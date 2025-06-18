@@ -1,6 +1,8 @@
 
 > [!abstract] Preface by **Lorenzo Bianchi Chignoli**
 > These lecture notes were originally prepared for the Advanced Macroeconomics III course offered by Jordi Galí in the PhD in Economics program at Universitat Pompeu Fabra during the Spring 2025 term. The content is primarily derived from my personal notes from Jordi Galí's lectures, complemented by key excerpts from his textbook *Monetary Policy, Inflation, and the Business Cycle* (Galí, 2015, 2nd ed.). Many of the mathematical derivations were worked out as exercises and, therefore, may contain inaccuracies. I would like to extend my special thanks to Vincent D'Anzi for his feedback and for identifying several typos. Responsibility for all remaining errors is entirely my own.
+
+
 ## Classical Monetary Model
 
 This section introduces a model of money in the classical economy. Most of the attending results are dramatically at odds with empirical evidence. However, this model serves as a smooth introduction to monetary economics, and to some of the notation that will be carried over hereafter. Some of the assumptions of the classical model are, indeed, quite heroic. The main assumptions are mentioned below:
