@@ -468,7 +468,7 @@ $$
 
 The property of uniquely pinning down the path of the price level is usually referred to as the **Taylor principle**. In this case, the Taylor principle is satisfied only if the nominal interest rate responds to inflation more strongly than 1 to 1 (i.e., $\varphi_\pi > 1$) thus affecting the *real* interest rate. This is also known as **nominal determinacy**.
 
-> [! def] Taylor Principle
+> [! definition] Taylor Principle
 > The interest rate rule must enforce a unique equilibrium.
 
 In contrast, if $\phi_{\pi} \le 1$, then the forward iteration of [[#^a243c4]] diverges because $\phi_\pi^{-(k+1)}$ either fails to decay (when $\phi_\pi = 1$) or grows (when $\phi_\pi < 1$). As a result, no bounded solution exists for inflation. Instead, the stationary solution to [[#^a243c4]] is derived combining [[#^26558a]] with [[#^648e11]]:
@@ -630,8 +630,8 @@ In previous years, the ECB initially adopted the "monetary pillar" for monetary 
 
 As regards the short run, some predictions of the classical model are too strong and rebuted by the data. Consider the effects of exogenous monetary policy shocks, that is a policy which is not elicited by the economy but imposed exogenously. The paper considered is Christiano, Eichenbaum and Evans (1999), focusing on the federal funds rate — the U.S. main instrument for monetary policy. Suppose for practical purposes that the data generating process for the nominal rate follows a linear model: $i_t = X_t^\intercal \beta + \varepsilon_t^m$. Obviously, the errors are not directly observable and have to be measured. A natural approach is estimating the rule and then recovering the residuals; finally, take variables of interest $X_t$ and regress these on the value of current monetary policy shocks, as $X_t = \sum_{k=0}^\infty \gamma_k^\intercal \varepsilon_{t-1}^m$. This allows to isolate the effect of monetary policy shocks from other shocks. Performing this calculation shows that, when the Federal Funds are raised persistently (persistent tightening), GDP also declines persistently. Second, in the short run, the GDP deflator hardly changes and declines eventually more slowly. Finally, the measure of money supply declines persistently. The key takehome message is that the response of the price level is basically unresponsive of the Funds rate. Moreover, the Classical model predicted no liquidity effect (oney supply and interest rate moved in same direction). Empirically, the opposite occurs: money supply and interest rates move in opposite directions.
 
->[! definition] Liquidity Effect
->**Liquidity effect** refers to the money supply and the interest rate moving in opposite directions.
+> [! definition] Liquidity Effect
+> **Liquidity effect** refers to the money supply and the interest rate moving in opposite directions.
 
 Similar results are obtained by Jaroncinski and Karadi (2020), focusing on the 30-minute window span when the Fed announced rates.
 
@@ -1823,7 +1823,7 @@ Which is solved at 0 inflation. Is it, however, the unique solution? For a coeff
 
 Are there any simple rules approximating the optimal rule? This question fueled a large body of recent research in monetary macroeconomics. The criterion to evaluate simple rules is exactly the welfare loss previously derived and originally proposed by Woodford (2003). Let us consider the **Taylor rule** based on this benchmark.
 
->[! def] Taylor rule
+>[! definition] Taylor rule
 >$$i_t = \rho + \phi_\pi \pi_t + \phi_y \hat y_t$$
 
 Simulating the model under such rule and proper calibrations of the parameters, the welfare loss can be computed based on the output gap and inflation. Consider both the technology shock and demand shock, and see how the rule behaves conditional on each shock separately. We'll consider the benchmark values proposed by Taylor, namely $\phi_\pi = 1.5$ and $\phi_y = 0.125$. The table computes the welfare loss, which can be interpreted as the loss that a consumer is willing to internalize in order to get rid of fluctuations.

@@ -6,4 +6,4 @@ My name is Lorenzo Bianchi Chignoli and this is the Economics Notebook. On this 
 
 Some of the current notes include [[Advanced Macroeconomics III (Galí)|Galí's course on New Keynesian models]] at UPF.
 
-Feedback is very welcome. Enjoy the notes!
+Feedback is very welcome. For any questions or comments, reach out via [email](mailto:lorenzo.bianchi@bse.eu) or [LinkedIn](https://www.linkedin.com/in/lorenzobianchichignoli/). Enjoy the notes!
