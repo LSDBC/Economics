@@ -119,7 +119,7 @@ l_{t} &= c_{t} - \frac{1}{\sigma} \log(1-e^{-i_{t}})  \\
 \end{cases}
 $$
 
-where denotes the semielasticity of money demand. In the most general form, the money demand function is postulated as equal to $m_{t} - p_{t} = c_{t} - \eta i_{t}$, where $\eta \equiv \frac{ \partial (m_{t} - p_{t}) }{ \partial i_{t} }$ is the semi-elasticity of money demand. This form is also derived in [[#^f2d530]]  as the optimality condition for a utility function with direct utility from real balances.
+where denotes the semielasticity of money demand. In the most general form, the money demand function is postulated as equal to $m_{t} - p_{t} = c_{t} - \eta i_{t}$, where $\eta \equiv \frac{ \partial (m_{t} - p_{t}) }{ \partial i_{t} }$ is the semi-elasticity of money demand. This form is also derived in the following exercise,  as the optimality condition for a utility function with direct utility from real balances.
 Details on the derivation of the Euler equation as a first-order approximation are outlined after the following exercise.
 
 > [!exercise]- Household Optimality through the Lagrangian
@@ -222,8 +222,6 @@ Details on the derivation of the Euler equation as a first-order approximation a
 > 
 > which identifies $\eta \equiv \frac{1}{\nu(e^i - 1)}$. Also note that, for small $i$, then $e^i - 1 \approx i$, so that $\eta \approx \frac{1}{\nu i}$.
 
-^f2d530
-
 To find the intertemporal Euler equation espressed in terms of the interest rate, take the optimality condition for $Q_t$ in logs:
 
 $$
@@ -273,7 +271,8 @@ where the fourth line introduces a first-order approximation (by Jensen's inequa
 > 
 > This leads to the final result:
 > 
-> > [! proposition] Certainty Equivalence First-Order Approximation
+> > [!proposition] Certainty Equivalence First-Order Approximation
+> >
 > > At the first order, $f(\mathbb{E}[X])$ and $\mathbb{E}[f(X)]$ are approximately equal because we intentionally ignore the term that captures the effect of variance.
 > > $$ f(\mathbb{E}[X]) = f(\mu) \approx \mathbb{E}[f(X)] $$
 > 
@@ -301,7 +300,7 @@ $$
 > As a possible interpretation of this relation, note that pure consumption smoothing can be achieved only if the real interest rate equalizes the discount rate. Deviations depend on the value of the real interest rate. How this is realized in practice is beyond the scope of this section: in the future, central banks may allow individuals to hold deposits directly through #CBDC, and presumably earn interests on liquidity. A more detailed treatment of #CBDC and #crypto is contained in Benigno (2025).
 
 
-> [! focus]- Government Budget Constraint
+> [!focus]- Government Budget Constraint
 > Note that, if a public sector were to be introduced, this model should also satisfy the government budget constraint:
 > 
 > $$
@@ -339,7 +338,7 @@ r_{t} = \rho - \sigma \psi_{ya} (1-\rho_{a})a_{t} + (1-\rho_{z}) z_{t}
 \end{cases}
 $$
 
-Details on the derivations of these equations are put off to [[#Sticky Prices Evidence, Microfoundations, and Early Models|Chapter 2]], in particular [[#^4f8e50]] the following.
+Details on the derivations of these equations are put off to [[#Sticky Prices Evidence, Microfoundations, and Early Models|Chapter 2]].
 
 The Classical model leads to two main neutrality results. After deriving the equilibrium values for the key model variables, we see that these are independent from monetary policy: in fact, no monetary policy rule was required to derive equilibrium. In addition, the equilibrium conditions are also independent from lump-sum taxes and debt. **The role of monetary and fiscal policy is thus simply to determine the level of *nominal variables***.
 Note that, in theory, two different regimes would allow to determine the level of nominal variables: a **Ricardian regime** (where monetary policy is active while fiscal policy is passive) and a **non-Ricardian regime** (the opposite). The latter is mainly known as [[#The Fiscal Theory of the Price Level]]: monetary policy is inactive, while fiscal policy determines nominal variables. Of course, there is widespread consensus that the Ricardian regime should be implemented to the expense of the non-Ricardian. Regardless of the choice, however, monetary neutrality holds in both, as it hinges exclusively on the separability of real balances.
@@ -348,7 +347,7 @@ Unlike real variables, the exact equilibrium values of nominal variables cannot 
 ### Policy
 #### Exogenous money growth
 
-Combining the money demand equation (or money market clearing condition), that is $m_{t} - p_{t} = c_{t} - \eta i_{t}$, with [[#^4f8e50]], and plugging in the definition of real interest rate (as the nominal rate minus inflation, also referred to as the **Fisher equation**, it is possible to sketch a rule for exogenous money growth.
+Combining the money demand equation (or money market clearing condition), that is $m_{t} - p_{t} = c_{t} - \eta i_{t}$, with the previous solution for the endogenous values — $n_t$, $y_t$, $\omega_t$ and $r_t$ —, and plugging in the definition of real interest rate (as the nominal rate minus inflation, also referred to as the **Fisher equation**, it is possible to sketch a rule for exogenous money growth.
 
 > [!definition] Fisher Equation
 > 
@@ -391,12 +390,10 @@ p_{t} &= m_{t} + \sum_{k=1}^\infty \left(  \frac{\eta}{1+\eta}  \right)^k \mathb
 \end{align*}
 $$
 
-^ec160a
-
 meaning that, when monetary policy takes the form of an exogenous path for the money supply, the equilibrium price level is always determined uniquely.
 
 Put simply, rearranging terms and in particular collecting $p_t$ on the LHS, the resulting stochastic difference equation collects all the terms independent of monetary policy (real variables) in the term $u_t$. As solved by forward iteration, it was shown that the price level is equal to exogenous current and future level of the money supply. This is usually expressed in growth rates rather than levels, which explains why its was subtracted $m_t$ from both sides.
-In the steady state, all the elemtns RHS are constant: therefore, also $p_t - m_t$ is constant. By taking first differences, we get that $\pi = \Delta m$ is constant in the economy:
+In the steady state, all the elements RHS are constant: therefore, also $p_t - m_t$ is constant. By taking first differences, we get that $\pi = \Delta m$ is constant in the economy:
 
 $$
 \begin{align*}
@@ -420,7 +417,7 @@ $$
 
 Inflation responds directly to variations in money growth. The equilibrium price level is a function of money growth, real variables (depending on real shocks), and $m_t$. Note that the price level should grow more than proportional to the price level, as this positively covariates with the expected money growth: this is radically at odds with empirical evidence. Moreover, real shocks also affect the price level.
 
-As for a solution for the interest rate, use the final line of [[#^ec160a]] and to solve for the first line of such equation, that is the money demand equation:
+As for a solution for the interest rate, use the final line of the price equation and to solve for the first line of such equation, that is the money demand equation:
 
 $$
 \begin{align*}
@@ -468,7 +465,7 @@ $$
 
 The property of uniquely pinning down the path of the price level is usually referred to as the **Taylor principle**. In this case, the Taylor principle is satisfied only if the nominal interest rate responds to inflation more strongly than 1 to 1 (i.e., $\varphi_\pi > 1$) thus affecting the *real* interest rate. This is also known as **nominal determinacy**.
 
-> [! definition] Taylor Principle
+> [!definition] Taylor Principle
 > The interest rate rule must enforce a unique equilibrium.
 
 In contrast, if $\phi_{\pi} \le 1$, then the forward iteration of [[#^a243c4]] diverges because $\phi_\pi^{-(k+1)}$ either fails to decay (when $\phi_\pi = 1$) or grows (when $\phi_\pi < 1$). As a result, no bounded solution exists for inflation. Instead, the stationary solution to [[#^a243c4]] is derived combining [[#^26558a]] with [[#^648e11]]:
@@ -512,10 +509,16 @@ As long as $\phi_p > 0$, the term $(1 + \phi_p)^{-(k+1)}$ decays geometrically, 
 
 To find the welfare-optimal monetary policy, start as usual by solving the social planner's problem. In particular, start by characterizing the allocation that solves such problem, which is typically the efficient allocation. Finally, try to come up with policy rules that implement such allocation in the decentralized equilibrium.
 
-The social planner's problem appears as $\max U(C_t, N_t, L_t; Z_t)$ subject to $C_t=A_tN_t^{1-\alpha}$, which means the only restrictions are i) technology and ii) the resource constraint. Note that, while the the social planner faces a static problem, households believe they can transfer resources from a period to another: this is not possible for the economy as a whole. By substitution, rewrite the problem as $\max U ( A_tN_t^{1-\alpha}, N_t, L_t; Z_t)$ and take the FOCs:$$\begin{cases}
+The social planner's problem appears as $\max U(C_t, N_t, L_t; Z_t)$ subject to $C_t=A_tN_t^{1-\alpha}$, which means the only restrictions are i) technology and ii) the resource constraint. Note that, while the the social planner faces a static problem, households believe they can transfer resources from a period to another: this is not possible for the economy as a whole. By substitution, rewrite the problem as $\max U ( A_tN_t^{1-\alpha}, N_t, L_t; Z_t)$ and take the FOCs:
+
+$$
+\begin{cases}
 -\frac{U_{n,t}}{U_{c,t}} = (1-\alpha)A_tN_t^{-\alpha} \\
 U_{l,t} = 0
-\end{cases}$$Can the solution given by the first order conditions be replicated in the decentralized economy taking prices as given? First, consider the efficiency condition: this is always satisfied, regardless of monetary policy, since the marginal rate of substitution equals the real wage, and by the optimality condition of the firm the real wage equals the marginal product of labor (both results follow from perfect competition). The central bank should thus worry about the second condition. Let us compare it with the optimality conditions for households:
+\end{cases}
+$$
+
+Can the solution given by the first order conditions be replicated in the decentralized economy taking prices as given? First, consider the efficiency condition: this is always satisfied, regardless of monetary policy, since the marginal rate of substitution equals the real wage, and by the optimality condition of the firm the real wage equals the marginal product of labor (both results follow from perfect competition). The central bank should thus worry about the second condition. Let us compare it with the optimality conditions for households:
 
 $$
 \begin{align*}
@@ -580,7 +583,7 @@ To continue, suppose that the inflation target is raised permanently to a higher
 
 To summarize, calibrated models with non-separable real balances exhibits quantitatively small non-neutralities, large effects of monetary policy shocks on prices, and absence of liquidity effect. An example of non-separability is provided by Walsh (2017). The author specifies a nonseparable utility function, calibrates the model and provides some impulse-response functions to a positive money growth rate shock.
 
-![[Walsh (2017). Figure 2.4.png|center|350]]
+![[Walsh (2017). Figure 2.4.png|center|500]]
 
 Expansionary monetary policy raises the nominal interest rate — consistently with earlier predictions: higher inflation expectations raise the nominal interest rate. Such an increase contracts labor supply and induces a recession, with lower output and employment. Inflation increases significantly: a 1% shock induces a 2-3% increase in inflation. The real money supply goes down as a result. The unpleasant result is that this model has no liquidity effect: a positive increase in money growth is associated with a positive increase in interest, which is not there in the data. Inflation responds basically immediately, which is also false in the data. An increase in the money supply induces a recession, false in the real world. Finally, and devastatingly, the non-neutrality is tiny: an increase in 1% money growth rate, which leads to a substantial increase in the interest rate, leads to a reduction in output of 0.0something percent, not even captured by the statistical agencies. **With non-separable real balances calibrated consistently with empirical estimates of money demand, non-neutralities are very small compared to empirical evidence**. This led the literature to cast aside these models for practical purposes. 
 #### Alternative Micro-foundations for Money Demand
@@ -1698,7 +1701,7 @@ Impulse response functions to a monetary policy shock from a calibrated version 
 
 The monetary shock utilized for the IRF functions takes the form of an increase of 25 base points in $\epsilon_{t}^v$. The increase in the real rate induces effects on consumption through the Euler equation, and thus on aggregate demand and output. This is reflected in the IS equation, where current output gap depends on current and future variables. 
 
-![[IRF. Monetary Policy Shock.png| center | 350]]
+![[IRF. Monetary Policy Shock.png| center | 500]]
 
 The output gap drops, and obviously inflation as well, being related to the output gap. The natural level of output does not change, also reflecting the fact that the output gap is shocked. The real wage also decreases unambiguously, moving down along the labor supply schedule.
 To solve for the price level, solve $p_t= p_{t-1} + \pi_t$ and note that the price level decreases *very* gradually until stabilization. This is consistent with negative inflation: ultimately, prices stabilize permanently at a lower level (recall, from previous passages, that there is no steady state for prices). To understand this, imagine that a firm sees decreasing demand for their goods: their response will be not only to produce less, but will also lead to lower marginal costs (decreased wage and increased marginal product of labor). Therefore, when they get a chance to adjust prices, they will try to lower prices. Finally, note that money supply also converges to the initial value.
@@ -1707,14 +1710,14 @@ The three predicitons of the classical model conflicting with the empirical evid
 #### IRF: Preference shock
 A negative shock to $z_t$ should be interpreted as a negative preference shock: consumers prefer to consume less at the time of the shock. The variables on the column on the left react just the same as in the monetary policy shock, with the exception of the nominal rate and the money supply.
 
-![[IRF. Discount Rate Shock.png|center|350]]
+![[IRF. Discount Rate Shock.png|center|500]]
 
 The nominal rate reacts differently through the endogenous component of the policy rule. Inflation and output decrease, and thus the central bank lowers the interest rate. Whenever the nominal rate goes down, so does the real rate, as inflation does not change much. This occurs as an attempt to stabilize the economy, to partly offset the declining demand coming from the preference shock. However, this is not fully offset and the output goes down, although the decrease would have been even larger without the policy intervention.
 
 The money supply goes up in the short run, but not in the long run, because of the lower nominal interest rate. Given this calibration, it tends to offset: $m_t = p_t + \pi_t - \eta i_t$, where the first two decrease and the latter increases. For the point of view of the individual firm, this shock looks similar to the monetary policy shock.
 #### IRF: Technology shock
 
-![[IRF. Technology Shock.png|center|350]]
+![[IRF. Technology Shock.png|center|500]]
 
 A persistent positive technology shock calls for increased output. However, the output gap decreases and becomes negatively. This is due to the fact that output increases by less than the natural level of ouput. Implicitly, this is because the real interest rate does not decrease as much as the natural interest rate — i.e. the central bank is non stimulating the economy enough, under this particular rule and calibration. 
 Inflation, as the output gap, is negative. In principle, the nominal rate responses both to inflation and output, which are now moving in opposite directions. In the present calibration, the nominal rate goes up (the reduction in inflation is dominated by the increase in output). The real wage goes up, but in principle this is ambiguous. In fact, output goes up, but employment decreases in response to a positive technology shock: $w_t = \sigma y_t + \phi n_t$. Unemployment goes down due to the labor demand equation: $n_t = \frac{y_t - a_t}{1 - \alpha}$. If output does not increase as much as technology, as it often happens, then employment decreases. This is a (fairly) general result in NK models: the demand for the good decreases by less than technology, and the firms need less workers than before to produce the, yet higher, quantity demanded by consumers.
@@ -1722,7 +1725,7 @@ Inflation, as the output gap, is negative. In principle, the nominal rate respon
 
 This prediction is at odds with the standard RBC model. A positive technology shock in the RBC would lead to *increased* employment: if not, those models could not have claimed that they generate business cycles by taking technology shocks as the only source of fluctuation. Thus, the RBC school takes on the tight positive correlation between output and employment. In contrast, the opposite is predicted by the NK model. Empirical evidence does not help much to settle the debate: in the real world, many shocks occur at once, and it is quite difficult to disentangle their relative impact. In Galì (1999), permanent technology shocks found as the only shocks with a permanent effect on labor productivity, which is a feature shared with RBC model. By estimating the impact of these shocks on a number of variables through a [[Advanced Econometric Methods III#VARs and SVARs|SVAR]], GDP increases gradually but the total amount of hours worked decrease. This seems to support the NK hypothesis rather than the RBC.
 
-![[Galì, 1999.png|center|350]]
+![[Galì, 1999.png|center|500]]
 
 In a related paper, Basu et al. (2006) use actual measures of technology using modified versions of Solow residual's correcting for problems in increasing returns to scale or non-perfect competition, or observed variations in factors employment. They regress every variable of interest of the current and lagged volumes of the change in technology, and obtain a similar result: a negative correlation between hours worked and technological shocks. This despite using an opposite approach (in Galì, 1999, technology was unobservable and here is a regressor).
 Note that, under $\sigma=1$, employment will ultimately go back to normal, consistent with balanced growth. Put simply, the following relation must hold in the long run: $c_t + \phi n_t = \log(1-\alpha) + y_t + n_t$. In this model, $c_t=y_t$, plus the additional feature of the markup: $\phi n_t = \log(1-\alpha) - n_t - \mu_t$; however, the markup also goes back to normal in the long run.
