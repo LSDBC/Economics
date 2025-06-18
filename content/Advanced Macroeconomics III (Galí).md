@@ -12,6 +12,7 @@ This section introduces a model of money in the classical economy. Most of the a
 - **Money in the utility function**. In this model, money enters the utility function directly. There are several ways to model money demand. In the baseline model, the convenient approach is simply to assume that money holdings provide some services, reflected in the utility function: money figures in the utility function directly, as a transactions facilitator. This means that no utility is derived from "being rich", although some recent expansions of the model have included such specifications (the so called "rough utility function"). Put simply, its role may be justified theoretically as a sort of "lubricant" for transactions. However, in the continuation of the chapter, some alternative approaches to include money in the household problem will be explored.
 - **Labor economy**. For simplicity, the entire course assumes no capital accumulation and no investment (labor is the only input).
 - **Closed economy**.
+
 ### Optimality
 
 This section considers a representative household with a general (neoclassical) utility function and derives the optimality conditions in the most generic case. Later on, a specific form for this functions will be introduced — namely, the CRRA utility function.
@@ -633,7 +634,7 @@ In previous years, the ECB initially adopted the "monetary pillar" for monetary 
 
 As regards the short run, some predictions of the classical model are too strong and rebuted by the data. Consider the effects of exogenous monetary policy shocks, that is a policy which is not elicited by the economy but imposed exogenously. The paper considered is Christiano, Eichenbaum and Evans (1999), focusing on the federal funds rate — the U.S. main instrument for monetary policy. Suppose for practical purposes that the data generating process for the nominal rate follows a linear model: $i_t = X_t^\intercal \beta + \varepsilon_t^m$. Obviously, the errors are not directly observable and have to be measured. A natural approach is estimating the rule and then recovering the residuals; finally, take variables of interest $X_t$ and regress these on the value of current monetary policy shocks, as $X_t = \sum_{k=0}^\infty \gamma_k^\intercal \varepsilon_{t-1}^m$. This allows to isolate the effect of monetary policy shocks from other shocks. Performing this calculation shows that, when the Federal Funds are raised persistently (persistent tightening), GDP also declines persistently. Second, in the short run, the GDP deflator hardly changes and declines eventually more slowly. Finally, the measure of money supply declines persistently. The key takehome message is that the response of the price level is basically unresponsive of the Funds rate. Moreover, the Classical model predicted no liquidity effect (oney supply and interest rate moved in same direction). Empirically, the opposite occurs: money supply and interest rates move in opposite directions.
 
-> [! definition] Liquidity Effect
+> [!definition] Liquidity Effect
 > **Liquidity effect** refers to the money supply and the interest rate moving in opposite directions.
 
 Similar results are obtained by Jaroncinski and Karadi (2020), focusing on the 30-minute window span when the Fed announced rates.
@@ -918,7 +919,8 @@ $$
 
 where $\log \left\{ (1-\alpha)\int_{0}^1 \left( \frac{P_{t}(i)}{P_{t}} \right)^{-\frac{\epsilon}{1-\alpha}} \right\}$ is an index of **price dispersion** and is equal to zero up to a first order approximation (the result is proved [[#^12b3bf|below]]).
 
-> [! focus]- Price Dispersion
+> [!focus]- Price Dispersion
+>
 > By definition of $P_t$:
 > 
 > $$
@@ -989,7 +991,8 @@ $$
 where $\psi_{ya} \equiv \frac{1+\phi}{\sigma(1-\alpha) + \phi + \alpha}$ and $\psi_{y}^\mu \equiv \frac{(1-\alpha)[\log(1-\alpha) - \mu]}{\sigma(1-\alpha) + \phi + \alpha}$. Comparing this expression to the classical monetary model case, note that this is almost identical. The only difference lies in the markup, which of  course could not be present in the classical model due to perfect competition. Put simply, the fact that firms are monopolistic competitors does not change the way the output responds to technology shocks. **The introduction of market power affects only the mean level of output at the steady state: it lowers the level around which output fluctuates, without changing the response to shocks**. As for the real interest rate, this remains totally unaffected, with same mean as before.
 
 
-> [! focus] Employment, real wages, and the real rate
+> [!focus] Employment, real wages, and the real rate
+>
 > Compute the levels of employment, real wages, and real interest rate and compare these to the classical model. In the flexible prices monopolistic model, these three quantities are as follows:
 > 
 > $$
@@ -997,9 +1000,11 @@ where $\psi_{ya} \equiv \frac{1+\phi}{\sigma(1-\alpha) + \phi + \alpha}$ and $\p
 > n_{t} &= \frac{\log(1-\alpha)+  a(1-\sigma) - \mu}{\sigma(1-\alpha) + \phi + \alpha} \\
 > \omega_{t} &= \frac{[\sigma(1-\alpha) + \phi][\log(1-\alpha)-\mu]}{\sigma(1-\alpha) + \phi + \alpha} + \frac{\sigma + \phi}{\sigma(1-\alpha) + \phi + \alpha} a_{t} \\
 > r_{t} &= \rho - \sigma \psi_{ya} (1-\rho_{a})a_{t} + (1-\rho_{z})z_{t}
-> \end{cases}$$
+> \end{cases}
+> $$
 > 
 > which compares to the classical model as follows:
+>
 > $$
 > \begin{cases}
 > n_{t} &= \frac{\log(1-\alpha) + a_{t}(1-\alpha)}{\sigma(1-\alpha) + \phi + \alpha}
@@ -1275,28 +1280,43 @@ which requires to find $p_t^*$ in the first place. This can be found from the fi
 
 > [!focus]- Positive Inflation Steady State
 > Reformulate the firm problem so as to account for a positive inflation steady state:
-> $$\max_{B_{t}^*(i)} \mathbb{E}_{t} \sum_{k=0}^\infty \theta^j \Lambda_{t,t+k} \left [ Y_{t+k}(i) P^*_{t}(i) \Gamma^{k\omega} - \mathcal{C}(Y_{t+k}) \right ]$$
+>
+> $$
+> \max_{B_{t}^*(i)} \mathbb{E}_{t} \sum_{k=0}^\infty \theta^j \Lambda_{t,t+k} \left [ Y_{t+k}(i) P^*_{t}(i) \Gamma^{k\omega} - \mathcal{C}(Y_{t+k}) \right ]
+> $$
 > where $\Gamma$ denotes the steady state level of inflation and $\omega$ is a parameter denoting the indexation intensity (0 to 1) for firms that do not reoptimize prices over the current period. The problem solves for:
 > $$\frac{P_{t}^*}{P_{t}} = \mathcal{M} \frac { \mathbb{E}_{t} \left [ \sum_{k=0}^\infty \theta^k \Lambda_{t,t+k} Y_{t+k} \left(\frac{P_{t+k}}{P_{t}}\right)^{\epsilon+1} \Gamma^{-k\omega\epsilon} \;\cdot\; \frac{\Psi_{t+k}(i)}{P_{t+k}} \right] } { \mathbb{E}_{t} \sum_{k=0}^\infty \left[ \theta^k \Lambda_{t,t+k} Y_{t+k} \left(\frac{P_{t+k}}{P_{t}}\right)^{\epsilon+1} \Gamma^{-k\omega\epsilon} \right] }$$
 > And the price setting dynamics are:
-> $$P_{t}^{1-\epsilon} = (1-\theta) (P^*_{t})^{1-\epsilon} + \theta P_{t-1}^{1-\epsilon} \Gamma^{\omega(1-\epsilon)}$$
+>
+> $$
+> P_{t}^{1-\epsilon} = (1-\theta) (P^*_{t})^{1-\epsilon} + \theta P_{t-1}^{1-\epsilon} \Gamma^{\omega(1-\epsilon)}
+> $$
+>
 > This implies the following relation, in levels and log deviations:
-> $$\begin{align*}
+> 
+> $$
+> \begin{align*}
 > \frac{P^*}{P} &= \left(  \frac{1-\theta}{1 - \theta\Gamma^{(1-\omega)(\epsilon-1)}} \right)^{\frac{1}{\epsilon-1}} \\
 > \\
 > \hat{\pi}_{t} &= \left(  \frac{1 - \theta\Gamma^{(1-\omega)(\epsilon-1)}} {\theta\Gamma^{(1-\omega)(\epsilon-1)}} \right)
-> \end{align*}$$
+> \end{align*}
+> $$
+>
 > which implies that inflation is less sensitive to changes in the re-optimizing price as steady-state inflation rises.  This effect reflects the fact that, with positive steady-state inflation, firms which reset prices have higher prices than others and receive a smaller share of expenditures, thereby reducing the sensitivity of inflation to these price changes.  Indexation of prices works to offset this effect however, with full indexation completely restoring the usual relationship between reset prices and inflation.
 > 
 > Here is a complete derivation of the equation:
-> $$\begin{align*}
+>
+> $$
+> \begin{align*}
 > P_{t}^{1-\epsilon} &= \int_{0}^{1} P_{t}(i)^{1-\epsilon} \, di \\ &= \sum_{j=0}^{\infty} (1-\theta)\theta^j \left[(P^*) \left(\Gamma^\omega\right)^j\right]^{1-\epsilon} \\
 > &= (1-\theta) (P^*)^{1-\epsilon} \sum_{j=0}^{\infty} \left(\theta \Gamma^{\omega(1-\epsilon)}\right)^j \\ &= (1-\theta) (P^*)^{1-\epsilon} \frac{1}{1 - \theta \Gamma^{\omega(1-\epsilon)}} \\ &= (1-\theta) \left((P^*)/\overline{P}\right)^{1-\epsilon} \overline{P}^{1-\epsilon} \frac{1}{1 - \theta \Gamma^{\omega(1-\epsilon)}} \\ &= (1-\theta) \left((P^*)/\overline{P}\right)^{1-\epsilon} \overline{P}^{1-\epsilon} \frac{1}{1 - \theta \Gamma^{\omega(1-\epsilon)}} \\ 1 &= (1-\theta) \left((P^*)/\overline{P}\right)^{1-\epsilon} \frac{1}{1 - \theta \Gamma^{\omega(1-\epsilon)}} \\ \left((P^*)/\overline{P}\right)^{1-\epsilon} &= \frac{1 - \theta \Gamma^{\omega(1-\epsilon)}}{1 - \theta} \\ (P^*)/\overline{P} &= \left(\frac{1 - \theta \Gamma^{\omega(1-\epsilon)}}{1 - \theta}\right)^{\frac{1}{1-\theta}} \\ &= \left(\frac{1 - \theta \Gamma^{-\omega(\epsilon-1)}}{1 - \theta}\right)^{-\frac{1}{\epsilon-1}} \\ (P^*)/\overline{P} &= \left(\frac{1 - \theta}{1 - \theta \Gamma^{-\omega(\epsilon-1)}}\right)^{\frac{1}{\epsilon-1}}
-> \end{align*}$$
+> \end{align*}
+> $$
+>
 > The log deviations are obtained as follows. Denote $x \equiv \Gamma^{(1-\omega)(\epsilon-1)} \frac{P^*}{P}$:
 >  
 > $$
-> \begin{align*ed}
+> \begin{align*}
 > x &= \Bigl(\tfrac{1-\theta}{\,1-\theta\,x\,}\Bigr)^{\!1/(\epsilon-1)}
 > \ln\frac{P^*}{P}\\
 > &= \frac{1}{\epsilon-1}\bigl[\ln(1-\theta)-\ln(1-\theta x)\bigr] \\
@@ -1312,7 +1332,7 @@ which requires to find $p_t^*$ in the first place. This can be found from the fi
 > \widehat\pi_t
 > &= \frac{\,1-\theta\,x\,}{\theta\,x}
 > \;=\;\frac{\,1-\theta\,\Gamma^{(1-\omega)(\epsilon-1)}\,}{\,\theta\,\Gamma^{(1-\omega)(\epsilon-1)}\,}
-> \end{align*ed}
+> \end{align*}
 > $$
 
 Consider the firm's objective function under Calvo pricing. Let $\Xi_t(i)$ denote the period $s \leq t$ when $P_t(i)$ was set. Present discounted value of a firm reoptimizing its price in period $t$:
@@ -1490,7 +1510,7 @@ $$
 
 which suggests that inflation depends also on expected future markup gaps, since firms realize that the price set today will persist for a possibly long period of time. Inflation depends on current **and** expected future markup gaps: in this sense, inflation is forward looking. Inflation is expressed as the discounted sum of current and expected future deviations of average markups from their desired level: thus, inflation will be positive when firms expect average markups to be below their desired level $\mu$.
 
->[! remark] Real Rigidities
+>[!remark] Real Rigidities
 >Note that $\lambda$ is decreasing in $\alpha$ and $\epsilon$. Let us try to come up with some intuition for this, putting ourselves into the position of a firm.
 >
 >With constant returns to scale, the marginal costs are independent on prices (as prices are the driver of demand). However, with decreasing returns, the marginal costs that a firm faces depend on the quantity being produced, and thus on the price. In other words, today's price also influences future marginal costs, and the firm takes this dependence into account when optimizing. If a firm increases the price assuming that the marginal cost will be higher, the price increase will be slightly less than in the context of constant returns, as the price itself lowers (or increases) the marginal costs. The effects of production technology on pricing dynamics are referred to as **real rigidities**.
@@ -1511,7 +1531,7 @@ $$
 
 where $\tilde{y}_{t} \equiv y_{t} - y_{t}^n$ denotes the output gap.
 
->[! definition] New Keynesian Phillips Curve
+>[!definition] New Keynesian Phillips Curve
 >$$\pi_{t} = \beta \mathbb{E}_{t} [\pi_{t+1}] + \kappa \tilde{y}_{t}$$
 >where $\kappa \equiv \left( \sigma + \frac{\phi+\alpha}{1-\alpha} \right) \lambda = \left( \sigma + \frac{\phi+\alpha}{1-\alpha} \right) \frac{(1-\theta)(1-\beta\theta)}{\theta}\Theta = \left( \sigma + \frac{\phi+\alpha}{1-\alpha} \right) \frac{(1-\theta)(1-\beta\theta)}{\theta} \frac{1-\alpha}{1-\alpha + \alpha\epsilon}$.
 
@@ -1543,7 +1563,7 @@ Finally, as a conclusive comment: The difference between the NK and the traditio
 
 What alternatives can be proposed to measure the NK Phillips curve? Using the markup gap and exploiting the fact that the markup gap is inversely related to the labor income share, that we directly observe, it is possible to obtain the desired measure.
 
->[! remark] The labor income share
+>[!remark] The labor income share
 >The labor income share evolves according to the technology fundamentals and the markup, but only if the previous assumptions on the production function are taken seriously. If firms don't pay workers the marginal product of labor, but less than it, the markup gap will be higher.
 >
 >Note that this line of reasoning hinges upon the assumption that the marginal product of labor is a truthful, meaningful economic object. Once the assumptions on the production function are modifies or relaxed, then, a jar is opened where other interpretations of the output gap become acceptable: such as **conflict inflation**, or a **CES production function** or other technological assumptions.
@@ -1593,7 +1613,7 @@ This implies that **the central bank can influence today's output gap by influen
 
 Equilibria in the NK model can take different forms, depending on how the central bank conducts monetary policy. On top of that, monetary policy may involve more than one equation. For instance, if some rule for the money supply is also followed, two equations would be needed: given three endogenous variables and the previous two equations, we add another variable — the money supply — and thus need four equations for four unknowns. The additional equation would describe the equilibrium in the money market, and relating money supply to the money market $m_t - p_t = y_t - \eta i_t$.
 
-> [! example] Money supply
+> [!example] Money supply
 > In this version, there is no reference to money. This is sometimes referred to as the **cashless version** of the NK model. An implication is that money demand shocks of the type $$m_t - p_t = y_t - \eta i_t + \zeta_t$$ are irrelevant. The idea is that the money demand shock leads the central bank to adjust the money supply 1-to-1 to the money demand shock, leaving all other variables unchanged: $$\Delta m_t = \pi_t + \Delta y_t - \eta \Delta i_t + \Delta \zeta_t$$Of course, this result depends on the fact that the central bank follows an interest rate rule, and not a money supply rule. The difference equation prescribes the money supply rule required in equilibrium to implement the same interest rule as before.
 
 For our purposes, however, assume that the central bank follows an interest rule such as the **standard interest rate rule** (note that this is not yet the optimal rule, and rather it is a simple, realistic rule that we assume):
@@ -1667,9 +1687,13 @@ $$
 The method starts by conjecturing the terms of the solution:
 
 >[!conjecture] Undetermined Coefficients
->$$\begin{align*}\tilde y_t = \delta_y v_t
+>
+>$$
+>\begin{align*}\tilde y_t = \delta_y v_t
 >\\
->\pi_t = \delta_\pi v_t \end{align*}$$
+>\pi_t = \delta_\pi v_t \end{align*}
+>$$
+>
 
 If the exogenous variables follow a AR(1), the correct conjecture looks like the previous one (the endogenous variable change is proportional to the endogenous volume of the shock). Impose the conjecture on the previous two equations:
 
@@ -1826,7 +1850,7 @@ Which is solved at 0 inflation. Is it, however, the unique solution? For a coeff
 
 Are there any simple rules approximating the optimal rule? This question fueled a large body of recent research in monetary macroeconomics. The criterion to evaluate simple rules is exactly the welfare loss previously derived and originally proposed by Woodford (2003). Let us consider the **Taylor rule** based on this benchmark.
 
->[! definition] Taylor rule
+>[!definition] Taylor rule
 >$$i_t = \rho + \phi_\pi \pi_t + \phi_y \hat y_t$$
 
 Simulating the model under such rule and proper calibrations of the parameters, the welfare loss can be computed based on the output gap and inflation. Consider both the technology shock and demand shock, and see how the rule behaves conditional on each shock separately. We'll consider the benchmark values proposed by Taylor, namely $\phi_\pi = 1.5$ and $\phi_y = 0.125$. The table computes the welfare loss, which can be interpreted as the loss that a consumer is willing to internalize in order to get rid of fluctuations.
@@ -2129,7 +2153,7 @@ A comparison between discretion and commitment in monetary policy for a transito
  ![[Cost-push shock, transitory.png|300]] ![[Cost-push shock, persistent.png|300]]
 
 
->[! focus]- Optimal Monetary Policy below the Zero Lower Bound
+>[!focus]- Optimal Monetary Policy below the Zero Lower Bound
 >Assume the optimal rule is:
 >$$i_t = r_t^n + \phi_\pi \pi_t$$
 >which shows that shocks to the natural rate (e.g., technology shocks) making the natural rate negative. In such case, it would be impossible to have zero inflation and zero output gap with a non-negative interest rate.
