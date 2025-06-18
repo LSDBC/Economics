@@ -931,7 +931,7 @@ where $\log \left\{ (1-\alpha)\int_{0}^1 \left( \frac{P_{t}(i)}{P_{t}} \right)^{
 > 
 > $$
 > \begin{align*}
-\exp\{(1-\epsilon) \hat{p}_{t}\} &\approx 1 + (1-\epsilon)\hat{p}_{t}(i) + \frac{1}{2} (1-\epsilon)^2 \hat{p}_{t}(i)
+> \exp\{(1-\epsilon) \hat{p}_{t}\} &\approx 1 + (1-\epsilon)\hat{p}_{t}(i) + \frac{1}{2} (1-\epsilon)^2 \hat{p}_{t}(i)
 > \\
 > 0 &\approx (1-\epsilon) \mathbb{E}_{i}[\hat{p}_{t}(i)] + \frac{1}{2} \mathbb{E}_{i} [\hat{p}_{t}(i)]
 > \\
@@ -1070,11 +1070,11 @@ where linear approximations have been introduced in the second line and in the s
 Symmetry can be invoked so as to generalize these conditions:
 
 $$
-\begin{gather}
+\begin{gather*}
 \mathbb{E}_{t-1} [\mu_{t}] = \mu
 \\
 p_{t} = \mu + \mathbb{E}_{t-1}[\psi_{t}] 
-\end{gather}
+\end{gather*}
 $$
 
 and finally to compute the average markup in the economy:
@@ -2753,66 +2753,8 @@ $$
 
 where an unemployment similar to that computed by national agencies is proportional to the wage markup.
 
-``` tikz
-\usetikzlibrary{arrows.meta, calc, decorations.pathreplacing}
+![[Labor force.png| center | 500]]
 
-\begin{document}
-\begin{tikzpicture}[scale=0.7, every node/.style={scale=0.9}]
-
-    % Define coordinates
-    \coordinate (O) at (0,0);
-    \coordinate (nt_x_val) at (3,0);        % n_t on x-axis
-    \coordinate (lt_x_val) at (7,0);        % l_t on x-axis
-    \coordinate (wage_level_on_y) at (0,4); % w_t-p_t on y-axis
-    \coordinate (E) at (3,4);               % Equilibrium (nt, wage_level)
-
-    % Labor supply: y = x + 1 (slope 1, intercept 1)
-    % Passes through E=(3,4). Start x=0.5 -> y=1.5
-    \coordinate (S_start) at (0.5, {0.5+1});      % (0.5, 1.5)
-    \coordinate (S_end_draw) at (7.5, {7.5+1});   % (7.5, 8.5), for drawing line past l_t
-    \coordinate (lt_on_S) at (7, {7+1});          % (7,8), point on Supply curve at l_t
-
-    % Axes
-    % X-axis (max X is 8.5)
-    \draw[->, >=Latex] (O) -- (8.5,0) node[below=0.5cm, align*=center] at (4.25,0) {employment \\ labor force};
-    % Y-axis (max Y is now 9.5 for a squarer plot)
-    \draw[->, >=Latex] (O) -- (0,9.5) node[midway, rotate=90, anchor=south, yshift=4mm] {wage}; % 'yshift' moves along normal (left)
-
-    % Labor Demand (vertical line, brown)
-    % Drawn from x-axis up to a reasonable height (e.g., 8.0)
-    \draw[brown, very thick] (3,0) -- (3, 8.0);
-    \node[black, left=2mm] at (3, 7.0) {labor demand}; % Positioned left of the line, near top
-
-    % Labor Supply (upward sloping, blue)
-    \draw[blue, very thick] (S_start) -- (S_end_draw);
-    % Label positioned above the line, around x=5.2
-    \node[black] at (5.2, {5.2+1+0.7}) {labor supply}; % (5.2, y_line=6.2, label_y=6.9)
-
-    % Dashed lines
-    \draw[dashed] (E) -- (wage_level_on_y); % Horizontal from E to y-axis
-    \draw[dashed] (lt_on_S) -- (lt_x_val);  % Vertical from S curve at l_t to x-axis
-    \draw[dashed] (E) -- (lt_x_val |- E);    % Horizontal from E to (l_t, wage_level) for u_t brace
-
-    % Points and Labels on axes
-    \node[below] at (nt_x_val) {$n_t$};
-    \node[below] at (lt_x_val) {$l_t$};
-    \node[left] at (wage_level_on_y) {$w_t - p_t$};
-
-    % Braces and their labels
-    % u_t brace: between n_t and l_t at wage_level
-    \path [decorate, decoration={brace,amplitude=5pt,mirror,raise=3pt}] % mirror makes brace open downwards
-        (E) -- (lt_x_val |- E) node [black,midway,above=4pt] {$u_t$};
-
-    % mu_t^w brace: on the demand curve, from S_start's y-level up to wage_level
-    \coordinate (mu_brace_low_point_on_demand) at (3, {0.5+1}); % (3, 1.5) y-coord of S_start for this line
-    \draw [decorate, decoration={brace,amplitude=5pt,raise=3pt}] % raise lifts brace off the line path
-        (mu_brace_low_point_on_demand) -- (E) node [black,midway,right=4pt] {$\mu_t^w$};
-
-    % Add dot for equilibrium for clarity
-    \fill (E) circle (1.5pt);
-\end{tikzpicture}
-\end{document}
-```
 
 In this framework, define the natural rate of unemployment as the unemployment observed in equilibrium if wages were flexible: $\mu^w = \phi u^n$. Therefore:
 
