@@ -1,6 +1,9 @@
 ---
-title: Welcome to Quartz
+title: Welcome to my Notebook!
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+My name is Lorenzo Bianchi Chignoli and this is the Economics Notebook. On this webpage, I share notes and materials on macroeconomics, based on my courses and research interests.
+
+I am currently a PhD student at the **Pompeu Fabra University**, Barcelona. My main interests include monetary macroeconomics, agent-based modelling, network theory, and inequality studies.
+
+Feedback is very welcome. Enjoy the notes!
