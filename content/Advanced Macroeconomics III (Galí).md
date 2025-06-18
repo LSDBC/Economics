@@ -300,6 +300,7 @@ $$
 > 
 > As a possible interpretation of this relation, note that pure consumption smoothing can be achieved only if the real interest rate equalizes the discount rate. Deviations depend on the value of the real interest rate. How this is realized in practice is beyond the scope of this section: in the future, central banks may allow individuals to hold deposits directly through #CBDC, and presumably earn interests on liquidity. A more detailed treatment of #CBDC and #crypto is contained in Benigno (2025).
 
+
 > [! focus]- Government Budget Constraint
 > Note that, if a public sector were to be introduced, this model should also satisfy the government budget constraint:
 > 
@@ -2123,6 +2124,7 @@ A comparison between discretion and commitment in monetary policy for a transito
 
 
  ![[Cost-push shock, transitory.png|300]] ![[Cost-push shock, persistent.png|300]]
+
 
 >[! focus]- Optimal Monetary Policy below the Zero Lower Bound
 >Assume the optimal rule is:

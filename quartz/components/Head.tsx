@@ -97,6 +97,20 @@ export default (() => {
             return resource
           }
         })}
+
+{/* === INIZIO CODICE GOOGLE ANALYTICS === */}
+<script async src={`https://www.googletagmanager.com/gtag/js?id=G-26XTKW2T2L`}></script>
+<script id="google-analytics" dangerouslySetInnerHTML={{
+  __html: `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-26XTKW2T2L');
+  `
+}}></script>
+{/* === FINE CODICE GOOGLE ANALYTICS === */}
+
       </head>
     )
   }
