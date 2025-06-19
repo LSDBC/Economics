@@ -943,7 +943,7 @@ where $\log \left\{ (1-\alpha)\int_{0}^1 \left( \frac{P_{t}(i)}{P_{t}} \right)^{
 > 
 > $$
 > \begin{align*}
-\int_{0}^1 \left(  \frac{P_{t}(i)}{P_{t}} \right)^{-\frac{\epsilon}{1-\alpha}} \,di &= 1 + \frac{1}{2}\left( \frac{\epsilon}{1-\alpha} \right) \frac{1}{\Theta} \text{var}_{i}(p_{t}(i))
+> \int_{0}^1 \left(  \frac{P_{t}(i)}{P_{t}} \right)^{-\frac{\epsilon}{1-\alpha}} \,di &= 1 + \frac{1}{2}\left( \frac{\epsilon}{1-\alpha} \right) \frac{1}{\Theta} \text{var}_{i}(p_{t}(i))
 > \end{align*}
 > $$
 > 
@@ -2230,7 +2230,6 @@ $$
 where $\mathbb{E}_t[\pi_{t+4}^{(4)}]$ is the expected inflation over the next four quarters on an annualized basis (note that this is using GDP change and not GDP gap: using GDP change makes the rule more robust, as gross mistakes such as those made by the Fed would be dodged). This is an example of **first-difference rule**, especially used in the Ecentral bank. They use the actual forecasts of professional forecasters to estimate an interval for inflation, and thereby compute an envelope of prescriptions for their simple policy rule, leading to a very good fit with actual data.
 
 <div style="page-break-after: always;"></div>
-
 
 ## Sticky Wages and Unemployment in the New Keynesian Model
 
