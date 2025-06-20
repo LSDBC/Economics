@@ -1,1 +1,1 @@
-The final version can be found [here](/Economics/Responsibility-Sensitivity in Theories of Justice.pdf) (last update: June 2025).
+The final version can be found [here](/Economics/Responsibility-Sensitivity-in-Theories-of-Justice.pdf) (last update: June 2025).
