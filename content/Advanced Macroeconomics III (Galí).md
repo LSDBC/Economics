@@ -972,11 +972,11 @@ p_{t} &= \mu + \psi_{t}
 \\
 - n_{t} &= \frac{ \mu + (\sigma-1) a_{t} - \log(1-\alpha) } { \sigma(1-\alpha) + \phi + \alpha }
 \\
-\frac{a_{t} - y_{t} }{1 - \alpha} &= \frac{ \mu - \log(1-\alpha) } { \sigma(1-\alpha) + \phi - \alpha } - \frac{a_{t}(\sigma - 1)}{\sigma(1-\alpha) + \phi - \alpha }
+\frac{a_{t} - y_{t} }{1 - \alpha} &= \frac{ \mu - \log(1-\alpha) } { \sigma(1-\alpha) + \phi - \alpha } + \frac{a_{t}(\sigma - 1)}{\sigma(1-\alpha) + \phi - \alpha }
 \\
-- y_{t} &= \frac{(1-\alpha)[ \mu - \log(1-\alpha) ] }{\sigma(1-\alpha) + \phi + \alpha} - a_{t} \left( \frac{(1-\alpha) (\sigma-1) }{\sigma(1-\alpha) + \phi + \alpha} -1 \right)
+- y_{t} &= \frac{(1-\alpha)[ \mu - \log(1-\alpha) ] }{\sigma(1-\alpha) + \phi + \alpha} + a_{t} \left( \frac{(1-\alpha) (\sigma-1) }{\sigma(1-\alpha) + \phi + \alpha} -1 \right)
 \\
-y_{t} &= \frac{(1-\alpha)[ \log(1-\alpha) - \mu ] }{\sigma(1-\alpha) + \phi + \alpha} + \frac{ 1+\phi }{\sigma(1-\alpha) + \phi + \alpha}
+y_{t} &= \frac{(1-\alpha)[ \log(1-\alpha) - \mu ] }{\sigma(1-\alpha) + \phi + \alpha} + a_t \frac{ 1+\phi }{\sigma(1-\alpha) + \phi + \alpha}
 \end{align*}
 $$
 
