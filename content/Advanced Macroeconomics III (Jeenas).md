@@ -43,7 +43,8 @@ $$
 \max_{ \{ c^i \}_{i=1}^I } \sum_{i} \lambda_{i} U_{i}(c^i) \quad \text{ such that }
 \begin{cases}
 \sum_{i} c_{t}^i (s^t) \le \sum_{i} y_{t}^i(s^t)
-\end{cases}$$
+\end{cases}
+$$
 
 any Pareto optimal allocation can be rewritten as a maximization problem with some non-negative weights. Let $\theta_{t}(s^t)$ be the Lagrange multiplier of the constraint at $s^t$. Note that:
 
@@ -74,6 +75,7 @@ When the planner puts weight on some agent $i$, they get more consumption and th
 $$
 c_{t}^i (s^t) = (u_{i}')^{-1} \left(  \frac{\lambda_{1}}{\lambda_{i}} u_{1}'(c_{t}^1 (s^t)) \right)
 $$
+
 which can be plugged into the feasibility constraint:
 
 $$
@@ -227,6 +229,7 @@ $$
 By optimality of the RA economy, the FOC or optimality conditions of the RA can be rewritten as $\beta^t\left( \sum_{i} y_{t}^i(s^t) \right)^{-\gamma}(s^t) = \mu_{\text{RA}} q_{t}^{0, \text{RA}} (s^t)$. Pick the normalization of the RA economy's price level such that $\mu_{\text{RA}} = \left( \sum_{i} \mu_{i}^{-1/\gamma} \right)^{\gamma}$. Then, $q_{t}^{0, \text{RA}} (s^t) = q_{t}^{0,*} (s^t)$.
 `\end{proof}`
 
+
 ### Sequential trading
 
 Denote $Q_{t}(s_{t+1} | s^t)$ as the price of an Arrow security paying 1 unit of consumption if state $s_{t+1}$ is realizing. In this case, a numeraire is being implicitly chosen: the final consumption good for any period will be the numeraire. Denote as $\tilde{a}_{t}^i(s_{t+1}|s^t)$ consumer $i$'s holdings of such a security. The maximization problem is thus changed:
@@ -368,7 +371,7 @@ For general equilibrium, we should figure out whether the optimal consumption se
 The key question is whether the distribution of income and wealth across agents evolves endogenously. This answer to questions (a) on the fraction of aggregate savings motivated by precautionary motives, (b) on the part of wealth inequality explained through uninsurable earning variations, or (c) the redistributional implications of fiscal policies. To do so, we will focus on three main pillar:
 1) Solve the income fluctuation problem of *ex ante* identical consumers;
 2) Find an equilibrium for goods and asset markets;
-3) Specify an assumption on goods creation ( #endowment or #production economies).
+3) Specify an assumption on goods creation ( endowment or production economies).
 
 Suppose the economy is populated by a continuum of measure one *ex ante* identical households $i \in \mathcal{I} \equiv [0,1]$. The problem is the same as in [[#^d13eba]] and following, and income processes across households are iid. Moreover, by the law of large numbers, $\Pi_{m,s}$ is also the fraction of households in the population subject to that specific transition: probabilities coincide with masses moving across states. Assume that the Markov transition is well-behaved, i.e. has a unique invariant distribution $\pi^* = \begin{bmatrix} \pi_{1}^* & \dots & \pi_{S}^* \end{bmatrix}$ that maps into itself (ergodic distribution), satisfying:
 
@@ -454,7 +457,6 @@ This is a pure endowment economy providing a benchmark for the previous model: a
 > [^3]: The goods market clear by Walras' Law.
 
 The solution can be represented in the previous graph as falling in the interception between $A(r)$ and $r^*$. Intuitively, if idiosyncratic income risk increases, aggregate savings also increase (to tamper intertemporal fluctuations in the marginal utility of consumption), and the interest rate needs to fall to counterbalance the soar in aggregate savings. On the contrary, taking the limit where idiosyncratic risk goes to 0, the aggregate savings schedule gets asymptotically closer to the angular dashed line, which solves the savings problem for an individual households.
-
 ### Production Economy (Aiyagari, 1994)
 
 In this model, agent $i$'s income comes from supplying one unit of labor subject to stochastic productivity: $y_{t}^i = \epsilon_{t}^i w$ at real wage $w$. Let $\epsilon_{t}^i$ follow a discrete Markov chain with transition matrix $\Pi$. Since we assume that the real wage $w$ is constant, the household problem is effectively the same as before: the household's individual state is now $(a,\epsilon)$, knowing the real wage, and an implicit Markov chain for income can be drawn. Also suppose there is a representative firm with CRS production that rents capital from households at rate $\tilde{r}$ and hires labor at wage $w$ (per efficiency unit). Households buy consumption and choose holdings of the risk-free assets, which is now capturing loans and physical capital accumulated by the households (capital depreciates at rate $\delta \in (0,1]$).
@@ -526,7 +528,6 @@ s_{\text{PS}} \equiv s_{\text{HA}} - s_{\text{RA}} = \frac{\alpha\delta}{r_{\tex
 $$
 
 Aiyagari includes estimations for these values, finding $s_{\text{PS}} \approx 0$ with log utility and iid shocks, and $s_{\text{PS}} \approx .14$ with risk aversion equal to 5 and persistent-volatile shocks. These can be approximately the lower and upper values where the actual empirical rate lies.
-
 ### Applications, Extensions, and Current Research
 
 Bewley-type models induce a theory of wealth inequality starting from *ex ante* homogeneity. However, the empirical inequality in earnings does not suffice in explaining the empirical wealth inequality through the model. Thus, the process for earnings is too unrealistic to induce "enough" wealth inequality. The standard model can be enriched by the option to become "entrepreneur" with the possibility of generating higher wealth (Quadrini, 2000); introducing heterogeneity in $\beta$ (Krusell and Smith, 1997); bequest motives (De Nardi, 2003); or reduce the incentives for the poor to save for self-insurance, for example with social security of other benefits (Hubbard et al., 1995).
@@ -741,7 +742,6 @@ In the long run, the two economies converge to the same: for a high level of cap
 
 ![[Screenshot 2025-06-15 005138.png| center| 300]] ![[Screenshot 2025-06-15 160414.png|center|300]]
 Summing up, financial frictions constrain the ability of the aggregate economy to direct resources into productive capital investments. Starting at a low $K$, an economy subject to frictions grows slower. Moreover, financial frictions can also affect outcomes in the long run, with the economy converging to a steady state with lower economic activity.
-
 ## Financial Accelerator (Bernanke and Gertler, 1989)
 
 This chapter links business cycle fluctuations to microfounded financial frictions. In fact, the starting point is the idea that financial conditions of banks can have effects on macroeconomic fluctuations, especially booms and crises.
