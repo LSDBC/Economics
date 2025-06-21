@@ -741,6 +741,8 @@ $$
 In the long run, the two economies converge to the same: for a high level of capital, the wages will be so high that will suffice to borrow enough, even when there are financial frictions. However, the dynamics of the two economies need not to be identical at any point in time. In particular, the frictionless economy converges faster than the frictional economy.
 
 ![[Screenshot 2025-06-15 005138.png| center| 300]] ![[Screenshot 2025-06-15 160414.png|center|300]]
+
+
 Summing up, financial frictions constrain the ability of the aggregate economy to direct resources into productive capital investments. Starting at a low $K$, an economy subject to frictions grows slower. Moreover, financial frictions can also affect outcomes in the long run, with the economy converging to a steady state with lower economic activity.
 ## Financial Accelerator (Bernanke and Gertler, 1989)
 
