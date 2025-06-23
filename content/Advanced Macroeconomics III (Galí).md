@@ -33,6 +33,43 @@ $$
 
 where $\mathcal{A}_t \equiv \frac{B_{t-1} + M_{t-1} }{P_t}$ is total financial wealth, while $\Lambda_{t,t+T} \equiv \beta^T \frac{U_{c,t+T}}{U_{c,t}}$ is the stochastic discount factor. This is the minimal assumption to prevent Ponzi schemes. Since $\Lambda_{t,t+T}$ will be decreasing as $T$ increases, it implies that household debt cannot increase at a higher rate than the interest rate. Trade in equity could be theoretically included, but households are homogeneous and therefore no trade occurs in equilibrium.
 
+> [!focus] No-Ponzi
+> In this focus, we'll try to understand why the no-Ponzi condition takes that specific form. The derivation is a simplified version of Woodford (2003, pp. 64-72).
+> 
+> The flow budget constraint in [[#^6a352e]] relies on the assumption of *complete financial markets*, i.e. markets that are completely spanning individual households' uncertainty about future shocks. This assumption is crucial as it guarantees the existence of a unique stochastic discount factor that can be used to price any stream of future payoffs, simplifying the household's problem significantly.
+> While this course involves a production economy, let us adopt a more general notation also applicable to endowment economies. The flow budget constraint can be rewritten as $P_{t}C_{t} + Q_{t} B_{t} \le B_{t-1} + Y_{t}$ (money is absent, as if we're in the cashless limit of a monetary economy). Assume a natural borrowing limit. A household is solvent if its financial assets $B_t$ are sufficient to cover all its net liabilities: It cannot borrow more than the present value of its entire future stream of non-financial income. Then:
+> 
+> $$
+> B_{t} \ge - \sum_{T=t+1}^\infty \mathbb{E}_{t+1} [ Q_{t+1,T} Y_{T} ]
+> $$
+> 
+> Note that the notation $Q_{t+1,T}$ is not casual: this denotes the nominal stochastic discount factor, which is exactly the random variable used to price at time $t+1$ any asset with return equal to 1 at $T$ (in the case of bonds, $Q_{t} = \mathbb{E}_{t}[Q_{t,t+1}]$).
+> To continue, iterate the standard flow budget constraint from period $t$ to some future period $T$, obtaining the **finite-horizon budget constraint**:
+> 
+> $$
+> \sum_{s=t}^T \mathbb{E}_{t}[Q_{t,s} P_{s} C_{s}] + \mathbb{E}_{t} [Q_{t-T} B_{T}] = B_{t-1} + \sum_{s=t}^T \mathbb{E}_{t} [Q_{t,s} Y_{s}]
+> $$
+> 
+> Continue by taking the infinite-horizon limit:
+> 
+> $$
+> \lim_{ T \to \infty } \mathbb{E}_{t} [Q_{t,T} B_{T}] \ge 0
+> $$
+> 
+> that is, the expected present value of the household's financial assets in the infinitely distant future cannot be negative. Define the real stochastic discount factors as the nominal stochastic discount factor adjusted for prices, $\Lambda_{t,T} = Q_{t,T} \frac{P_{T}}{P_{t}}$. Thus:
+> 
+> $$
+> \begin{align*}
+> \lim_{ T \to \infty } \mathbb{E}_{t} \left[  \left( \Lambda_{t,T} \frac{P_{t}}{P_{T}} \right) B_{T} \right] &\ge 0
+> \\
+> P_{t} \lim_{ T \to \infty } \mathbb{E}_{t} \left[ \Lambda_{t,T} \frac{ B_{T}}{P_{T}} \right] &\ge 0
+> \\
+> \lim_{ T \to \infty } \mathbb{E}_{t} \left[ \Lambda_{t,T} \frac{ B_{T}}{P_{T}} \right] &\ge 0
+> \end{align*}
+> $$
+> 
+> which is equivalent to the original equation (after the addition of cash).
+
 There are three optimality conditions:
 
 $$
