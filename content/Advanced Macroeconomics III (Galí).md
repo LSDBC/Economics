@@ -1,6 +1,6 @@
 
 > [!abstract] Preface by **Lorenzo Bianchi Chignoli**
-> These lecture notes were originally prepared for the Advanced Macroeconomics III course offered by Jordi Galí in the PhD in Economics program at Universitat Pompeu Fabra during the Spring 2025 term. The content is primarily derived from my personal notes from Jordi Galí's lectures, complemented by key excerpts from his textbook *Monetary Policy, Inflation, and the Business Cycle* (Galí, 2015, 2nd ed.). Many of the mathematical derivations were worked out as exercises and, therefore, may contain inaccuracies. I would like to extend my special thanks to Vincent D'Anzi for his feedback and for identifying several typos. Responsibility for all remaining errors is entirely my own.
+> These lecture notes were originally prepared for the Advanced Macroeconomics III course offered by Jordi Galí in the PhD in Economics program at Universitat Pompeu Fabra during the Spring 2025 term. The content is primarily derived from my personal notes from Jordi Galí's lectures, complemented by key excerpts from his textbook *Monetary Policy, Inflation, and the Business Cycle* (Galí, 2015, 2nd ed.). Many of the mathematical derivations were worked out as exercises and, therefore, may contain inaccuracies. I would like to extend my special thanks to Vincent D'Anzi and Lorenzo Marzano for his feedback and for identifying several typos. Responsibility for all remaining errors is entirely my own.
 
 
 ## Classical Monetary Model
@@ -33,10 +33,10 @@ $$
 
 where $\mathcal{A}_t \equiv \frac{B_{t-1} + M_{t-1} }{P_t}$ is total financial wealth, while $\Lambda_{t,t+T} \equiv \beta^T \frac{U_{c,t+T}}{U_{c,t}}$ is the stochastic discount factor. This is the minimal assumption to prevent Ponzi schemes. Since $\Lambda_{t,t+T}$ will be decreasing as $T$ increases, it implies that household debt cannot increase at a higher rate than the interest rate. Trade in equity could be theoretically included, but households are homogeneous and therefore no trade occurs in equilibrium.
 
-> [!focus] No-Ponzi
-> In this focus, we'll try to understand why the no-Ponzi condition takes that specific form. The derivation is a simplified version of Woodford (2003, pp. 64-72).
+> [!focus]- No-Ponzi condition
+> In this focus, we'll try to understand why the no-Ponzi condition takes that specific form. The derivation is a (significantly) simplified version of Woodford (2003, pp. 64-72).
 > 
-> The flow budget constraint in [[#^6a352e]] relies on the assumption of *complete financial markets*, i.e. markets that are completely spanning individual households' uncertainty about future shocks. This assumption is crucial as it guarantees the existence of a unique stochastic discount factor that can be used to price any stream of future payoffs, simplifying the household's problem significantly.
+> The flow budget constraint above relies on the assumption of *complete financial markets*, i.e. markets that are completely spanning individual households' uncertainty about future shocks. This assumption is crucial as it guarantees the existence of a unique stochastic discount factor that can be used to price any stream of future payoffs, simplifying the household's problem significantly.
 > While this course involves a production economy, let us adopt a more general notation also applicable to endowment economies. The flow budget constraint can be rewritten as $P_{t}C_{t} + Q_{t} B_{t} \le B_{t-1} + Y_{t}$ (money is absent, as if we're in the cashless limit of a monetary economy). Assume a natural borrowing limit. A household is solvent if its financial assets $B_t$ are sufficient to cover all its net liabilities: It cannot borrow more than the present value of its entire future stream of non-financial income. Then:
 > 
 > $$
@@ -70,7 +70,7 @@ where $\mathcal{A}_t \equiv \frac{B_{t-1} + M_{t-1} }{P_t}$ is total financial w
 > 
 > which is equivalent to the original equation (after the addition of cash).
 
-There are three optimality conditions:
+There are three optimality conditions, which will be derived below:
 
 $$
 \begin{cases} - \frac{U_{n,t}}{U_{c,t}} = \frac{W_t}{P_t}
@@ -80,6 +80,15 @@ Q_t = \beta \mathbb{E}_t \left\{ \frac{U_{c,t+1}}{U_{c,t}} \frac{P_t}{ P_{t+1} }
 \frac{ U_{m,t} }{ U_{c,t} } = 1- Q_t = 1-e^{-i_t}
 \end{cases}
 $$
+
+
+> [!focus]- Government Budget Constraint
+> Note that, if a public sector were to be introduced, this model should also satisfy the government budget constraint:
+> 
+> $$
+> P_{t} G_{t} + B_{t-1}^G = P_{t} T_{t} + Q_{t} B_{t}^G + \Delta M_{t}
+> $$
+> which implies a fiscal policy rule determining $\{ G_{t}, B_{t}^G, T_{t} \}$ and a monetary policy rule determining $\{ M_{t}, i_{t} \}$. The implicit assumption throughout this section is that $G_t=0$.
 
 For the derivation, assume the household follows an optimal plan and consider deviations for such plan. Provided that the plan was optimal in the first place, deviations must necessarily decrease utility. This method is usually referred to as the **variational approach** and can be very handy in solving optimality conditions along multiple variables.
 First, consider deviations in consumption and labor, that is satisfying the relationship $P_t dC_t = W_t dN_t$:
@@ -164,7 +173,7 @@ Details on the derivation of the Euler equation as a first-order approximation a
 > Set up the intertemporal household maximization problem supposing CRRA utility with preferenze shocks $Z$, where $\log(Z_t) \equiv z_t = (1-\rho_{z})z_{t-1} + \epsilon_{t}$:
 > 
 > $$
-> \max_{c, N} \left(  \frac{C^{1-\sigma}}{1-\sigma} - \frac{N^{ 1+\phi}}{1+\phi} \right) Z + \beta \left(  \frac{C^{1-\sigma}}{1-\sigma} - \frac{N^{1+\phi}}{1+\phi} \right) \mathbb{E}[Z']
+> \max_{c, N} \left(  \frac{C^{1-\sigma}}{1-\sigma} - \frac{N^{ 1+\phi}}{1+\phi} \right) Z + \beta \left(  \frac{ (C')^{1-\sigma}}{1-\sigma} - \frac{(N')^{1+\phi}}{1+\phi} \right) \mathbb{E}[Z']
 > $$
 > 
 > subject to
@@ -274,8 +283,8 @@ Q_{t} &= \mathbb{E}_{t} \left[ \beta\frac{Z'}{Z} \left( \frac{C}{C'} \right)^\si
 \\
 \sigma \mathbb{E}_t[\Delta c_{t+1}] &\approx i_t - \mathbb{E}_t[\pi_{t+1}] - \rho + \mathbb{E}_t[\Delta z_{t+1}] \\
 \mathbb{E}_t[\Delta c_{t+1}] &\approx \frac{1}{\sigma}(i_t - \mathbb{E}_t[\pi_{t+1}] - \rho + \mathbb{E}_t[\Delta z_{t+1}]) \\
-\mathbb{E}_t[c_{t+1} - c_t] &\approx \frac{1}{\sigma}(i_t - \mathbb{E}_t[\pi_{t+1}] - \rho + \mathbb{E}_t[z_{t+1} - x_t]) \\
-\mathbb{E}_t[c_{t+1}] - c_t &\approx \frac{1}{\sigma}(i_t - \mathbb{E}_t[\pi_{t+1}] - \rho + \mathbb{E}_t[z_{t+1}] - x_t) \\
+\mathbb{E}_t[c_{t+1} - c_t] &\approx \frac{1}{\sigma}(i_t - \mathbb{E}_t[\pi_{t+1}] - \rho + \mathbb{E}_t[z_{t+1} - z_t]) \\
+\mathbb{E}_t[c_{t+1}] - c_t &\approx \frac{1}{\sigma}(i_t - \mathbb{E}_t[\pi_{t+1}] - \rho + \mathbb{E}_t[z_{t+1}] - z_t) \\
 c_t &\approx \mathbb{E}_t[c_{t+1}] - \frac{1}{\sigma}(i_t - \mathbb{E}_t[\pi_{t+1}] - \rho + \mathbb{E}_t[ x_{t+1} ] - z_t) \\
 c_t &\approx \mathbb{E}_t[c_{t+1}] - \frac{1}{\sigma}(i_t - \mathbb{E}_t[\pi_{t+1}] - \rho - (1-\rho_z) z_t)
 \end{align*}
@@ -324,7 +333,7 @@ $$
 w_{t} - p_{t} = a_{t} - \alpha n_{t} + \log(1-\alpha)
 $$
 
-(the identity of total outpu on the RHS and real demand on the LHS holds by market clearing). This highlights how prices depend on marginal costs: $p_{t} = \psi_{t} \equiv w_{t} - [ a_{t} - \alpha n_{t} + \log(1-\alpha)]$.
+(the identity of total output on the RHS and real demand on the LHS holds by market clearing). This highlights how prices depend on marginal costs: $p_{t} = \psi_{t} \equiv w_{t} - [ a_{t} - \alpha n_{t} + \log(1-\alpha)]$.
 
 > [!focus]- Real and Nominal Interest Rates
 > A clarification on real and nominal rates. Recall that:
@@ -337,14 +346,6 @@ $$
 > 
 > As a possible interpretation of this relation, note that pure consumption smoothing can be achieved only if the real interest rate equalizes the discount rate. Deviations depend on the value of the real interest rate. How this is realized in practice is beyond the scope of this section: in the future, central banks may allow individuals to hold deposits directly through CBDC, and presumably earn interests on liquidity. A more detailed treatment of CBDC and crypto is contained in Benigno (2025).
 
-
-> [!focus]- Government Budget Constraint
-> Note that, if a public sector were to be introduced, this model should also satisfy the government budget constraint:
-> 
-> $$
-> P_{t} G_{t} + B_{t-1}^G = P_{t} T_{t} + Q_{t} B_{t}^G + \Delta M_{t}
-> $$
-> which implies a fiscal policy rule determining $\{ G_{t}, B_{t}^G, T_{t} \}$ and a monetary policy rule determining $\{ M_{t}, i_{t} \}$. The implicit assumption throughout this section is that $G_t=0$.
 
 ### Equilibrium
 
@@ -409,10 +410,10 @@ $$
 \begin{align*}
 m_{t} - p_{t} &= c_{t} - \eta i_{t} \\
 m_{t} - p_{t} &= c_{t} - \eta ( r_{t} + \mathbb{E}_{t}[p_{t+1}] - p_{t} ) \\
-p_{t} (1 - \eta) &= m_{t} - y_{t} + \eta r_{t} + \eta \mathbb{E}_{t} [p_{t+1}] \\
+p_{t} (1 + \eta) &= m_{t} - y_{t} + \eta r_{t} + \eta \mathbb{E}_{t} [p_{t+1}] \\
 p_{t} &= \left(  \frac{\eta}{1+\eta}  \right) \mathbb{E}_{t} [p_{t+1}] + \frac{m_{t}}{1-\eta} + \frac{\eta r_{t} - y_{t}}{1 + \eta} \\
-p_{t} &= \left(  \frac{\eta}{1+\eta}  \right) \mathbb{E}_{t} [p_{t+1}] + \frac{1}{1-\eta}m_{t} + u_{t} \\
-p_{t} - m_{t} &= \left(  \frac{\eta}{1+\eta}  \right) \mathbb{E}_{t} [p_{t+1}] + \frac{1 - 1 + \eta}{1-\eta}m_{t} + u_{t} \\
+p_{t} &= \left(  \frac{\eta}{1+\eta}  \right) \mathbb{E}_{t} [p_{t+1}] + \frac{1}{1+\eta}m_{t} + u_{t} \\
+p_{t} - m_{t} &= \left(  \frac{\eta}{1+\eta}  \right) \mathbb{E}_{t} [p_{t+1}] + \frac{1 - 1 + \eta}{1+\eta}m_{t} + u_{t} \\
 p_{t} - m_{t} &= \left(  \frac{\eta}{1+\eta}  \right) \mathbb{E}_{t} [p_{t+1} - m_{t}] + u_{t} \\
 p_{t} - m_{t} &= \left(  \frac{\eta}{1+\eta}  \right) \mathbb{E}_{t} [p_{t+1} - m_{t+1}] + \left(  \frac{\eta}{1+\eta}  \right) \mathbb{E}_{t} [\Delta m_{t+1}] + u_{t} \\
 p_{t} - m_{t} &= \left(  \frac{\eta}{1+\eta}  \right)^2 \mathbb{E}_{t} [p_{t+2} - m_{t+2}] + \left(  \frac{\eta}{1+\eta}  \right)^2 \mathbb{E}_{t} [\Delta m_{t+2}] + \frac{\eta}{1+\eta}  \mathbb{E}_{t} [\Delta m_{t+1}] +  \frac{\eta}{1+\eta}   \mathbb{E}_{t} [ u _{t+1} ] + u_{t} \\
@@ -424,7 +425,8 @@ By mathematical induction, complete the forward iteration:
 $$
 \begin{align*}
 p_{t} - m_{t} &= \sum_{k=1}^\infty \left(  \frac{\eta}{1+\eta}  \right)^k \mathbb{E}_{t} [ \Delta m_{t+k} + u_{t+k} ] \\
-p_{t} &= m_{t} + \sum_{k=1}^\infty \left(  \frac{\eta}{1+\eta}  \right)^k \mathbb{E}_{t}[\Delta m_{t+k} ] + \bar{u}_{t}
+p_{t} &= m_{t} + \sum_{k=1}^\infty \left(  \frac{\eta}{1+\eta}  \right)^k \mathbb{E}_{t}[\Delta m_{t+k} ] + \bar{u}_{t} \\
+p_{t} &= \frac{\eta}{1+\eta} \sum_{k=0}^\infty \left(  \frac{\eta}{1+\eta}  \right)^k \mathbb{E}_{t}[ m_{t+k} ] + \bar{u}_{t}
 \end{align*}
 $$
 
@@ -506,7 +508,7 @@ The property of uniquely pinning down the path of the price level is usually ref
 > [!definition] Taylor Principle
 > The interest rate rule must enforce a unique equilibrium.
 
-In contrast, if $\phi_{\pi} \le 1$, then the forward iteration of [[#^a243c4]] diverges because $\phi_\pi^{-(k+1)}$ either fails to decay (when $\phi_\pi = 1$) or grows (when $\phi_\pi < 1$). As a result, no bounded solution exists for inflation. Instead, the stationary solution to [[#^a243c4]] is derived combining [[#^26558a]] with [[#^648e11]]:
+In contrast, if $\phi_{\pi} \le 1$, then the forward iteration of the price equation diverges because $\phi_\pi^{-(k+1)}$ either fails to decay (when $\phi_\pi = 1$) or grows (when $\phi_\pi < 1$). As a result, no bounded solution exists for inflation. Instead, the stationary solution to [[#^a243c4]] is derived combining [[#^26558a]] with [[#^648e11]]:
 
 $$
 \begin{align*}
@@ -571,7 +573,7 @@ Then, for $U_{l,t}$ to be 0, it must be that the interest rate itself equals zer
 One weird implication of the Friedman rule is that average inflation will end up being negative. In fact, in the steady state, $i = \rho + \pi$: however, since $i=0$, then $\pi = - \rho$, which induces *deflation*, at least on average. This is at odds with actual practice, as most central banks have, in contrast, a small positive inflation target.
 
 Suppose a central bank follows the Friedman rule. This is an example of passive monetary policy rule, which implies inflation indeterminacy: $\phi_\pi=0$. The equilibrium is, thus, not unique (nominal indeterminacy). After all, would a central bank care about nominal indeterminacy in the setting of the classical model? Theoretically not, as nominal variables do not affect utility in any ways. High volatility in the price level would, in other words, be irrelevant for utility.
-However, as soon as we suppose — even exogenously — that the  wants to avoid indeterminacy, then how to satisfy this with the Friedman rule? In equilibrium, any sequence $\{\pi_t\}$ satisfying $0= r_t + \mathbb{E} \pi_{t+1}$ should be implemented with $\pi_{t+1} = -r_t$ uniquely determined. To obtain this, take the deviations from the target 0 and make that interest rate deviation proportional to the inflation deviation from the target:
+However, as soon as we suppose — even exogenously — that the central bank wants to avoid indeterminacy, then how to satisfy this with the Friedman rule? In equilibrium, any sequence $\{\pi_t\}$ satisfying $0= r_t + \mathbb{E} \pi_{t+1}$ should be implemented with $\pi_{t+1} = -r_t$ uniquely determined. To obtain this, take the deviations from the target 0 and make that interest rate deviation proportional to the inflation deviation from the target:
 
 $$
 i_t - 0 = \phi(\pi_t - \pi_t^*)
@@ -632,8 +634,10 @@ There are alternative ways to generate demand for money.
 - **Cash vs credit goods**, a generalization by Lucas of cash in advance constraints. Suppose Good 1 is a cash good and Good 2 is a credit good: the latter works like consumption so far (no cash in advance is needed, labor income can be directly transformed in consumption), but cash is needed in advance for Good 1. Interesting implications include that changes in inflation effectively affect the relative price of the two goods, distorcing the quantities consumed in an inefficient way (for further treatment, see PS1).
 ### Global Equilibrium Dynamics
 
-In this section, we will briefly consider equilibria further away from the steady state. In such contexts, log-linearization can no longer be used. Consider an economy like the previous one, with $R=\frac{1}{\beta}$. Money market clearing implies that $\frac{M}{P_t} = Y L (Q_t)$ where $L'(Q_t)>0$. Assuming perfect foresight and using the relationship between $Q_t$ and inflation, that is $Q_t = \frac{1}{R} \frac{P_t}{P_{t+1}}$ or in logs $i_t = \rho + \pi_t$, this becomes $\frac{M}{Y} = P_t L \left( \frac{\beta P_t}{P_{t+1}} \right)$. To continue, find consistent steady state paths without linear approximations. A steady state with a constant price level is defined as $P^* = \frac{M}{YL(\beta)}$. Deviations from this can be found by solving for $P_{t+1}$, with the global equilibrium dynamic: $$P_{t+1} = \frac { \beta  P_t } {L^{-1} \frac{M}{YP_t} } \equiv \phi(P_t)$$It is possible to verify that $\phi'(P_t)>0$ and $\phi'(P^*)>1$.
-Note that the transversality condition is violated if the dynamics tend to 0 and in particular if $\lim_{T\to\infty} \frac{M}{P_T} > 0$, since $P_t$ is decreasing at a rate $\beta$ and converging to a positive constant. Thus, it is not an equilibrium. In constrast, equilibria at the right of $P^*$ cannot be ruled out in general: thus, **hyperinflationary equilibria** can be, in principle, admitted. This may hold true even if the money supply is constant: in such cases, the steady state is referred to as a **self fulfilling hyperinflation**, since individuals believe that inflation is incrasing, leading to higher interest rates and lower demand for money, so as to increase the price level. It turns out, however (see Obstfeld and Rogoff, 1983), that these explosive equilibria can be ruled out with a single condition, known as the **Obstfeld Rogoff condition**: $$\lim_{L \to 0} L \cdot U_l > 0$$which is easily satisfied (even with log-utility). An interpretation consistent with the Walsh figure is that, for a finite $P_t$, then $P_{t+1}$ becomes basically vertical, so that no finite price level is consistent with the equilibrium.
+In this section, we will briefly consider equilibria further away from the steady state. In such contexts, log-linearization can no longer be used. Consider an economy like the previous one, with $R=\frac{1}{\beta}$. Money market clearing implies that $\frac{M}{P_t} = Y L (Q_t)$ where $L'(Q_t)>0$. Assuming perfect foresight and using the relationship between $Q_t$ and inflation, that is $Q_t = \frac{1}{R} \frac{P_t}{P_{t+1}}$ or in logs $i_t = \rho + \pi_t$, this becomes $\frac{M}{Y} = P_t L \left( \frac{\beta P_t}{P_{t+1}} \right)$. To continue, find consistent steady state paths without linear approximations. A steady state with a constant price level is defined as $P^* = \frac{M}{YL(\beta)}$. Deviations from this can be found by solving for $P_{t+1}$, with the global equilibrium dynamic: $$P_{t+1} = \frac { \beta  P_t } {L^{-1} \frac{M}{YP_t} } \equiv \phi(P_t)$$. It is possible to verify that $\phi'(P_t)>0$ and $\phi'(P^*)>1$.
+Note that the transversality condition is violated if the dynamics tend to 0 and in particular if $\lim_{T\to\infty} \frac{M}{P_T} > 0$, since $P_t$ is decreasing at a rate $\beta$ and converging to a positive constant. Thus, it is not an equilibrium. In constrast, equilibria at the right of $P^*$ cannot be ruled out in general: thus, **hyperinflationary equilibria** can be, in principle, admitted. This may hold true even if the money supply is constant: in such cases, the steady state is referred to as a **self fulfilling hyperinflation**, since individuals believe that inflation is incrasing, leading to higher interest rates and lower demand for money, so as to increase the price level. It turns out, however (see Obstfeld and Rogoff, 1983), that these explosive equilibria can be ruled out with a single condition, known as the **Obstfeld Rogoff condition**: $$\lim_{L \to 0} L \cdot U_l > 0$$ which is easily satisfied (even with log-utility). An interpretation consistent with the Walsh figure is that, for a finite $P_t$, then $P_{t+1}$ becomes basically vertical, so that no finite price level is consistent with the equilibrium.
+
+
 ### The Fiscal Theory of the Price Level
 
 An unorthodox monetary theory about price determination is the fiscal theory of the price level. In this case, monetary policy is passive, but fiscal policy determines nominal variables. Thus, $Q_t$ is exogenous (constant), there is an exogenous gross constant real interest rate $R_{t} \equiv \frac{1}{Q_{t}} \frac{P_{t}}{P_{t+1}} = \beta^{-1}$, and assume perfect foresight for simplicity. The period government budget constraint is:
@@ -684,7 +688,7 @@ Microeconomic evidence can help in grounding the patterns followed by individual
 Eventually, models of price stickiness assume that the frequency of price changes is constant. However, this is a reasonable simplification only to the extent that inflation remains low and steady. To model episodes of higher inflation, then the sticky prices models would not be appropriate.
 ### Microfoundations for Price Stickiness
 In the 80s, microfounding macroeconomics was popularized as a key issue and the main priority. Price stickiness is no less microfounded, as will be showed in this section. Let us consider a firm that sets prices independently, moving away from the assumption of perfect competition. Suppose their profit function is given by $D(p(i), Y)$, where $p(i) \equiv \frac{P(i)}{P}$ and $Y$ is a profit shifter. Real profits for firm $i$ depends on the relative price of the good, and $Y$ shifts the profit function, interpreted as aggregate output. Standard neoclassical assumptions include concavity with respect to prices, that is $D_{pp}<0, D_{py}\geq0$.
-The optimal price setting condition requires that:$$D_{p} (p(i)^*, Y) = 0$$while the optimal price adjustment in response to $dY$ is as follows:$$D_{pp}dp(i)^* + D_{py} dY = 0$$which implies, by multiplying and dividing by the level of $Y$:
+The optimal price setting condition requires that: $$D_{p} (p(i)^*, Y) = 0$$ while the optimal price adjustment in response to $dY$ is as follows:$$D_{pp}dp(i)^* + D_{py} dY = 0$$which implies, by multiplying and dividing by the level of $Y$:
 
 $$
 \begin{align*} dp(i)^* &= - \frac{D_{py}}{D_{pp}} dY \\
@@ -1142,7 +1146,7 @@ $$
 \mu_{t} - \mu = - \left ( \sigma + \frac{\phi + \alpha}{1-\alpha} \right ) \tilde y_{t}
 $$
 
-Why does markup decrease in output? This is because increased output induces higher wages, and thus consumption and real wage to the labor supply equilibrium. At the same time, the marginal cost will increase - for the same reason, and also due to decreasing returns to labor ($\alpha>0$). An positive shock to technology increases the markup for any level of output by directly reducing marginal costs. By subtracting the average mark up to output, we obtain the **output gap** $\tilde y_t \equiv y_t - y_t^n$. This allows to rewrite the equilibrium condition as a zero output gap condition in expectation.
+Why does markup decrease in output? This is because increased output induces higher wages, and thus consumption and real wage to the labor supply equilibrium. At the same time, the marginal cost will increase - for the same reason, and also due to decreasing returns to labor ($\alpha>0$). A positive shock to technology increases the markup for any level of output by directly reducing marginal costs. By subtracting the average mark up to output, we obtain the **output gap** $\tilde y_t \equiv y_t - y_t^n$. This allows to rewrite the equilibrium condition as a zero output gap condition in expectation.
 
 $$
 \begin{align*}
@@ -1191,7 +1195,7 @@ $$
 
 In this model, monetary policy is no longer neutral, finally accommodating empirical evidence. However, it is not such in a very trivial way: monetary shocks only have contemporaneous effects and no persistent effects on output. However, data suggest that the effect of monetary shocks on output *is* persistent. Since price stickyness has been introduced as lasting for one period only, monetary policy cannot be persistent, as it goes back to the flexible prices results after only one period (other shocks being absent). Another limitation of this model is that inflation has no welfare costs, due to the fact that there are no relative price distortions (all firms adjust samely). In what follows, we'll consider a model with staggered price setting: at each point in time, only a fraction of firms will adjust prices.
 
-Last, note that with sticky prices the Friedman rule does not hold. The  can influence output, and thus will attempt to make the outcome as close as possible as the flexible price equilibrium. This can be done by choosing a rule with $\phi_a=\psi_{ya}$, and no monetary policy shocks as these would cancel out. That would be the optimal policy in such scenario. In that case, the output gap would always be at 0, and the  would replicate the flexible price equilibrium. However, it is no longer an efficient equilibrium due to the monopolistic competition assumption.
+Last, note that with sticky prices the Friedman rule does not hold. The central bank can influence output, and thus will attempt to make the outcome as close as possible as the flexible price equilibrium. This can be done by choosing a rule with $\phi_a=\psi_{ya}$, and no monetary policy shocks as these would cancel out. That would be the optimal policy in such scenario. In that case, the output gap would always be at 0, and the  would replicate the flexible price equilibrium. However, it is no longer an efficient equilibrium due to the monopolistic competition assumption.
 
 <div style="page-break-after: always;"></div>
 
@@ -2494,6 +2498,7 @@ $$
 
 while the rest of the derivation for the firm problem is the same as in the baseline model.
 Price setting also works in the same way as in the benchmark NK model.
+
 #### Equilibrium
 
 As usual, markets clear in equilibrium. For the final good market, this means $Y_{t}=C_{t}$. Let us turn to the labor market. Aggregate employment is obtained by aggregating hours of work from all firms and occupations. The goal is to write as a function of aggregate output:
