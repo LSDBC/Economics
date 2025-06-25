@@ -1448,7 +1448,7 @@ $$
 \end{align*}
 $$
 
-Leading to the following relationship between firm-specific and economy-wide marginal costs:
+since the term in the parenthesis is the weighted average of log employment over all firm cohorts, which by definition is the aggregate log employment $n_t​$ (all firms that last set their price at the same time, $t-k$, will behave identically at time $t$). This leads to the following relationship between firm-specific and economy-wide marginal costs:
 
 $$
 \begin{align*}
@@ -1589,6 +1589,18 @@ $$
 
 implying that inflation is purely forward looking and there is no role for past inflation.
 
+> [!abstract]- NKPC: Outline
+> Here is a streamlined step-by-step guide to derive the NKPC from the model's fundamentals:
+> 
+> 1. Derive Calvo price level dynamics: $\pi_{t} = (1-\theta)(p^*_{t} - p_{t-1})$
+> 2. Derive the firm's optimal resetting price
+> 	1. Obtain the individual firm's resetting price from the firm's problem: $p_{t}^* = \mu + (1-\beta \theta) \sum_{k=0}^\infty (\beta\theta)^k \mathbb{E}_{t} [\pi_{{t+k \,|\, t}}]$
+> 	2. Compute the values $\psi_{t+k} = w_{t+k} - a_{t+k} - \alpha n_{t+k} + \log(1-\alpha$ and $\psi_{t+k \,|\, t} = \psi_{t+k} - \frac{\alpha\epsilon}{1-\alpha} (p_{t}^* - p_{t+k})$
+> 	3. Plug these values into the resetting price: $p_{t}^* = (1-\beta \theta) \sum_{k=0}^\infty (\beta\theta)^k \mathbb{E}_{t}[p_{t+k} - \Theta \hat{\mu}_{t}]$ for $\Theta= \frac{1-\alpha}{1-\alpha+\alpha\epsilon}$
+> 	4. Solve the equation forwarding by one period: $p^*_{t} = (1-\beta\theta)[p_{t} - \Theta \hat{\mu}_{t}] + \beta \mathbb{E}_{t}[p_{t+1}]$
+> 3. Plug the resetting price into the Calvo price level dynamics: $\pi_{t} = \beta \mathbb{E}_{t}[\pi_{t+1}] - \lambda \hat{\mu}_{t}$
+> 4. Compute the markup gap for this model specification and plug it into the previous equation.
+
 The previous, very general equation can be combined with model-specific equilibrium conditions (and thus with some additional assumptions) to find aggregate employment and other variables. The equation for the demand for labor can be transformed in terms of output, as in this model output is demand driven.
 Focus on $\Delta_{p,t}$, take the first order Taylor expansion in equilibrium, and note that it is equal to 1 up to first order. Later on, we'll take second order Taylor expansions, which will involve the cross-sectional variance of the price of different firms. [[Advanced Macroeconomics III (Galì)#^b5b102|Price dispersion]] is important for computing the welfare costs of inflation, as the price ratio is a convex function: by Jensen's inequality, the mean of the function is larger than the function of the mean, so that price dispersion increases the value of the price ratio at that point. The larger the price dispersion, the greater the amount of labor required. This will, of course, lead to second-order welfare implications.
 
@@ -1605,6 +1617,7 @@ as in the traditional markup models from the 70s and 80s (where $\hat y_t$ is th
 The second property is sometimes referred to as **Divine Coincidence**: according to the NK model, there is no tradeoff between output gap and inflation stabilization (once again in clear contrast with the traditional Phillips curve). The tradeoff seems to be gone: if the central bank stabilizes inflation, this would automatically stabilize the output gap (suppose at 0), and vice versa. This is a very powerful result. Suppose a central bank cares about the output gap. The gap is output minus the natural level of output, which is however not observable but purely counterfactual (it assumes flexible prices). How to address the output gap if this is not observable? This challenge is rescued by the Divine Coincidence: if inflation is stabilized — with inflation being naturally observed — then output gap will also be stabilized. More specifically, to completely close the output gap, it would enough (in the limit) to set inflation equal to 0 at all times.
 
 Finally, as a conclusive comment: The difference between the NK and the traditional Phillips curve is that in the NK the notion of output gap is more precise, and theoretically grounded: it is exactly the gap between current output and the equilibrium output with flexible prices. Traditional output gap, very differently, usually referred to the detrended output $\hat y_t = y_t - f(t)$, which is usually current output minus some statistical function of time that captures low frequency movements in output. It is a purely statistical magnitude with no theoretical justification. This kind of measure is usually used in empirical versions of the Phillips curve, and many economists still use output gap referring to this object. To our purposes, however, it is worth noting that the value of these two different "output gaps" may be extremely different: the natural level of output responds to many shocks and may be very different from its smooth function over time. In Galì (2003), some comparison is offered, focusing on the 90s US economy: productivity growth was high, with an increase not only in ouput, but also in the natural level of output. Thus, the output gap was stable, while the traditional output gap was skyrocketing. To further support this idea, inflation was stable in the 90s, and not increasing, as the traditional Phillips curve should have required.
+
 #### Empirical Evidence
 
 What alternatives can be proposed to measure the NK Phillips curve? Using the markup gap and exploiting the fact that the markup gap is inversely related to the labor income share, that we directly observe, it is possible to obtain the desired measure.
