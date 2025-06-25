@@ -1,6 +1,6 @@
 
 > [!abstract] Preface by **Lorenzo Bianchi Chignoli**
-> These lecture notes were originally prepared for the Advanced Macroeconomics III course offered by Jordi Galí in the PhD in Economics program at Universitat Pompeu Fabra during the Spring 2025 term. The content is primarily derived from my personal notes from Jordi Galí's lectures, complemented by key excerpts from his textbook *Monetary Policy, Inflation, and the Business Cycle* (Galí, 2015, 2nd ed.). Many of the mathematical derivations were worked out as exercises and, therefore, may contain inaccuracies. I would like to extend my special thanks to Vincent D'Anzi and Lorenzo Marzano for his feedback and for identifying several typos. Responsibility for all remaining errors is entirely my own.
+> These lecture notes were originally prepared for the Advanced Macroeconomics III course offered by Jordi Galí in the PhD in Economics program at Universitat Pompeu Fabra during the Spring 2025 term. The content is primarily derived from my personal notes from Jordi Galí's lectures, complemented by key excerpts from his textbook *Monetary Policy, Inflation, and the Business Cycle* (Galí, 2015, 2nd ed.). Many of the mathematical derivations were worked out as exercises and, therefore, may contain inaccuracies. I would like to extend my special thanks to Vincent D'Anzi and Lorenzo Marzano for their feedback and for identifying several typos. Responsibility for all remaining errors is entirely my own.
 
 
 ## Classical Monetary Model
@@ -1440,6 +1440,10 @@ $$
 \begin{align*}
 \psi_{t} &= (1-\theta) \sum_{k=0}^\infty \theta^k \psi_{t \,|\, t-k}
 \\
+&= (1-\theta) \sum_{k=0}^\infty \theta^k [ w_{t-k} - a_{t-k} - \alpha n_{t \,|\, t-k} + \log(1-\alpha) ]
+\\
+&=  w_{t-k} - a_{t-k} + \log(1-\alpha) - \alpha (1-\theta) \sum_{k=0}^\infty \theta^k  n_{t \,|\, t-k} 
+\\
 &= w_{t} - a_{t} - \alpha n_{t} + \log(1-\alpha)
 \end{align*}
 $$
@@ -1448,18 +1452,19 @@ Leading to the following relationship between firm-specific and economy-wide mar
 
 $$
 \begin{align*}
+\psi_{t+k \,|\, t} - \psi_{t+k} &= \alpha(n_{t+k \,|\, t} - n_{t+k})
+\\
 \psi_{t+k \,|\, t} &= \psi_{t+k} + \alpha(n_{t+k \,|\, t} - n_{t+k})
 \\
-&= \psi_{t+k} + \frac{\alpha}{1-\alpha} (y_{t+k \,|\, t} - y_{t+k})
+&= \psi_{t+k} - \frac{\alpha}{1-\alpha} (y_{t+k \,|\, t} - y_{t+k})
 \\
-&= \psi_{t+k} + \frac{\alpha \epsilon}{1-\alpha} (p_{t}^* - p_{t+k})
+&= \psi_{t+k} - \frac{\alpha \epsilon}{1-\alpha} (p_{t}^* - p_{t+k})
 \end{align*}
 $$
 
 ^9c8ae2
 
-
-The previous results can be combined so as to define a new object, the **markup gap**, which is exploited to describe the inflation environment. Note that, now, the marginal cost is firm-specific (unless the technology is linear): in fact, firms have different prices, thus sell different quantities, ultimately incurring different marginal cost.
+exploiting the fact that $y_{t \,|\, t-k} - y_{t} = (1-\alpha) (n_{t \,|\, t-k} - n_{t})$ and $y_{t \,|\, t-k} - y_{t} = -\epsilon_t (p_t^* - p_{t-k})$ (why? [^4]).The previous results can be combined so as to define a new object, the **markup gap**, which is exploited to describe the inflation environment. Note that, now, the marginal cost is firm-specific (unless the technology is linear): in fact, firms have different prices, thus sell different quantities, ultimately incurring different marginal cost.
 In what follows, consider linear technology for simplicity. Linear technology is modelled by assuming $\alpha = 0$, so that $\psi_{t} = w_{t} - a_{t}$.
 
 Rewrite equation the previous equation so as to emphasize the role of the markup gap on inflation. Recall that, in the special linear case where $\alpha=0$, it holds that $\psi_{t+k \,|\, t} = \psi_{t+k}$ (this can be easily seen from [[#^9c8ae2]]). The **markup gap** is defined as $\hat{\mu}_{t}  \equiv \mu_{t} - \mu$, and the actual markup is $\mu_{t}\equiv p_{t} - \psi_{t}$. Combining:
@@ -2843,3 +2848,5 @@ Suppose only sticky prices where there: the wage markup would be constant and th
 [^2]: This is the only explanation I could come up with for the disappearance of the term $1+z_{t}$, provided that the math is correct. This derivation may be subject to revision later on.
 
 [^3]: Namely, this is the "variational" solution method proposed during the lecture.
+
+[^4]: Assuming equilibrium, $C_{t} = Y_{t}$ and thus $Y_{t}(i) = \left(  \frac{P_{t}(i)}{P_{t}} \right)^{-\epsilon} Y_{t}$. Taking logs yields the results desired.
