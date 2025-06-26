@@ -1933,7 +1933,7 @@ While the social planner would choose equal proportion of these goods, firms pro
 In monetary economics, there is a long standing belief that inflation induces other types of losses, typically of transactionary kind. With its minimal assumptions on utility and monopolistic competition, however, this is the kind of losses that the New Keynesian model predicts.
 ### Inefficient Natural Equilibrium
 
-In the case of an infficient natural equilibrium, even if prices were flexible, the outcome would not be optimal, meaning that some additional distortions must be present on top of sticky prices (labor markets, taxation, externalities...). If so, the standard output gap and the welfare relevant output gap no longer coincide: $y_{t}^n \neq y_{t}^e$. Recall that the welfare output gap is the relevant level of output for optimal monetary policy — the NKPC is, in fact, expressed in terms of the standard output gap. To begin with, rewrite the NKPC in terms of the welfare relevant output gap, by first noting that $\tilde y_t = \hat y_t - \hat y_t^n = (\hat y_t - \hat y_t ^e) + (\hat y_t^e - \hat y_t^n)$ by adding and substracting the deviations of the efficient level of output from its steady state:
+In the case of an infficient natural equilibrium, even if prices were flexible, the outcome would not be optimal, meaning that some additional distortions must be present on top of sticky prices (labor markets, taxation, externalities...). If so, the standard output gap and the welfare relevant output gap no longer coincide: $y_{t}^n \neq y_{t}^e$. Recall that the welfare output gap is the relevant level of output for optimal monetary policy — the NKPC is, in fact, expressed in terms of the standard output gap. To begin with, rewrite the NKPC in terms of the welfare relevant output gap,by first noting that $\tilde y_t = \hat y_t - \hat y_t^n = (\hat y_t - \hat y_t ^e) + (\hat y_t^e - \hat y_t^n) = x_{t} + \frac{u_{t}}{\kappa}$ by adding and subtracting the deviations of the efficient level of output from its steady state:
 
 $$
 \begin{equation*}
@@ -1944,6 +1944,19 @@ $$
 ^aa7e11
 
 The output gap was replaced by the **welfare-relevant output gap** $\hat x \equiv \hat y_t - \hat y_t^e$ and the cost push shock $u_t \equiv \kappa( \hat y_t^e - \hat y_t^n )$ which is independent of monetary policy since the natural level of output is not affected by shocks nor by fluctuations in the efficient output gap (which solves the social planner's problem). Fluctuations in $u_t$ can be interpreted as shocks in presence of distortions or imperfections that make the economy respond inefficiently to the shock despite price flexibility. The **cost push shocks** will fluctuate because the natural level of output may respond differently than the efficient level of output due to some distortionary inefficiency.
+
+>[!faq]- Types of Output
+>
+>- **Output** ($y_t$): The actual level of output in the economy at time $t$. In log-linearized form, $\hat{y}_t$ is the percent deviation of output from its steady state.
+>- **Natural Level of Output** ($y_t^n$): The level of output with flexible prices but other distortions (e.g., monopolistic competition). Its log-linearized form is $\hat{y}_t^n$.
+>- **Efficient Level of Output** ($y_t^e$): The socially optimal level of output that a benevolent social planner would choose (i.e., with flexible prices and no other distortions). Its log-linearized form is $\hat{y}_t^e$.
+>- **Standard Output Gap** ($\tilde{y}_t$): The gap between actual and natural output. This is the gap that appears in the standard NKPC.
+>    - $\tilde{y}_t = \hat{y}_t - \hat{y}_t^n$
+>- **Welfare-Relevant Output Gap** ($x_t$): The gap between actual and efficient output. This is the gap that matters for welfare analysis.
+>    - $x_t = \hat{y}_t - \hat{y}_t^e$
+>- **Cost-Push Shock** ($u_t$): A shock term that arises when the NKPC is expressed in terms of the welfare-relevant output gap. It captures the distortions that cause the natural and efficient levels of output to diverge.
+>    - $u_t = \kappa(\hat{y}_t^e - \hat{y}_t^n)$
+
 
 The welfare loss under an inefficient economy is derived as follows. Starting from [[#^e998e0]]:
 
@@ -2554,8 +2567,9 @@ where the $\Delta$ are indices of wage and price dispersion.
 
 $$
 \begin{cases}
-\Delta_{w,t} \equiv \int_{0}^1 \left(  \frac{W_{t}(j)}{W_{t}}  \right)^{- \epsilon_{w}} \\
-\Delta_{p,t} \equiv \int_{0}^1 \left(  \frac{P_{t}(i)}{P_{t}}  \right)^{\frac{-\epsilon_{p}}{1-\alpha}}
+\Delta_{w,t} \equiv \int_{0}^1 \left(  \frac{W_{t}(j)}{W_{t}}  \right)^{- \epsilon_{w}} \, dj
+\\
+\Delta_{p,t} \equiv \int_{0}^1 \left(  \frac{P_{t}(i)}{P_{t}}  \right)^{\frac{-\epsilon_{p}}{1-\alpha}} \,di
 \end{cases}
 $$
 
@@ -2586,7 +2600,7 @@ To find a new version of the equations for price and wage inflation, note that t
 $$
 \begin{align*}
 \omega_{t}^n &= \log(1-\alpha) + (a_{t} - \alpha n_{t}^n) - \mu^p \\
-&= \log(1-\alpha) + \psi_{we}a_{t} - \mu^p
+&= \log(1-\alpha) + \psi_{wa}a_{t} - \mu^p
 \end{align*}
 $$
 
