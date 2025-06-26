@@ -1442,7 +1442,7 @@ $$
 \\
 &= (1-\theta) \sum_{k=0}^\infty \theta^k [ w_{t-k} - a_{t-k} - \alpha n_{t \,|\, t-k} + \log(1-\alpha) ]
 \\
-&=  w_{t-k} - a_{t-k} + \log(1-\alpha) - \alpha (1-\theta) \sum_{k=0}^\infty \theta^k  n_{t \,|\, t-k} 
+&=  w_{t} - a_{t} + \log(1-\alpha) - \alpha (1-\theta) \sum_{k=0}^\infty \theta^k  n_{t \,|\, t-k} 
 \\
 &= w_{t} - a_{t} - \alpha n_{t} + \log(1-\alpha)
 \end{align*}
@@ -1456,7 +1456,7 @@ $$
 \\
 \psi_{t+k \,|\, t} &= \psi_{t+k} + \alpha(n_{t+k \,|\, t} - n_{t+k})
 \\
-&= \psi_{t+k} - \frac{\alpha}{1-\alpha} (y_{t+k \,|\, t} - y_{t+k})
+&= \psi_{t+k} + \frac{\alpha}{1-\alpha} (y_{t+k \,|\, t} - y_{t+k})
 \\
 &= \psi_{t+k} - \frac{\alpha \epsilon}{1-\alpha} (p_{t}^* - p_{t+k})
 \end{align*}
@@ -1802,7 +1802,7 @@ The money supply goes up in the short run, but not in the long run, because of t
 
 ![[IRF. Technology Shock.png|center|500]]
 
-A persistent positive technology shock calls for increased output. However, the output gap decreases and becomes negatively. This is due to the fact that output increases by less than the natural level of ouput. Implicitly, this is because the real interest rate does not decrease as much as the natural interest rate — i.e. the central bank is non stimulating the economy enough, under this particular rule and calibration. 
+A persistent positive technology shock calls for increased output. However, the output gap decreases and becomes negative. This is due to the fact that output increases by less than the natural level of ouput. Implicitly, this is because the real interest rate does not decrease as much as the natural interest rate — i.e. the central bank is non stimulating the economy enough, under this particular rule and calibration. 
 Inflation, as the output gap, is negative. In principle, the nominal rate responses both to inflation and output, which are now moving in opposite directions. In the present calibration, the nominal rate goes up (the reduction in inflation is dominated by the increase in output). The real wage goes up, but in principle this is ambiguous. In fact, output goes up, but employment decreases in response to a positive technology shock: $w_t = \sigma y_t + \phi n_t$. Unemployment goes down due to the labor demand equation: $n_t = \frac{y_t - a_t}{1 - \alpha}$. If output does not increase as much as technology, as it often happens, then employment decreases. This is a (fairly) general result in NK models: the demand for the good decreases by less than technology, and the firms need less workers than before to produce the, yet higher, quantity demanded by consumers.
 #### Employment and technology shocks in New Keynesian and RBC models
 
@@ -1881,7 +1881,7 @@ $$
 
 ^4c6b9a
 
-An implication of this equation is that an optimal policy — a policy that minimizes the welfare loss — must enforce zero inflation (as we anticipated in deriving the NKPC in the previous chapter) and zero output gap. If the SS were efficient, in would holds the identity $\text{MRS} = \text{MPN}$. In case of inefficiency, however, they will differ: for reasons that will be clarified in the future, MPN is usually larger than MRS. Therefore, the output gap will very hardly be zero.
+An implication of this equation is that an optimal policy — a policy that minimizes the welfare loss — must enforce zero inflation (as we anticipated in deriving the NKPC in the previous chapter) and zero output gap. If the SS were efficient, in equilibrium the following identity would hold: $\text{MRS} = \text{MPN}$. In case of inefficiency, however, they will differ: for reasons that will be clarified in the future, MPN is usually larger than MRS. Therefore, the output gap will very hardly be zero.
 In turn, the average welfare loss will depend on a linear combination of the variances of the output gap and inflation:
 
 $$
@@ -1945,28 +1945,42 @@ $$
 
 The output gap was replaced by the **welfare-relevant output gap** $\hat x \equiv \hat y_t - \hat y_t^e$ and the cost push shock $u_t \equiv \kappa( \hat y_t^e - \hat y_t^n )$ which is independent of monetary policy since the natural level of output is not affected by shocks nor by fluctuations in the efficient output gap (which solves the social planner's problem). Fluctuations in $u_t$ can be interpreted as shocks in presence of distortions or imperfections that make the economy respond inefficiently to the shock despite price flexibility. The **cost push shocks** will fluctuate because the natural level of output may respond differently than the efficient level of output due to some distortionary inefficiency.
 
-The welfare loss under an inefficient economy are derived as follows. Starting from [[#^e998e0]]:
+The welfare loss under an inefficient economy is derived as follows. Starting from [[#^e998e0]]:
 
 $$
 U_{t} - U \simeq U_c C \left( \hat{y}_t (1 + z_t) + \frac{1 - \sigma}{2} \hat{y}_t^2 \right) + \frac{U_n N}{1-\alpha} \left( \hat{y}_t (1 + z_t) + \frac{\epsilon}{2\Theta}\text{var}_{i}(p_{t}(i)) + \frac{1 + \varphi}{2(1-\alpha)} (\hat{y}_t - a_{t})^2 \right) + \text{t.i.p.}
 $$
 
-Let $\Phi$ denote the size of the steady state distortion. This is defined implicitly by $- \frac{U_{n}}{U_{c}} = \text{MPN}(1-\Phi)$:
-
-$$
-\frac{U_{t} - U}{U_c C } = \hat{y}_t (1 + z_t) + \frac{1 - \sigma}{2} \hat{y}_t^2 -(1-\Phi) \left( \hat{y}_t (1 + z_t) + \frac{\epsilon}{2\Theta}\text{var}_{i}(p_{t}(i)) + \frac{1 + \varphi}{2(1-\alpha)} (\hat{y}_t - a_{t})^2 \right) + \text{t.i.p.}
-$$
-
-Under the "small distortion" assumption, so that the product $\Phi$ with a second-order term can be taken as neglibigle:
+Let $\Phi$ denote the size of the steady state distortion. This is defined implicitly by $- \frac{U_{n}}{U_{c}} = \text{MPN}(1-\Phi)$. Under the "small distortion" assumption, so that the product $\Phi$ with a second-order term can be taken as neglibigle:
 
 $$
 \begin{align*}
-\frac{U_{t} - U}{U_c C } &\simeq \hat{y}_t (1 + z_t) + \frac{1 - \sigma}{2} \hat{y}_t^2 -(1-\Phi) \left( \hat{y}_t (1 + z_t) + \frac{\epsilon}{2\Theta}\text{var}_{i}(p_{t}(i)) + \frac{1 + \varphi}{2(1-\alpha)} (\hat{y}_t - a_{t})^2 \right) + \text{t.i.p.} \\
-&\simeq  \Phi \hat{y}_{t} (1 + z_t)  -\frac{1}{2} \left[ \frac{\epsilon}{\Theta}\text{var}_{i}(p_{t}(i)) - (1 - \sigma) \hat{y}_t^2 + \frac{1 + \varphi}{1-\alpha} (\hat{y}_t - a_{t})^2 \right] + \text{t.i.p.} \\
-&\simeq \Phi \hat{y}_{t} (1 + z_t) - \frac{1}{2} \left[ \frac{\epsilon}{\Theta}\text{var}_{i}(p_{t}(i)) + \left(  \sigma + \frac{\phi+\alpha}{1-\alpha} \right) \tilde{y}_{t}^2 \right] + \text{t.i.p.}
+\frac{U_{t} - U}{U_c C } &= \hat{y}_t (1 + z_t) + \frac{1 - \sigma}{2} \hat{y}_t^2 -(1-\Phi) \left( \hat{y}_t (1 + z_t) + \frac{\epsilon}{2\Theta}\text{var}_{i}(p_{t}(i)) + \frac{1 + \varphi}{2(1-\alpha)} (\hat{y}_t - a_{t})^2 \right) + \text{t.i.p.}
 \\
-\mathbb{W} & \simeq \frac{1}{2} \mathbb{E}_{0} \sum_{t=0}^\infty \beta^t \left[  -\Phi \hat{x}_{t} + \left( \sigma + \frac{\phi + \alpha}{1-\alpha} \right) \hat{x}_{t}^2 + \frac{\epsilon}{\lambda} \pi_{t}^2  \right] + \text{t.i.p} \\
-&\simeq - \mathbb{E}_{0} \sum_{t=0}^\infty \beta^t \left[ \Phi \hat{x}_{t} - \frac{1}{2} \kappa \hat{x}_{t}^2 + \frac{\epsilon}{\lambda} \pi_{t}^2  \right] + \text{t.i.p}
+&= \left(\hat{y}_t + \hat{y}_t z_t\right) + \frac{1 - \sigma}{2} \hat{y}_t^2 - (1-\Phi) \left( \hat{y}_t + \hat{y}_t z_t \right) - (1-\Phi)\left( \frac{\epsilon}{2\Theta}\text{var}_{i}(p_{t}(i)) + \frac{1 + \varphi}{2(1-\alpha)} (\hat{y}_t - a_{t})^2 \right) + \text{t.i.p.}
+\\
+&= (\hat{y}_t - (1-\Phi)\hat{y}_t) + (\hat{y}_t z_t - (1-\Phi)\hat{y}_t z_t) + \frac{1 - \sigma}{2} \hat{y}_t^2 - (1-\Phi) \left( \frac{\epsilon}{2\Theta}\text{var}_{i}(p_{t}(i)) + \frac{1 + \varphi}{2(1-\alpha)} (\hat{y}_t - a_{t})^2 \right) + \text{t.i.p.} \\
+&= \Phi \hat{y}_t + \Phi (\hat{y}_t z_t) + \frac{1 - \sigma}{2} \hat{y}_t^2 - (1-\Phi)\left( \frac{\epsilon}{2\Theta}\text{var}_{i}(p_{t}(i)) + \frac{1 + \varphi}{2(1-\alpha)} (\hat{y}_t - a_{t})^2 \right) + \text{t.i.p.}
+\end{align*}
+$$
+
+Neglecting terms that are products of small deviations or independent of policy (like $z_t$ and the cross-term $\Phi \hat{y}_t z_t$):
+
+$$
+\begin{align*}
+&\simeq \Phi \hat{y}_{t} + \frac{1 - \sigma}{2} \hat{y}_t^2 - \frac{1+\varphi}{2(1-\alpha)}(\hat{y}_t - a_t)^2 - \frac{\epsilon}{2\Theta} \text{var}_i(p_t(i)) + \text{t.i.p.} \\
+&\simeq \Phi \hat{y}_{t} - \frac{1}{2} \left[ \left(\sigma + \frac{\varphi+\alpha}{1-\alpha}\right)(\hat{y}_t - \hat{y}_t^n)^2 + \frac{\epsilon}{\Theta}\text{var}_{i}(p_{t}(i)) \right] +  \text{t.i.p.} \\
+&\simeq \Phi \tilde{y}_{t} - \frac{1}{2} \left[ \left(\sigma + \frac{\varphi+\alpha}{1-\alpha}\right) \tilde{y}_{t}^2 + \frac{\epsilon}{\Theta}\text{var}_{i}(p_{t}(i)) \right] + \text{t.i.p.}
+\end{align*}
+$$
+
+Let $\tilde{y}_t \equiv \hat{x}_t \text{ and use } \text{var}_i(p_t(i)) = \frac{\Theta}{\lambda}\pi_t^2$. The welfare loss is $\mathbb{W} = - \mathbb{E}_{0} \sum_{t=0}^\infty \beta^t \left(\frac{U_{t} - U}{U_c C }\right)$, that is:
+
+$$
+\begin{align*}
+\mathbb{W} &\simeq - \mathbb{E}_{0} \sum_{t=0}^\infty \beta^t \left[ \Phi \hat{x}_{t} - \frac{1}{2} \left( \left(\sigma + \frac{\varphi+\alpha}{1-\alpha}\right) \hat{x}_{t}^2 + \frac{\epsilon}{\lambda} \pi_{t}^2 \right) \right] + \text{t.i.p} \\
+&\simeq \mathbb{E}_{0} \sum_{t=0}^\infty \beta^t \left[ -\Phi \hat{x}_{t} + \frac{1}{2}\left(\sigma + \frac{\varphi+\alpha}{1-\alpha}\right) \hat{x}_{t}^2 + \frac{\epsilon}{2\lambda} \pi_{t}^2 \right] + \text{t.i.p} \\
+&\simeq \frac{1}{2} \mathbb{E}_{0} \sum_{t=0}^\infty \beta^t \left[ \frac{\epsilon}{\lambda} \pi_{t}^2 + \left(\sigma + \frac{\varphi+\alpha}{1-\alpha}\right) \hat{x}_{t}^2 - 2\Phi \hat{x}_{t} \right] + \text{t.i.p}
 \end{align*}
 $$
 
@@ -1977,6 +1991,7 @@ $$
 $$
 
 for an exogenous $u_t = \rho_{u} u_{t-1} + \epsilon_{t}$ with $\vartheta$ representing the weight of output gap fluctuations relative to inflation in the loss function and welfare-theoretically equal to the utilithy based $\vartheta = \left( \sigma + \frac{\phi + \alpha}{1-\alpha} \right) \frac{\lambda}{\epsilon} = \frac{\kappa}{\epsilon}$. Alternatively, interpret $\vartheta$ arbitrary central bank preference towards output gap rather tha prices. Additional assumptions should be make on how the central bank can affect the expectations. Two assumption will be proposed. In one case, the central bank cannot influence the expectations of future variables.
+
 #### Optimal Monetary Policy under Discretion
 
 If the central bank cannot influence the expectations of future variables, then the problem can be transformed into a static problem where the central bank takes expected inflation as given and responds optimally through the NKPC. The solution is obtained at:
@@ -2028,13 +2043,14 @@ i_{t} &= r_{t}^e + \frac {\vartheta \rho_{u} + \sigma \kappa(1-\rho_{u})} {\kapp
 $$
 
 for $\Theta = \frac{\sigma \kappa (1-\rho_{u}) - \vartheta (\phi_{\pi} - \rho_{u})}{\kappa^2 + \vartheta(1 - \beta ) }$. Ex post, in equilibrium, the term in brackets will be 0, but it is the one that guarantess uniqueness: the central bank has to threaten to increase $i$ sufficiently if inflation deviates from the desired path.
+
 #### Optimal Monetary Policy under Commitment
 
 In this other case, the central bank commits itself to a plan in period 0 which is state-contingent but provides  a specification for all subsequent periods in all scenarios and moves of nature. Afterwards, it just implements the plan. The central bank may be tempted to deviate, but we assume the central bank sticks to the plan by assumption of commitment. In so doing, the central bank can affect expectations of future variables. The central bank solve the state-contingent plan that minimizes the loss function subject to the sequence of constraints:
 
 $$
 \begin{align*}
-\min_{ \{ x_{t}, \pi_{t} \}_{t=0}^\infty } \beta^t ( \pi_{t}^2 + \vartheta x_{t}^2 ) \quad \text{ such that } \pi_{t} = \beta \mathbb{E}_{t} [p_{t+1}] + \kappa x_{t} + u_{t} 
+\min_{ \{ x_{t}, \pi_{t} \}_{t=0}^\infty } \beta^t ( \pi_{t}^2 + \vartheta x_{t}^2 ) \quad \text{ such that } \pi_{t} = \beta \mathbb{E}_{t} [\pi_{t+1}] + \kappa x_{t} + u_{t} 
 \end{align*}
 $$
 
@@ -2286,7 +2302,7 @@ $$
 \Delta i_t^{(a)} = 0.5 (\mathbb{E}_t[\pi_{t+4}^{(4)}] - \pi) + 0.5(\mathbb{E}_t[\Delta y_{t+4}^{(4)}] - \Delta y_t^*)
 $$
 
-where $\mathbb{E}_t[\pi_{t+4}^{(4)}]$ is the expected inflation over the next four quarters on an annualized basis (note that this is using GDP change and not GDP gap: using GDP change makes the rule more robust, as gross mistakes such as those made by the Fed would be dodged). This is an example of **first-difference rule**, especially used in the Ecentral bank. They use the actual forecasts of professional forecasters to estimate an interval for inflation, and thereby compute an envelope of prescriptions for their simple policy rule, leading to a very good fit with actual data.
+where $\mathbb{E}_t[\pi_{t+4}^{(4)}]$ is the expected inflation over the next four quarters on an annualized basis (note that this is using GDP change and not GDP gap: using GDP change makes the rule more robust, as gross mistakes such as those made by the Fed would be dodged). This is an example of **first-difference rule**, especially used in the central bank. They use the actual forecasts of professional forecasters to estimate an interval for inflation, and thereby compute an envelope of prescriptions for their simple policy rule, leading to a very good fit with actual data.
 
 <div style="page-break-after: always;"></div>
 
