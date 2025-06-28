@@ -867,54 +867,7 @@ Everything boils down to comparing the *entire* size of the pie compared to the 
 - **Poor**: types $\omega> \hat{\omega}$ are excluded from the market and do not invest (in principle, they *could* write contract, but with payoff inferior to the sheer storage)
 The composition of entrepreneurs between the three types depends on $S_t^E$.
 
-```tikz
-\usepackage{xcolor} % Required for \textcolor
-\begin{document}
-\begin{tikzpicture}[
-    every node/.style={align=center} % Center-aligns text in multi-line nodes
-]
-
-    % --- Define coordinates for key points on the axis ---
-    % The unnecessary 'tick2' coordinate has been removed.
-    \coordinate (axis_start) at (0,0);
-    \coordinate (tick1)      at (2,0);
-    \coordinate (sep1)       at (5,0);   % separator 1
-    \coordinate (sep2)       at (10.5,0); % separator 2
-    \coordinate (tick3)      at (12.5,0);
-    \coordinate (axis_end)   at (15,0);
-
-    % --- Draw the main axis ---
-    \draw[->, thick, -latex] (axis_start) -- (axis_end) node[right=2pt] {$rx(\omega)$};
-
-    % --- Draw the solid tick marks ---
-    % The loop now only includes the two required ticks.
-    \foreach \pos in {tick1, tick3} {
-        \draw[thick] (\pos |- 0,0.2) -- (\pos |- 0,-0.2);
-    }
-
-    % --- Draw the dashed separator lines ---
-    \foreach \pos in {sep1, sep2} {
-        \draw[dashed] (\pos |- 0,1.2) -- (\pos |- 0,-2);
-    }
-
-
-    % --- Place labels below the axis ---
-    % The label for rx(omega_hat) has been moved to be under sep2.
-    \node[below=0.4cm] at (tick1) {$rS_t^E$};
-    \node[below=0.4cm] at (sep1) {$\kappa_L \hat{q}_{t+1} + rS_t^E$ \\ {\small\textcolor{gray}{$(rx(\omega^*))$}}};
-    \node[below=0.4cm] at (sep2) {$rx(\hat{\omega})$};
-    \node[below=0.4cm] at (tick3) {$\kappa^e \hat{q}_{t+1}$ \\ {\small\textcolor{gray}{$(rx(\bar{\omega}))$}}};
-
-
-    % --- Place labels above the axis (regions) ---
-    % These remain unchanged as the region boundaries have not moved.
-    \node[above=0.5cm, font=\large\sffamily] at (2.5,0)  {Good};  % Midpoint of (0, 5)
-    \node[above=0.5cm, font=\large\sffamily] at (7.75,0) {Fair};  % Midpoint of (5, 10.5)
-    \node[above=0.5cm, font=\large\sffamily] at (12.75,0){Poor};  % Midpoint of (10.5, 15)
-
-\end{tikzpicture}
-\end{document}
-```
+![[BernankeGertlerOmegas.png|center|500]]
 
 For greater $S_{t}^E$, more entrepreneur switch from suffering from monitoring cost to contracts without monitoring, saving up capital and leading to an increase in the supply of capital.
 
