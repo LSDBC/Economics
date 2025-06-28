@@ -49,7 +49,7 @@ $$
 any Pareto optimal allocation can be rewritten as a maximization problem with some non-negative weights. Let $\theta_{t}(s^t)$ be the Lagrange multiplier of the constraint at $s^t$. Note that:
 
 $$
-\sum_{i} \lambda_{i} U(c^i) = \sum_{i} \lambda_{i} \left\{  \sum_{t=0}^\infty \sum_{i} \beta^t u_{i}(c_{t}^i(s^t)) \pi_{t}(s^t)  \right\}
+\sum_{i} \lambda_{i} U(c^i) = \sum_{i} \lambda_{i} \left\{  \sum_{t=0}^\infty \sum_{s^t} \beta^t u_{i}(c_{t}^i(s^t)) \pi_{t}(s^t)  \right\}
 $$
 
 Which can be rewritten as a Lagrangian:
@@ -192,20 +192,18 @@ $$
 \begin{cases}
 \sum_{i} c_{t}^i (s^t) \le \sum_{i} y_{t}^i (s^t)
 \end{cases}
-\tag{\dagger}
 $$
 
-Define $C(s^t) \equiv \sum_{i} c_{t}^i (s^t)$ and similarly $u(C) \equiv \max_{ \{ c_{t}^i(s^t) \}} \sum_{i} \lambda_{i} u_{i} (c_{t}^i(s^t)$ such that $\sum_{i} c_{t}^i(s^t) \leq C(s^t)$ — basically, the utility derived from increasing aggregate consumption conditional on agents trading and redistributing optimally. Then, the problem $\dagger$ can be rewritten as:
+Define $C(s^t) \equiv \sum_{i} c_{t}^i (s^t)$ and similarly $u(C) \equiv \max_{ \{ c_{t}^i(s^t) \}} \sum_{i} \lambda_{i} u_{i} (c_{t}^i(s^t)$ such that $\sum_{i} c_{t}^i(s^t) \leq C(s^t)$ — basically, the utility derived from increasing aggregate consumption conditional on agents trading and redistributing optimally. Then, the problem can be rewritten as:
 
 $$
 \max_{ \{ C_{t}(s^t) \}_{s^t} } \sum_{t=0}^\infty \sum_{s^t} \beta^t u(C_{t}(s^t)) \pi_{t}(s^t) \quad \text{such that} \quad 
 \begin{cases}
 C_{t} (s^t) \leq \sum_{i} y_{t}^i (s^t)
 \end{cases}
-\tag{\dagger\dagger}
 $$
 
-Let $\theta_{t}(s^t)$ be the Lagrange multiplier for $(\dagger\dagger)$. If $\{ \lambda_{i} \}_{i=1}^I$ is such that $\lambda_{i} = \mu_{i}^{-1}$, then $\theta_{t}(s^t) = q_{t}^{0*}(s^t)$. By optimality of the $(\dagger \dagger)$ problem, the allocation $\{ C_{t}(s^t) \}_{s^t}$ and $\{ \theta_{t}(s^t) \}$ must also satisfy the FOC, that is $\beta u'(C_{t}(s^t)) \pi_{t} (s^t) = \theta_{t}(s^t)$ and $C_{t}(s^t) = \sum_{i} y_{t}^i (s^t)$.
+Let $\theta_{t}(s^t)$ be the Lagrange multiplier for the second equation. If $\{ \lambda_{i} \}_{i=1}^I$ is such that $\lambda_{i} = \mu_{i}^{-1}$, then $\theta_{t}(s^t) = q_{t}^{0*}(s^t)$. By optimality of the second problem, the allocation $\{ C_{t}(s^t) \}_{s^t}$ and $\{ \theta_{t}(s^t) \}$ must also satisfy the FOC, that is $\beta u'(C_{t}(s^t)) \pi_{t} (s^t) = \theta_{t}(s^t)$ and $C_{t}(s^t) = \sum_{i} y_{t}^i (s^t)$.
 In turn, consider that the CE of a  representative agent (RA) economy $\{ C_{t}^{\text{RA}} (s^t), q_{t}^{0, \text{RA}}(s^t) \}_{s^t}$. It must be that $\beta^t u'(C_{t}^\text{RA}(s^t)) \pi_{t}(s^t) = \mu_{\text{RA}} q_{t}^{0, \text{RA}}(s^t)$ and $C(s^t) = \sum_{i} y_{t}^i(s^t)$: the scaling of the prices can be still selected as wished. Pick the normalization of the system $\{ q_{t}^{0, \text{RA}} (s^t) \}_{s^t}$ such that $\mu_{\text{RA}} = 1$, then the $\theta_{t}(s^t)$ must be equal to the equilibrium prices of the competitive equilibrium: $q_{t}^{0, \text{RA}} (s^t) = \theta_{t} (s^t) = q_{t}^{0,*} (s^t)$.
 `\end{proof}`
 

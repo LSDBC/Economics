@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import { ProofEnvironment } from "./quartz/plugins/transformers/ProofEnvironment.js"
 
 /**
  * Quartz 4 Configuration
@@ -55,6 +56,7 @@ const config: QuartzConfig = {
   },
   plugins: {
     transformers: [
+      ProofEnvironment(),
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
         priority: ["frontmatter", "git", "filesystem"],
@@ -66,6 +68,7 @@ const config: QuartzConfig = {
         },
         keepBackground: false,
       }),
+
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),

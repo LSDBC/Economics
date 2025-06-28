@@ -2088,8 +2088,14 @@ $$
 \begin{align*}
 x_{0} &= -\frac{\kappa}{\vartheta} \pi_{0} \\
 x_{1} - x_{0} &= x_{0} -\frac{\kappa}{\vartheta}\pi_{1} - x_{0} \\
-\Delta x_{1} &= - \frac{\kappa}{\vartheta} \pi_{1}  \\
-\Delta x_{t} &= - \frac{\kappa}{\vartheta}\pi_{t} \\
+\Delta x_{1} &= - \frac{\kappa}{\vartheta} \pi_{1}
+\end{align*}
+$$
+
+Generalizing for any $t$:
+
+$$
+\begin{align*}
 x_{t} &= x_{0} - \frac{\kappa}{\vartheta} \sum_{j=0}^t \pi_{j} \\
 x_{t} &= - \frac{\kappa}{\vartheta} (p_{t} - p_{-1}) \\
 x_{t} &= - \frac{\kappa}{\vartheta} \hat{p}_{t}
@@ -2131,7 +2137,7 @@ $$
 
 ^c74c8a
 
-for $\gamma \equiv \frac{\vartheta}{\vartheta(1+\beta) + \kappa^2}$. To find a stationary solution to this difference equation, maintaining the assumption that the cost-push shock is an AR(1) process, first guess that the solution takes the form $\hat{p}_{t} = \delta \hat{p}_{t} + b u_{t}$ (see the second identify in the following derivation) and verify it. That is:
+for $\gamma \equiv \frac{\vartheta}{\vartheta(1+\beta) + \kappa^2}$. To find a stationary solution to this difference equation, maintaining the assumption that the cost-push shock is an AR(1) process, first guess that the solution takes the form $\hat{p}_{t} = \delta \hat{p}_{t-1} + b u_{t}$ (see the second identify in the following derivation) and verify it. That is:
 
 $$
 \begin{align*}

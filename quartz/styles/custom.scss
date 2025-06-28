@@ -2,6 +2,22 @@
 
 // put your custom CSS here!
 
+
+// PROOF ENVIRONMENTS
+// Stile per l'inizio della prova ("Proof.")
+.proof-begin {
+  font-style: italic;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.2em; /* <-- Aggiungi questa riga per ingrandire del 10% */
+}
+// Stile per la fine della prova (il quadratino)
+.proof-end {
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.3em; /* <-- Aggiungi questa riga. L'ho fatto un po' più grande (20%) perché i simboli a volte sembrano piccoli */
+}
+
 /* --- Stili personalizzati per Callout --- */
 /* v3: Aggiunti i callout 'focus' e 'assumption' */
 
