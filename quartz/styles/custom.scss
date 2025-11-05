@@ -2,6 +2,25 @@
 
 // put your custom CSS here!
 
+// BETTER COLORS FOR STANDARD CALLOUTS
+
+.callout {
+  // This targets the default 'note' callout
+  &[data-callout],
+  &[data-callout="note"] {
+    --color: var(--secondary); // Sets title/icon to your theme's red/purple
+    --border: var(--highlight); // Uses your theme's translucent highlight for the border
+    --bg: var(--highlight);     // Uses your theme's translucent highlight for the background
+  }
+
+// Test: Style 'abstract' callout using your theme's tertiary color
+  &[data-callout="abstract"] {
+    --color: var(--tertiary); // Uses your theme's hover color
+    --border: var(--highlight); // Uses your standard highlight background
+    --bg: var(--highlight);     // Uses your standard highlight background
+  }
+}
+
 
 // PROOF ENVIRONMENTS
 // Stile per l'inizio della prova ("Proof.")
@@ -45,7 +64,7 @@
 
 .callout[data-callout="focus"],
 .callout[data-callout="assumption"] {
-  --callout-color-rgb: 240, 137, 208; /* Colore rosa/magenta */
+  --callout-color-rgb: 46, 104, 158; /* Colore rosa/magenta */
   border-left: 4px solid rgb(var(--callout-color-rgb)) !important;
   background-color: rgba(var(--callout-color-rgb), 0.05) !important;
   border-radius: 6px !important;
@@ -145,7 +164,7 @@
 .callout[data-callout="exercise"] .callout-icon { background-image: url('data:image/svg+xml,<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(112, 78, 214)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.05 10.966a5 2.5 0 0 1-8.1 0"/><path fill="none" d="m16.923 14.049 4.48 2.04a1 1 0 0 1 .001 1.831l-8.574 3.9a2 2 0 0 1-1.66 0l-8.574-3.91a1 1 0 0 1 0-1.83l4.484-2.04"/><path fill="none" d="M16.949 14.14a5 2.5 0 1 1-9.9 0L10.063 3.5a2 2 0 0 1 3.874 0z"/><path d="M9.194 6.57a5 2.5 0 0 0 5.61 0"/></svg>'); }
 .callout[data-callout="claim"] .callout-icon { background-image: url('data:image/svg+xml,<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(112, 78, 214)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path fill="none" d="m3 11 18-5v12L3 14v-3z"/><path fill="none" d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>'); }
 
-/* Nuovi Callout (Rosa/Magenta) */
-.callout[data-callout="focus"] .callout-icon { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(240, 137, 208)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>'); }
+/* Callouts with new color */
+.callout[data-callout="focus"] .callout-icon { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(46, 104, 158)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>'); }
 
-.callout[data-callout="assumption"] .callout-icon { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(240, 137, 208)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pyramid"><path d="M2.5 16.5A2 2 0 0 0 4.3 18L12 22l7.7-4a2 2 0 0 0 1.8-1.5L22 8l-10-6L2 8Z"/><path d="m12 2 10 6-10 6-10-6Z"/><path d="M12 22V12"/></svg>'); }
+.callout[data-callout="assumption"] .callout-icon { background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(46, 104, 158)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pyramid"><path d="M2.5 16.5A2 2 0 0 0 4.3 18L12 22l7.7-4a2 2 0 0 0 1.8-1.5L22 8l-10-6L2 8Z"/><path d="m12 2 10 6-10 6-10-6Z"/><path d="M12 22V12"/></svg>'); }

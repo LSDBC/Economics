@@ -2,8 +2,33 @@
 title: Welcome to my Notebook!
 ---
 
-My name is Lorenzo Bianchi Chignoli and this is the Economics Notebook. On this webpage, I share notes and materials on macroeconomics, based on my courses and research interests. I am currently a PhD student at the **Pompeu Fabra University**, Barcelona. My main interests include monetary macroeconomics, agent-based modelling, network theory, and inequality studies.
+Hi, I'm **Lorenzo Bianchi Chignoli**. Welcome to my personal collection of notes and materials on macroeconomics.
 
-Some of the current notes include [[Advanced Macroeconomics III (Galí)|Galí's course on New Keynesian models]] at UPF, and my conference article on [[Responsibility-Sensitivity in Theories of Justice]].
+I am currently a PhD student at **Pompeu Fabra University** in Barcelona. This site serves as a public notebook for topics related to my courses and research.
 
-Feedback is very welcome. For any questions or comments, reach out via [email](mailto:lorenzo.bianchi@bse.eu) or [LinkedIn](https://www.linkedin.com/in/lorenzobianchichignoli/). Enjoy the notes!
+---
+
+## Research Interests
+
+My main academic interests include:
+* Monetary Macroeconomics and Macrofinance
+* Deep Learning and Neural Networks
+* Expectations and Learning Algorithms
+
+---
+
+## Current Notes
+
+Here are some of the materials currently available:
+
+* [[Advanced Macroeconomics III (Galí)|Galí's course on New Keynesian models]]
+* [[Responsibility-Sensitivity in Theories of Justice]] (Conference Article)
+
+---
+
+## Contact & Feedback
+
+Feedback is very welcome. For any questions, comments, or corrections, please feel free to reach out.
+
+* **Email**: [lorenzo.bianchichignoli@upf.edu](mailto:lorenzo.bianchichignoli@upf.edu)
+* **LinkedIn**: [lorenzobianchichignoli](https://www.linkedin.com/in/lorenzobianchichignoli/)

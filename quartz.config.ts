@@ -13,9 +13,7 @@ const config: QuartzConfig = {
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
-    analytics: {
-      provider: "plausible",
-    },
+    analytics: { provider: 'google', tagId: 'G-26XTKW2T2L' },
     locale: "en-US",
     baseUrl: "https://notebook.bianchichignoli.it",
     ignorePatterns: ["private", "templates", ".obsidian"],
@@ -24,31 +22,31 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
+        header: "Ubuntu", // "Schibsted Grotesk",
+        body: "Public Sans", // "Source Sans Pro",
         code: "IBM Plex Mono",
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
+          light: "#ffffff",
           lightgray: "#e5e5e5",
           gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          darkgray: "#242424",
+          dark: "#000000",
+          secondary: "#377a66",     // Your chosen red
+          tertiary: "#5ea682",      // A deep yellow for hover/visited
+          highlight: "rgba(140, 222, 181, 0.15)", // A faint red highlight
+          textHighlight: "#fff3a388",
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
+          light: "#000000",
+          lightgray: "#222222",
+          gray: "#4e4e4e",
+          darkgray: "#e0e0e0",
+          dark: "#ffffff",
+          secondary: "#BB86FC",     // A bright, standard purple
+          tertiary: "#D7B3FF",      // A lighter purple for hover/visited
+          highlight: "rgba(187, 134, 252, 0.15)", // A faint purple highlight
           textHighlight: "#b3aa0288",
         },
       },

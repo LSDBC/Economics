@@ -141,7 +141,7 @@ Summing up, these attempt resembles the late-70s strategy. It is always possible
 
 RE is not the only way to attain the objectives desired by Sargent, Prescott, Lucas, and so on. With the additional contribution of the GFC, non-RE are being liberalized in these years, although this still faces a strong resistance. In fact, a mainstream argument is that departures from RE should be temporary -- any learning feature should converge rapidly to RE. This is usually referred to as the **Friedman hypothesis**.
 
-> [! conjecture] Friedman Hypothesis
+> [!conjecture] Friedman Hypothesis
 > Investors that hold wrong beliefs will be driven out of the market very quickly.
 
 However, recent evidence suggests that not only learning, but also expulsion from the market takes a lot of time. Moreover, overly optimistic "crazy" agents may be overly parsimonious, and their savings may still ferry them to the future market (despite present welfare losses).
