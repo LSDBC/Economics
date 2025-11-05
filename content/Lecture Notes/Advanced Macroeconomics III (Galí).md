@@ -2602,6 +2602,7 @@ To find a new version of the equations for price and wage inflation, note that t
 > $$
 > 
 > where $\omega_{t} \equiv w_{t} - p_{t}$ and $\omega_{t}^n$ is the natural real wage (determined below).
+>
 
 $$
 \begin{align*}
