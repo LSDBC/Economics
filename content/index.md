@@ -1,5 +1,6 @@
 ---
 title: Welcome to my Notebook!
+enableToc: false
 ---
 
 Hi, I'm **Lorenzo Bianchi Chignoli**. Welcome to my personal collection of notes and materials on macroeconomics.

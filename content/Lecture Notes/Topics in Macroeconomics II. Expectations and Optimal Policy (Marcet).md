@@ -3,10 +3,9 @@
 > These lecture notes were originally prepared for the *Topics in Macroeconomics II. Expectation and Optimal Policy* course offered by Albert Marcet in the MRes in Economics program at Universitat Pompeu Fabra during the Spring 2025 term. The content is primarily derived from my personal notes. Many of the mathematical derivations were worked out as exercises and, therefore, may contain inaccuracies.
 
 
-This course explores modelling approaches to expectations, and the corresponding optimal policies in dynamic economies.
+This course explores modelling approaches to expectations, and the corresponding optimal policies in dynamic economies. The two main sections of the notes reflect this structure.
 
 ## Expectations
-
 ### History of Rational Expectations
 
 Older approaches simply specified expectations as a fixed function of current and past variables. Assuming inconsistent expectations to the model's implication is the most disappointing feature of non-rational expectations. The crisis of Classical Keynesian models occurred in the 70s with the failure of the classical Phillips Curve to predict a positive correlation between inflation and unemployment. With rational expectations (hereafter, RE), instead, agent's predictions coincide with objective predictions, as the model's natural predictive output. As aid, this also implies that expectations are enforced by the model itself: there is no additional degrees of freedom to test the model predictions against specifications of expectations. Sure enough, the Classical Keynesian models had an excessive, basically infinite amount of degrees of freedom, with maximized explanatory power and minimized predictive power. At that time, RE was a welcome methodological innovation, as it avoided arbitrary model specifications.
@@ -23,7 +22,7 @@ Although these are good methodological justification, and any deviation from RE 
 
 An excellent example for modeling expectation is the stock market. Stock prices are quite unpredictable, and especially in the long run where booms and busts dominate. The stock market may exhibit high prices either due to good fundamentals, and the corresponding well-grounded expectations of profitability; or mistaken expectations, which may lead to a bubble burst. The conflict between expectations and outcomes is well exemplified by the famed excess return regressions. Fama's efficient market's hypothesis should prevent to predict stock prices (read, find a large value for a coefficient in the regression).
 
-> [!quote] The **Efficient Market Hypothesis**
+> [! quote] The **Efficient Market Hypothesis**
 > The primary role of the capital market is allocation of ownership of the economy's capital stock. In general terms, the ideal is a market in which prices provide accurate signals for resource allocation: that is, a market in which firms can make production-investment decisions, and investors can choose among securities that represent ownership of firms' activities under the assumption that security prices at any time 'fully reflect' all available information. A market in which prices always 'fully reflect' available information is called 'efficient'. (Fama, 1970, p. 383)
 
 Instead, excess return regressions show this is not quite the case. Consider Table 1 in Adam, Marcet, Nicolini:
@@ -536,7 +535,7 @@ $$
 
 is stable (converges). Finding stability of this equation is relatively easy. Since $T' = \beta < 1$, this is a discrete nonstochastic system, and least squares learning works just as small steps towards the true expectation. If, instead, $T'>1$, then these small steps would lead us away from RE. This suggests that not only the rational expectations algorithm, but also the perceived expectations algorithm should contribute to inform expectations robust policy. Moreover, as RE models may exhibit multiple equilibria, these can be used as selection criteria to choose stable rather than unstable RE equilibria (see Woodford).
 
-> [!proposition] E-stability
+> [! proposition] E-stability
 > $$
 > z_{t} = T(m_{t}) z_{t-1} + V(m_{t-1}) \epsilon_{t}
 > $$
@@ -616,6 +615,8 @@ Agents have to forecast a variable $z^1$ given information on $z^2$. Let vector-
 $$
 z_{t}^1 = \beta' z_{t-1}^2 + u_{t}
 $$
+
+^c81f2b
 
 so that they set
 
@@ -771,9 +772,260 @@ As Sargent once put it, there is a general idea that deviating from RE hurls ana
 
 These good concerns can easily find counterarguments in support of learning.
 1) Expectations can be disciplined through empirical validation, such as looking at surveys and testing if the PLM are compatible with observed data on expectations.
-2) If unfalsifiability is imputed to overparametrization, learning models are no-more overparametrized than many RE models. In particular, it is possible to design parsimonious learning models in terms of parameters.
+2) If unfalsifiability is imputed to overparametrization, learning models are no more overparametrized than many RE models. In particular, it is possible to design learning models that are just as parsimonious or even more parsimonious in terms of parameters.
 3) If agents learn about prices, expectations don't need to be "fairly good". The only required criterion may be "internal rationality".
 
 #### Internal Rationality
 
-(To be continued continue)
+This section incorporates summaries of Adam and Marcet (2011), Adam et al. (2016, alias AMN), and Adam et al. (2017, alias AMB).
+
+Consider a Lucas' asset pricing model for a consumer problem:
+
+$$
+\mathbb{E}_{o}^\mathcal{P} \sum_{t=0}^\infty \delta^t u( c_{t} ) \quad \text{ such that } \quad c_{t} + S_{t} P_{t} = W_{t} + S_{t-1} (P_{t} + D_{t} )
+$$
+
+The only difference in this model from Lucas' original lies in the generality of expectations: exogenous variables are perceived according to some $\mathcal{P}$ distribution of $\{ P_{t}, D_{t} \}$, where $W$ is omitted for simplicity. This means consumers choose:
+
+$$
+\begin{gather*}
+S_{t} ((P,D)^t)
+\\
+c_{t}((P,D)^t)
+\end{gather*}
+$$
+
+that is, they choose contingent plans for each possible history of external variables. This separates the issue of optimality from the RE paradigm: agents behave optimally, given their perceived probability distributions. In this sense, the deviation from orthodoxy is only small, since individual optimality is not rebutted but conditioned on some specification for expectations. Compared to most contemporary models, this choice forces the analyst to be explicit about assumptions about the model of prices employed by agents.
+The learning algorithm is then derived from optimal behavior given $\mathcal{P}$, a process that can be interpreted as **microfoundations for adaptive learning**. Put simply, the optimal algorithm must be derived from *assuming* a model of pricing. Then, this model can be tested in the data, with very encouraging results.
+
+Once $\mathcal{P}$ is part of the model assumptions, a rule must be specified accordingly. In AMN and AMB, the simplest behavioral assumption is that agents have correct beliefs about dividends and income; but a mistaken view about stock price growth. In particular:
+
+$$
+\begin{align*}
+\frac{D_{t}}{D_{t-1}} &= 1 + G + \varepsilon_{t}
+\\
+\frac{P_{t}}{P_{t-1}} &= \beta_{t}^P + \varepsilon_{t}^P
+\\
+\beta^P_{t} &= \beta_{t-1}^P + \eta_{t}
+\end{align*}
+$$
+
+The agent's expected growth is derived from this belief with a constant-gain Kalman filter.
+
+As we will verify, this specification for expectations is strengthened by the fact that it elicits these desirable properties:
+
+1) Closeness to RE
+2) Closeness to data
+3) Closeness to the model (the perceived law of motion is relatively close to the actual law of motion)
+4) Compatibility with survey expectations
+ 
+In particular:
+
+1) If $\mathbb{V}(\eta_{t}) \approx 0$, agents' belief are close to RE.
+2) $\frac{\Delta P_{t}}{P_{t-1}}$ is MA(1), and this could be tested by the agents making the model falsifiable. In fact, letting $u_{t} = \Delta \log\left(  \frac{P_{t}}{P_{t_-1}} \right)$ and $\mathbb{E} ( u_{t} x_{t-2} ) = 0$ can be tested by GMM through suitable instruments $x$ and noting that $\hat{Q}_{T} \equiv T \left(  \frac{1}{T} \sum_{t=0}^T x_{t-2} u_{t} \right)^\intercal \hat{S_{w}}^{-1} \left(  \frac{1}{T} \sum_{t=0}^T x_{t-2} u_{t}  \right) \to \chi_{n}^{2}$. The results are reported in the following table:
+
+
+| Regressors (4 lags)                                                                  | $\hat{Q}_{T}$ |
+| ------------------------------------------------------------------------------------ | ------------- |
+| $\frac{D_{t-2}}{D_{t-3}}$                                                            | 6.69          |
+| $\Delta \frac{ P_{t-2}}{P_{t-3}}$                                                    | 6.66          |
+| $\Delta \left(  \frac{C_{t-2}}{C_{t-3}}  \right) ^{-\gamma} \frac{P_{t-2}}{P_{t-3}}$ | 6.97          |
+| $\frac{P_{t-2}}{D_{t-2}}$                                                            | 6.33          |
+| $\frac{P_{t-2}}{P_{t-3}}$                                                            | 4.68          |
+
+which are all significant at the 5\% critical value (9.48).
+
+In this model, the authors follow standard practice in RE and Bayesian-RE literature, and assume that agents know the pricing function $P_{t} = F_{t}^P((D,W)^t)$ at all $t$. The key consequence of that unrealistic assumption is that the joint distribution of all possible combinations of prices ($P$) and data ($D$) that could ever occur, involves a singularity, meaning the relationship between the variables is perfect, fixed, and deterministic from the very start: $(P,D)^t$. This allows to rewrite the choice problem as:
+
+$$
+\begin{align*}
+S_{t}(D^t) \\ c_{t}(D_{t})
+\end{align*}
+$$
+
+To continue, derive the optimality conditions for the model. Some authors argued that holding beliefs about prices is irrational, and the FOC would be something like $u'(c_{t}) P _t = \mathbb{E}_{t} \sum_{i=1}^\infty \delta^i u'(D_{t+i}) D_{t+i}$. However, it is false that agents' optimality conditions contradict price beliefs. The only reason you would think there's a contradiction is if you use the misspecified FOC, where you illogically assume agents ignore prices in their decisions[^1]. If you use the correct FOC, where agents do use price information, then their beliefs and their decisions are perfectly consistent. In fact, the true FOC is:
+
+$$
+u'(c_t) P_{t} = \mathbb{E}_{t}^{\mathcal{P}} \sum_{i=1}^\infty \delta^i  u' ( c_{t+i} ((P,D)^{t+i} )  ) D_{t+i}
+$$
+
+If agents deviate from RE, they see themself as choosing something different, depending on the price, and according to their belief. The current market clearing prices must be consistent with expectations about price dynamics, as the decision is optimal given their belief. Agents do not see that in equilibrium consumption is identical to the dividends; they only project themselves buying and selling depending on the prices at any period. In other terms: The stochastic discount factor does not incorporate realized consumption, but rather expected consumption.
+
+This model is also capable not only of rejecting RE, but also of accounting for [[F01_Media_stock_return_survey.png|Figure 1]] in AMB. In fact, this model can also be put through a formal test by Simulated Method of Moments[^2]. The results of the SMM simulation are presented in the following Table from AMN.
+
+|                                                      | US Data Moment | Estimated Moment | *t*-statistic |
+| ---------------------------------------------------- | -------------- | ---------------- | ------------- |
+| Quarterly mean stock return, $E_{r^s}$               | 2.25           | 1.49             | 2.06          |
+| Quarterly mean bond return, $E_{r^b}$                | 0.15           | 0.49             | -1.78         |
+| Mean PD ratio, $E_{PD}$                              | 123.91         | 119.05           | 0.23          |
+| Standard derivative of stock returns, $\sigma_{r^s}$ | 11.44          | 11.60            | -0.06         |
+
+As the values and *t*-statistics suggest, empirical variance is successfully matched (recall how difficult this matching used to be with previous models) in a statistically robust way. Moreover, surveys seem highly correlated in the data with the estimated moment. This simple specification solves most of the problem that emerged so far. The fit of the model can improve dramatically with very simple additions, and further extensions can be implied.
+
+An easy way to solve is model is by assuming the following optimality condition:
+
+$$
+\begin{align*}
+u'(c_{t})P_{t} &= \beta \mathbb{E}_{t}^{\mathcal{P}} [ u'(c_{t+1}) P_{t+1} + D_{t+1} ]
+\\
+P_{t} &= \beta \mathbb{E}_{t}^{\mathcal{P}} \left[  \frac{u'(c_{t+1})}{u'(c_{t})} P_{t+1}  \right] + \beta \mathbb{E}_{t}^{\mathcal{P}} \left[  \frac{u'(c_{t+1})}{u'(c_{t})}  D_{t+1}  \right]
+\\
+&= \beta \mathbb{E}_{t}^{\mathcal{P}} \left[  \frac{u'(c_{t+1})}{u'(c_{t})} \frac{P_{t+1}}{P_{t}} P_{t}  \right] + \beta \mathbb{E}_{t}^{\mathcal{P}} \left[  \frac{u'(c_{t+1})}{u'(c_{t})}  D_{t+1}  \right]
+\\
+& \approx \beta \mathbb{E}_{t}^{\mathcal{P}} \left[  \frac{u'(D_{t+1})}{u'(D_{t})}  \frac{P_{t+1}}{P_{t}} P_{t}  \right] + \beta \mathbb{E}_{t}^{\mathcal{P}} \left[  \frac{u'(D_{t+1})}{u'(D_{t})}  D_{t+1}  \right]
+\end{align*}
+$$
+
+where the third line is justified assuming that only a limited portion of their wealth is in stocks relative to dividends (that is, $P_{t} S_{t}$ is very small). Then, for the risk adjusted prices $\frac{u'(D_{t})}{u'(D_{t+1})} \frac{P_{t}}{P_{t-1}} = \beta_{t}^P + \varepsilon_{t}^P$, the solution is:
+
+$$
+P_{t} \simeq \beta m_{t} + D_{t} (1 + G)
+$$
+
+that is, the current dividends times their known growth rates. In some ways then, this resembles a bubble: if, for any reasons, $m_t$ is high (read, agents are optimistic), then current prices go up, leading to higher $m_{t+1}$ and ultimately blowing $P_{t+1}$ up again, in a positive feedback. This _is_ a bubble, although not a *rational* bubble. For example, if there were an upper bound for $m_{t}$, then prices would not be able to grow longer and become constant; then, this would bring revisions of $m_{t}$ in the negative territory (verify with Kalman filter formula), implying that a bound would force e a bubble to revert at some point. Of course, this implication from $m_{t}$ to prices and not the opposite is due to self-reference, and the opposite relationship would be implied by a Bayesian-RE learning model. 
+
+#### Extensions
+
+Other papers from this research program include:
+- Adam and Marcet. *Internal Rationality and Asset Prices*, JET
+- Adam, Kuang and Marcet. *House Price Booms and the Current Account*. NBER Macroeconomics Annual.
+- Adam, Beutel, Merkel and Marcet.  *Can a Financial Transaction Tax Prevent Stock Price Booms?*. JME
+- A few others by Klaus Adam and his coauthors
+
+How does this instances in practice? A serious example might be the "Fed Put": Bernanke claimed that the Fed would not intervene during a bubble burst, and his 2006 position was fairly standard among economists and policy makers. Yet, in 2008 Bernanke organized one of the largest stock purchases by the American government that ever occurred in history. So, one may claim he might have not believed what he said in 2006 at any point. Current research about the so-called "Fed Put" demonstrates central banks systematically intervene at stock market busts, basically insuring put options. This is a crucial phenomenon to understand if and why central banks should intervene in the stock market, and provide insurance to investors with the potential to affect income and wealth distributions and distort incentives or elicit moral hazard.
+
+This literature is also connected to the research on collateral constraints and the financial frictions model by [[Advanced Macroeconomics III (Jeenas)#Collateral Amplification Mechanism (Kiyotaki and Moore, 1997)|Kiyotaki and Moore]]. A specification of this learning design, as an extension of the previous model, was introduced by Winkler (2020), who imposes that firms face a borrowing limit equal to $\theta$ or their market value. This links investment to stock prices. Under RE expectations, such a relationship has limited effects. However, under learning, stock price boom creates an increase in investment, fueling the business cycle. This is confirmed in the data, here investment responds positively to stock price shocks, and the model provides a straightforward argument to avoid stock price bubbles through central bank interventions.
+
+### An Application: Learning about Bond Prices
+
+Many studies focus on stock price volatility, but research on bond price volatility is relatively underdeveloped. As previously argued, we may want to learn about stock prices using learning models with internal rationality. On a similar not, how much can be learnt about bond yields using models of internally rational learning?
+
+This model applies the previous ideas to bond yields, using nominal yields in monthly US data for almost 40 years combined with surveys (Reuters' Blue Chip FF), focusing on one-year forecasting horizons.
+
+#### Evidence from the Yield Structure
+
+A main target of this model is the flat term structure of yield volatilities, which is hard to reconcile with RE and (reasonable) serial correlation of expected inflation:
+
+
+|                                    | 1y     | 2y     | 3y     | 5y     | 7y     | 10y    |
+| ---------------------------------- | ------ | ------ | ------ | ------ | ------ | ------ |
+| $\hat{Y}^n$                        | 388.83 | 417.23 | 441.39 | 481.19 | 510.89 | 541.69 |
+| $\hat{\sigma}_{Y^n}$               | 289.15 | 294.34 | 291.41 | 281.62 | 272.50 | 258.74 |
+| $\widehat{\text{corr}}(Y^n)_{-1y}$ | .89    | .90    | .91    | .93    | .93    | .93    |
+
+
+In actual practice, the [[Seminar 3#Expected Interest Rates|expectation hypothesis]] does not hold. Consider the model:
+
+$$
+Y_{t+1}^{n-1} - Y^n_{t} = \alpha^n + \beta^n \frac { Y_{t}^n - Y_{t}^1 } {n - 1} + U_{t}^n
+$$
+
+If the expectations hypothesis were true, then $\beta \approx 1$. This equation is a test of how the current yield curve predicts future yield movements. Assuming $Y^{n-1}_{t+1}$  is the yield of the $n$-year bond at time $t+1$, when it has $n-1$ years left to maturity, the model is testing the core implication of the expectation hypothesis as follows: The term on the right, $\frac { Y_{t}^n - Y_{t}^1 } {n - 1}$, is the normalized yield spread, while the term on the left, $Y^{n-1}_{t+1} - Y^n_{t}$, is the actual change in the long-term bond's yield over the next period. Since the _expected_ change in the long-term yield must be exactly equal to the normalized yield spread, that is, $\mathbb{E}_t[Y^{n-1}_{t+1} - Y^n_t] = \frac { Y_{t}^n - Y_{t}^1 } {n - 1}$, the regression tests if the actual, realized change (the left side) moves one-for-one with the theoretically expected change (the right side). This fails in empirical practice:
+
+
+|                 | 2y    | 3y    | 5y    | 7y    | 10y   |
+| --------------- | ----- | ----- | ----- | ----- | ----- |
+| $\hat{\beta}^n$ | -0.31 | -0.50 | -0.99 | -1.28 | -1.67 |
+| *t*-stat        | -0.43 | -0.60 | -1.21 | -1.56 | -2.16 |
+
+An alternative, "modern" version of this test focuses on the $xr$ forecasts:
+
+$$
+xr_{t+1}^n = \alpha_{n}^{xr} + b_{n}^{xr} \frac{Y_{t}^n - Y_{t}^1}{n-1} + U_{t}^n
+$$
+
+where the expectation hypothesis would predict $b^{xr} \approx 0$, and the LHS denote the marginal profits from long bonds. This test also fails in practice:
+
+
+|                    | 2y   | 3y   | 6y    | 8y    | 11y   |
+| ------------------ | ---- | ---- | ----- | ----- | ----- |
+| $\hat{b}_{n}^{xr}$ | 0.61 | 2.54 | 10.69 | 15.87 | 24.17 |
+| *t*-stat           | 0.52 | 1.14 | 2.40  | 2.87  | 3.54  |
+| $R^2$              | 0.32 |      |       |       |       |
+
+(Note that surveys have 1t, 2y, 5y, 7y, and 10y horizons, so can be used to predict year-ahead values for the *following* year.) Moreover, the volatility of excess returns, measured as $xr_{t+1}^n = \log \left( \frac{Q_{t+1}^{n-1}}{Q_{t}^n} \right) - \log \left( \frac{1}{Q_{t}^1} \right)$, seems to increase in the horizon:
+
+
+| maturity                | 2y     | 3y     | 5y     | 7y     | 10y    |
+| ----------------------- | ------ | ------ | ------ | ------ | ------ |
+| $\hat{\sigma}_{xr^{n}}$ | 136.60 | 256.20 | 455.74 | 636.45 | 880.10 |
+
+Why does excessive volatility of long-term yields suggest a failure of RE? Note that today's price of a bond can we rewritten as:
+
+$$
+\begin{align*}
+Q_{t}^n &= Q_{t}^1 \mathbb{E}_{t}^{\mathbb{Q}} [ Q_{t+1}^{n-1} ]
+\\
+&= \mathbb{E}_{t}^{\mathbb{Q}} \left(  \prod_{i=0}^{n-1} Q_{t+i}^1  \right)
+\end{align*}
+$$
+
+where $\mathbb{Q}$ refers to the risk-neutral distribution. Taking a log-linear approximation:
+
+$$
+Y_{t}^n \approx \mathbb{E}_{t}^{\mathbb{Q}} \left(  \frac{\sum_{i=0}^{n-1}Y_{t+i}^1}{n} \right)
+$$
+
+Once again, two averages are being computed: an average over the horizons $n$, and an average in probabilistic terms (the expectations). By this, we would reasonably expect that $\sigma_{Y_{t}^n} < \sigma_{Y_{t}^1}$: the opposite of what happens in the data.
+
+Moreover, excess returns can also be expressed as:
+
+$$
+\begin{align*}
+xr_{t+1}^n &= n Y_{t}^n - (n-1) Y_{t+1}^{n-1} - Y_{t}^1
+\\
+&\approx - \Delta \mathbb{E}_{t+1}^{\mathbb{Q}} \left[  \sum_{i=1}^{n-1} Y_{t+i}^1  \right]
+\end{align*}
+$$
+
+where $\Delta \mathbb{E}_{t+1}^\mathbb{Q} [X] \equiv \mathbb{E}_{t+1}^\mathbb{Q}[X] - \mathbb{E}_{t}^\mathbb{Q} [X]$. This highlights that $\sigma_{xr_{t}^n}^{2}$ can be interpreted as a change in expectations, and should be small under RE.
+
+RE can be further tested through survey data. In AMB, the following test is proposed. Let $\mathcal{E}$ denote survey expectations and take an equation similar to the test for the expectations hypothesis:
+
+$$
+\mathcal{E}_{t} [ xr_{t+1}^n ] = \alpha_{n}^{\mathcal{E}} + b_{n}^{\mathcal{E}} \frac{Y_{t}^n - Y_{t}^1}{n-1} + U_{t}^{n, \mathcal{E}}
+$$
+
+Under rational expectations, it should hold that $b_{n}^{xr} = b_{n}^{\mathcal{E}}$, for the values of the excess returns found above. The regression contradicts this prediction:
+
+
+|                                               | 2y   | 3y   | 6y    | 8y    | 11y   |
+| --------------------------------------------- | ---- | ---- | ----- | ----- | ----- |
+| $\hat{b}_{n}^{xr}$                            | 0.61 | 2.54 | 10.69 | 15.87 | 24.17 |
+| $\hat{b}_{n}^{\mathcal{E}}$                   | 0.16 | 0.80 | 2.50  | 1.27  | 3.69  |
+| *t*-stat for $b_{n}^{xr} = b_{n}^\mathcal{E}$ | 0.37 | 0.76 | 1.75  | 2.47  | 2.70  |
+
+In outline, it emerges that $\hat{b}_{n}^{xr} > \hat{b}_{n}^\mathcal{E} > 0$, and both are larger for longer horizons. That is, survey underestimate the role of the slope in predicting the excess returns. RE are rejected by the $t$-test – the longer the maturity, the stronger the rejection. 
+
+What if the simple slope isn't the right variable? What if investors use a more complex measure of the slope? Does the RE hypothesis still fail? To answer this, test two new "alternative regressors" that also capture the slope of the yield curve:
+- The Principal Component, $PC_t^2$. This is a purely statistical measure used to statistically extract the slope information from the entire set of bond yields.
+- The Model's Slope Factor $\hat{S}_{t-3}$. This is an economic measure derived by the own model-based estimate of an "underlying slope" that investors see.    
+
+The core idea is to see if the main conclusion (that RE fails) holds true even when using these more sophisticated slope measures. This test also rejects RE:
+
+
+| regressor                                                                 |                           | 2y   | 3y   | 6y   | 8y    | 11y   |
+| ------------------------------------------------------------------------- | ------------------------- | ---- | ---- | ---- | ----- | ----- |
+| $PC_{t}^{2}$                                                              | $\hat{b}_{n}^{xr}$        | 0.06 | 0.13 | 0.43 | 0.61  | 0.89  |
+|                                                                           | $\hat{b}_{n}^\mathcal{E}$ | 0.02 | 0.05 | 0.14 | 0.13  | 0.19  |
+|                                                                           | *t*-stat                  | 0.85 | 1.22 | 1.98 | 2.57  | 2.87  |
+| $\hat{\boldsymbol{\mathbf{s}}}_{t-3}$                                     | $\hat{b}_{n}^{xr}$        | 1.04 | 2.16 | 9.14 | 13.90 | 22.67 |
+|                                                                           | $\hat{b}_{n}^\mathcal{E}$ | 0.41 | 0.57 | 0.28 | -2.28 | -2.86 |
+|                                                                           | *t*-stat                  | 0.77 | 0.95 | 2.12 | 2.79  | 3.08  |
+| $\hat{\boldsymbol{\mathbf{s}}}_{t} , \hat{\boldsymbol{\mathbf{s}}}_{t-3}$ | *p*-value                 | 0.70 | 0.59 | 0.09 | 0.01  | 0.00  |
+
+
+
+[^1]: I do not see how this mistaken FOC could be derived for this model. It seems like a *non sequitur*, or better, a straw-man argument developed on purpose by opposing analysts.
+
+[^2]: The SMM estimates a times series generated by parameters, that is $y_{t}(\boldsymbol{\mathbf{\theta}})$. The model tests the following identity:
+	
+	$$
+	\begin{align*}
+	\mathbb{E}[ f(y_{t}(\boldsymbol{\mathbf{\theta}})) ] &\overset{?}{\simeq} M_{T} \equiv \frac{1}{T} \sum_{t=0}^T f(y_{t})
+	\\
+	\mathbb{E} [ f(y_{t}(\boldsymbol{\mathbf{\theta}})) - f(y_{t}) ] &\overset{?}{\simeq} 0
+	\end{align*}
+	$$
+	
+	This is a special case of GMM and can be solved through the same estimator $\hat{\boldsymbol{\mathbf{\theta}}}$.
