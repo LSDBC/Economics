@@ -22,7 +22,7 @@ Although these are good methodological justification, and any deviation from RE 
 
 An excellent example for modeling expectation is the stock market. Stock prices are quite unpredictable, and especially in the long run where booms and busts dominate. The stock market may exhibit high prices either due to good fundamentals, and the corresponding well-grounded expectations of profitability; or mistaken expectations, which may lead to a bubble burst. The conflict between expectations and outcomes is well exemplified by the famed excess return regressions. Fama's efficient market's hypothesis should prevent to predict stock prices (read, find a large value for a coefficient in the regression).
 
-> [! quote] The **Efficient Market Hypothesis**
+> [!quote] The **Efficient Market Hypothesis**
 > The primary role of the capital market is allocation of ownership of the economy's capital stock. In general terms, the ideal is a market in which prices provide accurate signals for resource allocation: that is, a market in which firms can make production-investment decisions, and investors can choose among securities that represent ownership of firms' activities under the assumption that security prices at any time 'fully reflect' all available information. A market in which prices always 'fully reflect' available information is called 'efficient'. (Fama, 1970, p. 383)
 
 Instead, excess return regressions show this is not quite the case. Consider Table 1 in Adam, Marcet, Nicolini:
@@ -535,7 +535,7 @@ $$
 
 is stable (converges). Finding stability of this equation is relatively easy. Since $T' = \beta < 1$, this is a discrete nonstochastic system, and least squares learning works just as small steps towards the true expectation. If, instead, $T'>1$, then these small steps would lead us away from RE. This suggests that not only the rational expectations algorithm, but also the perceived expectations algorithm should contribute to inform expectations robust policy. Moreover, as RE models may exhibit multiple equilibria, these can be used as selection criteria to choose stable rather than unstable RE equilibria (see Woodford).
 
-> [! proposition] E-stability
+> [!proposition] E-stability
 > $$
 > z_{t} = T(m_{t}) z_{t-1} + V(m_{t-1}) \epsilon_{t}
 > $$
