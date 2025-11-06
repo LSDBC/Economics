@@ -5,7 +5,7 @@
 // JUSTIFY AND BREAK SYLLABLES
 
 article {
-  text-align: justify;
+  text-align: justify !important;
   hyphens: auto; /* Permette al browser di dividere le parole */
 }
 
