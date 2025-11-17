@@ -767,7 +767,7 @@ Bernanke and Gertler (1989) is the first paper to formally show how financial ma
 
 Time is discrete and infinite, with Diamond-fashioned OLG of agents of mass one and two-period lifetimes, and savers and lenders in the same way as in the previous model (preferences are also identical). Returns on storage are now denoted by $r>1$, and units of labor sum to (but can be individually different from) 1 at the aggregate level. Entrepreneurs can store too in this model (in the previous model, lenders faced no financial constraints so entrepreneur could "implicitly" store by lending to the lenders in the debt market).
 Suppose entrepreneurs face heterogeneous investment costs as a type $\omega \sim \text{U}[0,1]$. Investment is such that $x(\omega)$ units of consumption goods invested at $t$ lead to $\kappa$ units of capital at $t+1$, with $x(\omega)$ increasing in $\omega$ (a cost function increasing the type). Projects are nondivisible: the only investment yielding any outcomes is exactly the entrepreneur-specific unitary investment with cost $x(\omega)$. Moreover, $\kappa \in \{ \kappa_{L}, \, \kappa_{H} \}$ regulated by a transition probability matrix $\pi$.
-Production follows a #Cobb-Douglas technology:
+Production follows a Cobb-Douglas technology:
 
 $$
 F_{t} (k_{it}, l_{it}, \tilde{\theta}_{t}) = \tilde{\theta}_{t} \cdot k_{it}^\alpha \cdot l_{it}^{1-\alpha}
@@ -873,7 +873,7 @@ For greater $S_{t}^E$, more entrepreneur switch from suffering from monitoring c
 
 ## Collateral Amplification Mechanism (Kiyotaki and Moore, 1997)
 
-Asset prices comove significantly with the business cycle. Are these fluctuations a byproduct of the business cycle, or is it the case that the fall in asset prices in bad times actually deepens recessions? This may happen by inducing a decrease in the net worth of agents holding these assets. Assets act as #collateral supporting repayment, but are also inputs of production. These amplification narratives may also contribute evidence to the idea why small shocks can induce large effects, and is key in the literature on #macroprudential regulation (Lorenzoni, 2008).
+Asset prices comove significantly with the business cycle. Are these fluctuations a byproduct of the business cycle, or is it the case that the fall in asset prices in bad times actually deepens recessions? This may happen by inducing a decrease in the net worth of agents holding these assets. Assets act as collateral supporting repayment, but are also inputs of production. These amplification narratives may also contribute evidence to the idea why small shocks can induce large effects, and is key in the literature on macroprudential regulation (Lorenzoni, 2008).
 
 Assume one group of agents cannot borrow as much as it likes, because it would otherwise exhibit opportunistic behavior. The borrower faces a collateral/credit constraint: $R_{t+1} b_{t} \le q_{t+1} k_{t}$, where $q_{t+1}$ is the price of the asset (land? capital? opt for land to neglect depreciation) at $t+1$, whereas the stock used as collateral is $k_{t}$. Note that:
 - In the previous specification, borrowing is against the entire capital stock. A fraction could be specified by including $\xi \in (0,1]$.

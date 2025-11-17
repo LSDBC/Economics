@@ -914,7 +914,7 @@ A main target of this model is the flat term structure of yield volatilities, wh
 | $\widehat{\text{corr}}(Y^n)_{-1y}$ | .89    | .90    | .91    | .93    | .93    | .93    |
 
 
-In actual practice, the [[Seminar 3#Expected Interest Rates|expectation hypothesis]] does not hold. Consider the model:
+In actual practice, the [[Seminar 3-4#Expected Interest Rates|expectation hypothesis]] does not hold. Consider the model:
 
 $$
 Y_{t+1}^{n-1} - Y^n_{t} = \alpha^n + \beta^n \frac { Y_{t}^n - Y_{t}^1 } {n - 1} + U_{t}^n
@@ -1014,6 +1014,352 @@ The core idea is to see if the main conclusion (that RE fails) holds true even w
 |                                                                           | *t*-stat                  | 0.77 | 0.95 | 2.12 | 2.79  | 3.08  |
 | $\hat{\boldsymbol{\mathbf{s}}}_{t} , \hat{\boldsymbol{\mathbf{s}}}_{t-3}$ | *p*-value                 | 0.70 | 0.59 | 0.09 | 0.01  | 0.00  |
 
+### Conclusions
+
+What often policymakers to is to evaluate the stability of a policy based on the underlying *objective* probabilities. In contrast, Molnard and Santoro (2014) evaluate optimal monetary policy in a [[Advanced Macroeconomics III (Galí)#The Basic New Keynesian Model|New Keynesian model]] when agents are learning. In particular, agents update their view based on output, with the PLM $y_{t} = \begin{bmatrix} \pi_{t} \\ q_{t} \end{bmatrix} = \begin{bmatrix} \alpha_{t}^\pi \\ \alpha_{t}^q \end{bmatrix} + \epsilon$ and updating the gains $\begin{bmatrix} \alpha_{t}^\pi \\ \alpha_{t}^q \end{bmatrix} = \begin{bmatrix} \alpha_{t-1}^\pi \\ \alpha_{t-1}^q \end{bmatrix} + \frac{1}{\alpha} \begin{bmatrix} \pi_{t} - \alpha_{t-1}^\pi \\ q_{t} - \alpha_{t-1}^q \end{bmatrix}$. Expectations are a "stock" that policymakers build and would like to avoid shocking or surprising (a [[Advanced Macroeconomics III (Galí)#Optimal Monetary Policy under Commitment|forward guidance]] term in the update could be included, such as $\lambda \begin{bmatrix} \pi_{t}^* \\ q_{t}^* \end{bmatrix}$ for some promised output of inflation). Other papers on learning in NK models is provided by Eusepi and Preston (for instance, the review [*The Science of Monetary Policy: An Imperfect Knowledge Perspective*](https://www.econstor.eu/bitstream/10419/146681/1/862690846.pdf)).
+
+## Optimal Policy under Rational Expectations
+
+### Optimal Fiscal Policy (Lucas and Stokey, 1982)
+
+Is it possible that a dynamic competitive equilibrium can be improved by some optimal fiscal policy? The classical reference for this class is the model by [Lucas and Stokey (1982, JME)](https://www.sciencedirect.com/science/article/pii/0304393283900491). In particular, they take the simplest dynamic economy possible: a labor economy where government only sets taxes, and check what's the best path for taxes.
+
+#### Complete markets
+
+Assume homogeneous agents with utility functions $\mathbb{E}_{0} \sum_{t=0}^\infty \delta^t ( u ( C_{t}) + v(L_{t}) )$ (where $v(L_t)$ is the disutility of labor, so $v' > 0$). A firm produces output with linear technology $Y_{t} = L_{t}$, and the [[Advanced Microeconomics III#^8ffdc9]] takes prices as given and complete markets. [cite_start]Suppose a government must satisfy an exogenous stochastic spending sequence $\{ g_{t} \}_{t=0}^\infty$ with some support $G$ at every time. Consider proportional taxes $\tau_{t}$ on labor income, with tax revenue $\tau_{t} W_{t} L_{t}$. Moreover, the Ramsey planner has access to full contingent claims. Of course, these are contingent on the only stochastic quantity, $g_{t}$. The period 0 implementability constraint, which is derived from the agent's optimization (their FOCs and budget constraint), is:
+
+$$
+\mathbb{E}_{0} \sum_{t=0}^\infty \delta^t \frac{u'(C_{t})}{u'(C_{0})} [ C_{t} - (1 - \tau_{t}) W_{t} L_{t} ] = B_{-1}
+$$
+
+meaning that the present value of the agent's net consumption must equal their initial bond holdings. In this setup, the optimal policy problem is to find the stream of taxes $\{ \tau_{t}, [ B_{t}(g^t) ]_{g} \}$ such that:
+
+$$
+\max_{ \{ \tau_{t}, \{ B_{t}(g^t) \} _{g \in G^t} \}_{t=0}^\infty } \mathbb{E}_{0} \sum_{t=0}^\infty \delta^t ( u(C_{t}) + v(L_{t}) )
+$$
+
+A **Ramsey policy** is distinguished from a time-consistent policy or partial information policy, and it is nowadays used to denote a **full-commitment full-information policy**.
+
+> [!definition] Ramsey Policy
+> A full-commitment, full-information policy.
+
+Note that $\tau_{t}$ is both time-dependent and $g^t$ dependent[^3]. Full-commitment *ex ante* implies the government cannot re-optimize later; it must follow the pre-committed state-contingent plan, even if a peculiar shock sequence occurs.
+The problem must be solved subject to the competitive equilibrium, that is the Ramsey planner understands that their chosen tax affects the economy through the competitive equilibrium.
+
+To solve the model, we start from market clearing. By market clearing and the linear technology, $C_{t} + g_{t} = L_{t}$. The bond market also needs to clear, implying $B_{t}^g(g^t) + B_{t}^c(g^t) = 0$. By firm optimization and the linear technology, it also holds that $W_{t}=1$. Thus, when the consumer maximizes their utility subject to the budget constraint, their first-order condition (which involves a non-zero Lagrange multiplier $\alpha$ on the budget constraint) gives the usual condition $- \frac{v'(L_{t})}{u'(C_{t})} = W_{t}(1 - \tau_{t})$, that is the marginal rate of substitution must be equal to the disposable wage. Since wage is unity, it must also be that $- \frac{v'(L_{t})}{u'(C_{t})} = 1 - \tau_{t}$. Also, note that optimal taxes can be found without solving for the bonds, which also allows to get rid of another equilibrium condition. In equilibrium, $- \frac{v'(C_{t} + g_{t})}{u'(C_{t})} = 1 - \tau_{t}$. Note that $- \frac{v'(L_{t})}{u'(C_{t})} = 1 - \tau_{t}$. Substituting back in the agent's budget constraint, we summarize the entire set of constraints in a unique equation:
+
+$$
+\mathbb{E}_{0} \sum_{t=0}^\infty \delta^t \frac{u'(C_{t})}{u'(C_{0})} \left[  C_{t} + \frac{v'(L_{t})}{u'(C_{t})} L_{t}  \right] = B_{-1}
+$$
+
+by the previous BC satisfied and Walras' law, also the government budget constraint is satisfied. The entire problem can be recasted as:
+
+$$
+\max_{\{ C_{t} \}_{t=0}^\infty } \mathbb{E}_{0} \sum_{t=0}^\infty \delta^t [ u(C_{t}) + v(C_t + g_t )] \quad\text{ s.t.}\quad \mathbb{E}_{0} \sum_{t=0}^\infty \delta^t \frac{u'(C_{t})}{u'(C_{0})} \left[  C_{t} + \frac{v'(C_t+g_t)}{u'(C_{t})} (C_t+g_t)  \right] = B_{-1}
+$$
+
+Note the constraint has been made explicit by substituting $L_t = C_t + g_t$.
+By setting up a Lagrangian for the **implementability constraint**:
+
+$$
+\begin{align*}
+\mathcal{L} &= \mathbb{E}_{0} \sum_{t=0}^\infty \delta^t [ u(C_{t}) + v(C_t + g_t )] + \alpha \left[ \sum_{t=0}^\infty \delta^t \frac{u'(C_{t})}{u'(C_{0})} \left( C_{t} + \frac{v'(C_t+g_t)}{u'(C_{t})} (C_t + g_t) \right) - B_{-1} \right]
+\end{align*}
+$$
+
+Note that $\alpha$ is a single, time-invariant Lagrange multiplier for the single $t=0$ present-value constraint. Therefore, the first-order condition (FOC) with respect to $C_t$ (for any $t$ and state $g^t$) follows from this Lagrangian. This FOC is conceptually:
+
+$$
+\frac{ \partial \mathcal{L} }{ \partial C_{t} } : \underbrace{\delta^t \left[ u'(C_{t}) + v'(L_{t}) \right]}_{\text{Marginal Utility of } C_t} + \underbrace{\alpha \cdot \frac{ \partial }{ \partial C_{t} } \left[ \delta^t \frac{u'(C_t)}{u'(C_0)} \left( C_t + \frac{v'(L_t)}{u'(C_t)} L_t \right) \right]}_{\text{Marginal Impact on IC}} = 0
+$$
+
+where $L_t = C_t + g_t$. We use $\Delta$ (or $\lambda_0$ in the paper) to denote the multiplier $\alpha$.
+
+If we wanted to solve for bonds, we should simply remember that period 0 budget constraints must also hold for every period in the future; therefore, the government bonds held by the agents $B_{t-1}^g(g^{t}) = \mathbb{E}_{t} \left( \sum_{j=0}^\infty \delta^j \frac{u'(C_{t+j})}{u'(C_{t})} ( C_{t+j} - \tau_{t+j} L_{t+j} ) \right)$. The multiplier $\alpha$ can be found such that, choosing the according consumption, the previous constraint for period 0 holds. This is usually solved by numerically finding the $\alpha$ that satisfies the constraint.
+
+This equation is the optimal policy under the Ramsey assumption: the policymaker is benevolent, there is full commitment. The FOC for $t=0$ is structurally different from the FOC for $t>0$. This is because $C_0$ also appears in the pricing kernel $u'(C_t)/u'(C_0)$ for all $t>0$. By changing $C_0$, the $t=0$ government can manipulate the *real value* of all future payments, including the initial debt $B_{-1}$. This creates an incentive (similar to a "capital levy") to distort the $t=0$ tax rate. This is why $\tau_0$ is generally different from future tax rates.
+Note that, with risk neutrality, the second derivative would be zero and this condition would always be satisfied. In the terms from the following paragraphs, it implies the interest rate is neutral, and the government can play no tricks to affect the agents' consumption.
+
+Government cares about taxation due to the MRS. In the first optimum, given linear technology, the technological marginal rate of transformation would be 1: the first best would not be implementable, as it would violate the competitive equilibrium through the budget constraint. In fact, 0 tax in equilibrium implies that $-g_{t}L_{t}$ disappears from the equation, probably violating the constraint. The first-best (0 tax) violates if $B_{-1}$ is not equal to the present value of government spending. If the government starts with net assets that are exactly equal to the PV of its future spending, the first-best would be achievable.
+
+Also note that[^4] $\frac{1}{R_{t,0}} \simeq \frac{u'(C_{t})}{u'(C_{0})}\delta^t$ which implies that the government can engineer levels of consumption to favor itself, for example decrease t consumption relative to 0 consumption so that $R_t$ goes down as well as $tau_t$. Typically, taxes at period 0 are a bit lower and then they jump to a constant rate. This difference between $\tau_0$ and $\tau_{t>0}$ is what would introduce time inconsistency, a point brought up by Kydland and Prescott (1977). The central finding of Lucas and Stokey for the barter economy is the _opposite_: the optimal Ramsey policy _can be made time-consistent_. This is achieved by letting the government issue a rich set of state-contingent bonds that perfectly structure the next government's incentives (i.e., its initial debt) to align with the original plan.
+
+The generic outcome of this model is indeed summarized in the $\tau_{t} = F(g_{t})$. In fact, the variance $\mathbb{V}(\tau_{t})$ is low relative to the variance of spending: after the first jump, optimal taxes are fairly constant, although they depend on $g_t$. This is what people call **tax smoothing**, a very prevalent phenomenon in the data. This implies that $\mathbb{V}(g_{t} - \tau_{t}L_{t})$ (the deficit/surplus) is usually very high. The opposite would happen with balanced budget, which would however be suboptimal. This is the important result of this model.
+
+The idea that wealth equals discounted future deficits holds not only at the beginning, but throughout the model. What is the wealth of a consumer at period $t$? At each period, a market for one-period bonds $b_{t}(g)$ exists, where $g$ is all the  realizations that can happen for $g_{t+1}$. This pays one unit if $g_{t+1}=g$ and 0 otherwise. Then, wealth is whatever the consumer holds of $b_{t-1}^g (g_{t})$, which is the government debt issued (positive values denote government deficits). In equilibrium, $b_{t}^g(g) = b_{t}^c(g)$ for all $t,g$. At the same time, we saw that $b_{t-1}^g = \mathbb{E}_{t} \left[  \sum_{j=0}^\infty \delta^j \frac{u'(C_{t+j})}{u'(C_{t})} ( C_{t+j} - (1 - \tau_{t+j}) L_{t+j} )  \right]$. In Exercise 3, we are asked to find $C_{t} = F^C(g_{t})$ and $\tau_{t} = F^\tau(g_{t})$, using $g_{t}$ as a sufficient statistic. This also implies, however, that $\mathbb{E}_{t} \left[  \sum_{j=0}^\infty \delta^j \frac{u'(C_{t+j})}{u'(C_{t})} ( C_{t+j} - (1 - \tau_{t+j} ) L_{t+j} )  \right] = F^b(g_{t})$ itself, and also the same function at all periods.
+
+#### Incomplete markets
+
+Suppose markets are incomplete and the government only issues risk-free one period bonds. The budget constraint for the government and households with incomplete markets becomes:
+
+$$
+\begin{align*}
+[\text{G}] &:&
+\tau_{t} L_{t} + b_{t}^g p_{t}^b &= b^g_{t-1} + g_{t}
+\\
+[\text{H}] &:&
+C_{t} + b_{t}^g p_{t}^b &= b_{t-1}^g + (1-\tau_{t}) L_{t}
+\end{align*}
+$$
+
+where market clearing requires zero net supply of bonds, $b_{t}^g + b_{t}^c = 0$.
+
+What is the optimal policy with incomplete markets? First, find the CE relations. The sequence of equations becomes:
+
+$$
+\begin{align*}
+- \frac{v'(L_{t})}{u'(C_{t})} &= 1 - \tau_{t}
+\\
+C_{t} + g_{t} &= L_{t}
+\\
+p_{t}^b &= \delta \mathbb{E}_{t} \left[ \frac{u'(C_{t+1})}{u'(C_{t})} \right]
+\end{align*}
+$$
+
+So, the Ramsey problem becomes:
+
+$$
+\begin{align*}
+\max_{} \mathbb{E}_{0} \left[  \sum_{t=0}^\infty \delta^t ( u'(C_{t}) + v(L_{t}) ) \right]
+\end{align*}
+$$
+
+subject to CE.
+
+The budget constraints will now no longer be squeezable into a single time-0 implementability constraint. This is because the asset price $p_t^b$ and thus the value of debt depends on the *state* at time $t$, but the debt $b_t^g$ issued at $t$ must be risk-free, i.e., its value is not contingent on the $t+1$ state.
+
+Moreover, consider the government's budget solved for $b_{t}^g$:
+
+$$
+b_{t}^g = b_{t-1}^g \frac{1}{p_{t}^b} + \frac{g_{t} - \tau_{t}L_{t}}{p_{t}^b}
+$$
+
+If the primary deficit ($g_t - \tau_t L_t$) did not respond to the level of inherited debt $b_{t-1}^g$, the debt dynamics could be explosive and violate the Ponzi condition. For example, for high debt or high $g_t$, taxes must be increased to ==generate a surplus==. In this sense, ==the dependence of the surplus on the debt== is crucial. This implies that, with ==in==complete markets, the statements $C_{t} = F^C(g_{t})$ and $\tau_{t} = F^\tau(g_{t})$ are no longer true. ==The allocations $C_t$ and $\tau_t$ must also depend on the level of outstanding debt, $b_{t-1}^g$.==
+
+In outline, with incomplete markets it is never possible to get rid of bonds as a tracking measure for each period. The constraint of the Ramsey problem always includes $b_{t}^g$. In ==the== paper by Aiyagari, Marcet, Sargent and Seppala (2002), ==they emphasize== that ==a standard Bellman equation cannot be applied because the policy at $t$ is not a time-invariant function of the "natural" state variables ($g_t, b_{t-1}^g$). This is due to the complex, forward-looking nature of the implementability constraints.
+
+However, Aiyagari et al. (2002) show that the problem *can* be made recursive by adding the cumulative Lagrange multiplier $\psi_{t-1}$ as a state variable. The resulting optimal policy is *still* a Ramsey plan (assuming full commitment) and is time-inconsistent if that commitment is not assumed. The authors explicitly assume commitment to the Ramsey plan to focus on the effect of incomplete markets.
+#### Risk Sharing with Participation Constraints
+
+Let's maintain a two-agent setup and rational expectations. The two agents with same utility functions but different endowments. Then, the CE with complete markets would be the Pareto-optimal allocation given by the [[Welfare Economics and Existence of An Equilibrium for a Competitive Economy|Negishi problem]]:
+
+$$
+\max_{} \mathbb{E}_{0} \left[  \sum_{t=0}^\infty \delta^t ( \alpha u(c_{t}^1) + (1-\alpha) u'(c_{t}^2 ) ) \right] \quad\text{s.t.}\quad c_{t}^1 + c_{t}^2 = \underbrace{w_{t}^1 + w_{t}^2}_{{W_{t}}}
+$$
+
+with FOCs:
+
+$$
+\begin{align*}
+\frac{u'(c_{t}^1)}{u'(c_{t}^2)} &= \frac{{1-\alpha}}{\alpha}
+\\
+\frac{c_{t}^1}{c_{t}^2} &= \left(  \frac{{1-\alpha}}{\alpha} \right) ^{1/\gamma}
+\end{align*}
+$$
+
+Intuitively, the two agents can share idiosyncratic risk: in any situation, the Pareto-optimal allocation is that $\frac{c^1_{t}}{W_{t} - c_{t}} = \left( \frac{{1-\alpha}}{\alpha} \right)^{1/\gamma}$. Whenever an agent consumes more than the other, that must be because initially they had more wealth (captured by the Negishi weight $\alpha$), and the shocks cannot alter this situation as agents are fully risk-sharing.
+
+Suppose that $\begin{bmatrix} w_{t}^1 \\ w_{t}^2 \end{bmatrix}$ is an AR(1). Any luck for an agent will carry on to future periods. In such situation, nothing changes: the permanent fluctuations are also perfectly shared, regardless of the persistence of the shock.
+
+
+The previous problem, although not recursive, can be made recursive through a trick analogous to the one outlined by Aiyagari et al. (2002) (who apply it to the Ramsey problem). Instead of an outside option, let's denote a function $\mathcal{F}(w_{t}^1, w_{t}^2)$. Now, in rewriting the Lagrangian, we include a different multiplier for each period and agent on their participation constraint.
+
+$$
+\begin{align*}
+\mathcal{L} &= \mathbb{E}_{0} \left[  \sum_{t=0}^\infty \delta^t ( \alpha u'(c_{t}^1) + (1-\alpha) u(c^2_{t} ) ) + \sum_{i \in \{ 1,2 \}} \mu_{t}^i \mathbb{E}_{t} \left( \sum_{j=0}^\infty \delta^j u(c_{t+j}^i) - \mathcal{F}(w_{t}^1, w_{t}^2) \right)  \right] 
+\\
+&= \mathbb{E}_{0} \left[  \sum_{t=0}^\infty \delta^t ( \alpha u'(c_{t}^1) + (1-\alpha) u(c^2_{t} ) ) + \sum_{i \in \{ 1,2 \}} \mathbb{E}_{t} \mu_{t}^i \left( \sum_{j=0}^\infty \delta^j u(c_{t+j}^i) - \mathcal{F}(w_{t}^1, w_{t}^2) \right)  \right] 
+\\
+&= \mathbb{E}_{0} \left[  \sum_{t=0}^\infty \delta^t ( \alpha u'(c_{t}^1) + (1-\alpha) u(c^2_{t} ) ) + \sum_{i \in \{ 1,2 \}} \mathbb{E}_{0} \mu_{t}^i \left( \sum_{j=0}^\infty \delta^j u(c_{t+j}^i) - \mathcal{F}(w_{t}^1, w_{t}^2) \right)  \right]
+\\
+&= \mathbb{E}_{0} \left[  \sum_{t=0}^\infty \delta^t ( u(c_{t}^1) [\alpha + \underbrace{\mu_{t}^1 + \mu_{t-1}^1 + \dots + \mu_{0}^1}_{\equiv \lambda_{t}^1} ] ) + u(c_{t}^2) [ 1 - \alpha + \mu_{t}^2 + \dots + \mu_{0}^2] - \sum_{i \in \{ 1,2 \}} \mu^i_{t} \mathcal{F}^i (w_{t}^1, w_{t}^2) \right]
+\end{align*}
+$$
+
+Taking the FOC:
+
+$$
+\begin{align*}
+\frac{ \partial \mathcal{L} }{ \partial c_{t}^1 } &= \delta^t u'(c_{t}^1) (\alpha + \lambda_{t}^1) - u'(c_{t}^2) ( 1 - \alpha + \lambda_{t}^2)
+\\
+\frac{u'(c_{t}^1)}{u'(c_{t}^2)} &= \frac{1 - \alpha + \lambda_{t}^2}{\alpha + \lambda_{t}^1}
+\end{align*}
+$$
+
+This includes complete markets as a special case: when the outside option is infinite-valued, it's never binding (that is, autarky is very bad): constraints are slack, $\mu_{t}^i=0$, and thus their sum $\lambda$ is 0, taking us back to the previous solution. Thus, it is clear by the definition of the lambdas that $c_{t}^1 = F \left( w_{t}^1, w_{t}^2, \frac{\lambda_{t-1}^1}{\lambda_{t-1}^2} \right)$.
+
+This solution can be extended to the Lucas and Stokey model.
+
+Aiyagari et al. (2002) apply a similar logic. They formulate a recursive Lagrangian where the state variables are the exogenous shock $g_t$, the endogenous debt level $b_{t-1}^g$, and the cumulative multiplier $\psi_{t-1}$. This $\psi_t$ is the co-state variable that evolves based on the multipliers for the new implementability constraints that arise from incomplete markets.
+
+Their Lagrangian (Eq. 11 in the paper) is:
+
+$$
+\begin{align*}
+\mathcal{L} &= \mathbb{E}_{0} \left[  \sum_{t=0}^\infty \delta^t [ u(C_{t} + v(L_{t}) ] + \mu_{t} [ u'(c_{t}) c_{t} + b_{t}^g \delta u'(c_{t+1}) - u'(c_{t}) b_{t-1}^g - v'(L_{t})L_{t} ]  \right]
+\\
+&= \mathbb{E}_{0} \left[  \sum_{t=0}^\infty \delta^t [ u(C_{t} + v(L_{t}) ] + \mu_{t} [ u'(c_{t}) c_{t} + b_{t}^g \delta u'(c_{t+1}) - u'(c_{t}) b_{t-1}^g - v'(L_{t})L_{t} ] + \mu_{t-1} b_{t-1}^g u'(c_{t})  \right]
+\end{align*}
+$$
+
+conditional on assuming $\mu_{-1}=0$. Thus, we can conclude that $\begin{bmatrix} c_{t} \\ b_{t}^g \end{bmatrix} = F ( g_{t}, b_{t-1}^g, \mu_{t-1} )$. Let us break down this result for consumption levels and bonds issuance.
+
+The Lagrangian is fully recursive and free of forward looking values, and the optimal consumption levels are an invariant function of past variables, as:
+
+$$
+\begin{bmatrix} \\
+c_{t}^{1,*} \\ c_{t}^{2,*} \\ \lambda_{t}^{1,*} \\ \lambda_{t}^{2,*} \\
+\end{bmatrix}
+= F(w_{t}^1, w_{t}^2, \mu_{t-1}^{1,*}, \mu_{t-1}^{2,*})
+$$
+
+with the inclusion of the optimal costates and a positivity constraint on the Lagrange multiplier. These models, where optimal choices interact with an outside option through the multipliers, are sometimes referred to as **models of defaults**. However, at least in this case, the constraint is enforced in equilibrium, and default is an off-equilibrium path (the optimal contract is for people not to default).
+Moreover, note that Lagrangians are maximized with respect to the state variables, but minimized with respect to the multipliers, which are simply saddle points. Finding the fixed point on a grid where maximization and minimization are simultaneously required means that the value function maximization is not as straightforward as before. Although few assumptions are sufficient to ensure existence of the saddle point, it is theoretically difficult to prove that the $\inf \sup$ of the Bellman equation is also the solution to the maximization problem. Therefore, analysts normally don't solve value functions for these models, but find the specific FOCs for this recursive moment.
+
+The FOCs are:
+
+$$
+\begin{align*}
+\frac{u'(c_{t}^1)}{u'(c_{t}^2)} &= \frac{1 - \alpha + \mu_{t-1}^2 + \lambda_{t}^2}{\alpha + \mu_{t-1}^1 + \lambda_{t}^1 }
+\\
+c_{t}^1 + c_{t}^2 &= w_{t}^1 + w_{t}^2
+\\
+u(c_{t}^i) + \mathbb{E}_{t} \left[  \sum_{j=1}^\infty \delta^j u(c_{t+j}^i)  \right] & \ge V_{t}^{\text{out},i} (w_{t}^1, w_{t}^2) & \forall i \in \{ 1,2 \}
+\end{align*}
+$$
+
+Consider the last FOC. This involves individual-specific inequality constraints. The expectations at time $t$ of future consumptions can always be written as a function of the state variables at time $t$, $V^i(w_{t}^1, w_{t}^2, \mu_{t-1}^1, \mu_{t-1}^2)$. A discussion on the way to find this function is omitted. Once a candidate $V^i$ is found, the expectation can be computed for the two variables, and combined with a consumption level to check whether the condition binds or not. Consider the familiar two-agent case, which involves two constraints.
+
+- If both are slack, then both $\lambda_{t}^1 = \lambda_{t}^2 = 0$. Therefore, the first two FOCs give a system with two equations and two unknowns, and the consumption levels can be found. Then, plugging in the found consumption in the third FOC, the participation constraint can be checked: if these are indeed satisfied as strict inequality, then this is effectively the solution.
+- Alternative, suppose that the participation constraint of agent 1 binds, but does not for agent 2. For agent 1, the equality is strict: the third condition is an identity and can be used to solve for current consumption level of agent 1. Then, this value can be plugged into the first FOC to find consumption also for the other agent.
+
+Note that it can't be that both constraint bind: this would mean that the solution does not exist (they can't both be leaving resources, the point must be interior)[^6]
+
+The previous paragraph focused on the PC condition. The reasoning is, however, also valid for the Bellman Lagrangian. In fact, it holds that 
+$$
+\begin{bmatrix} c_{t}^* \\ b_{t}^{g,*} \\ \lambda_{t}^* \end{bmatrix} = F(b_{t-1}^{g,*}, g_{t}, \lambda_{t-1}^*)
+$$
+
+The FOCs are as follows:
+
+$$
+\begin{align*}
+\left [ \frac{ \partial \mathcal{L} }{ \partial c_{t} } \right ] &:&
+u'(c_{t}) + v'(L_{t}) + \lambda_{t} \left(  \frac{ \partial u'(c_{t}) + v'(L_{t}) L_{t} }{ \partial c_{t} }   \right) + ( \lambda_{t} - \lambda_{t-1} ) b_{t-1}^g u'(c_{t}) &= 0
+\\
+\left [ \frac{ \partial \mathcal{L} }{ \partial b_{t}^g } \right ] &:&
+\mathbb{E}_{t} \left[  u'(c_{t+1}) \lambda_{t+1} \right] &= \mathbb{E}_{t} \left[  u'(c_{t+1}) \lambda_{t} \right]  
+\end{align*} 
+$$
+
+In the Lucas and Stokey case, the first FOC was similar but displayed a constant multiplier, due the period-0 budget constraint being the only constraint. Thus, this FOC is analogous to Lucas and Stokey, but features a time variant multiplier: under incomplete markets, the history of shock matters as it is not possible to insure completely. Thus, period by period, the Lagrange multiplier of the budget constraint changes, and it is needed to keep track of that in addition to the terms that were already tracked.
+To solve for the second FOC, parametrize the expectations and follow steps similar as before, using the FOC directly to solve for the optimal solution[^5].
+
+In a recent paper by [Faraglia, Marcet, Oikonomou, and Scott (2019)](https://academic.oup.com/restud/article/86/6/2554/5132698), the authors develop a model in the previous spirit and explore how a government should optimally choose the maturity of the debt to issue. The model matches some stylized facts about bond issuance and government debt. This can be combined with the literature on [[L'economia del debito sovrano|sovereign debt crises]] to explore how the optimization changes when the government can effectively default and has a default outside option[^8].
+
+### Optimal Capital Taxation
+
+In real-world economies, capital taxes are exacted on several sources: dividends, gains, corporate, and more. The issue of optimal taxation is particularly important in capitalistic economies, and in recent years capital taxes have been steadily declining. This section of the course focuses on famed papers by Chamley (1986) and Judd (1985), as revisited in the 1998 handbook chapter by Chari and Kehoe[^9].
+
+Firms produce with constant returns to scale, $y_{t} = F(k_{t-1}, L_{t})$. Consumers have same utility as in Lucas and Stokey's model; can save and dissave; however, they now face no uncertainty. However, consumers now *own* the capital stock $k_{t} = i_{t} + (1 - d) k_{t-1}$, and receive capital income $r_{t} k_{t-1}$. Then, consumer pay capital taxes $\tau_{t}^k r_{t} k_{t-1}$. The consumer problem is thus:
+
+$$
+\max_{} \sum_{t=0}^\infty \delta^t [ u(c_{t}) + v(L_{t}) ] \quad\text{ s.t. }\quad c_{t} + i_{t} + p_{t}^b b_{t}^g = b_{t-1}^g + r_{t} k_{t-1} (1 - \tau_{t}^k) + w_{t} L_{t} (1 - \tau_{t}^l)
+$$
+
+Firm statically optimize profits, where rental rates and wages are the marginal product of the corresponding factor. The government has a symmetric budget constraint, $g_{t} + b^g_{t-1} = b_{t}^g p_{t}^b + \tau_{t}^k r_{t} k_{t-1} + \tau_{t}^l w_{t} L_{t}$.
+
+The Ramsey full commitment optimal policy would be framed as:
+
+$$
+\max_{ \{ \tau_{t}^k, \tau_{t}^l, g_{t}^g \}_{t=0}^\infty } \sum_{t=0}^\infty \delta^t [ u(c_{t}) + v(L_{t}) ] \quad\text{ subject to CEq}
+$$
+
+where full commitment is captured by the fact that the full series is chosen at time 0.
+
+Let us simplify the CE condition and solve the model by substitution. By Walras' law, the government budget constraint is already satisfied by the consumer's budget constraint. The rental rate and wages can be directly plugged into the equation as equilibrium objects. Last, instead of $i_{t}$, the law of motion of capital can be plugged in, as $c_{t} + k_{t} + p_{t}^b b_{t}^g = b_{t-1}^g + r_{t} k_{t-1} (1 - \tau_{t}^k + 1 - d) + w_{t} L_{t} (1 - \tau_{t}^l)$.
+As a result, the FOC of the consumption problem is the usual identity of the MRS, $- \frac{v'(L_{t})}{u'(c_{t})} = w_{t} (1 - \tau_{t}^l)$. Similarly, the FOC of capital is the MRS for capital: $u'(c_{t}) = \delta u'(c_{t+1}) [ r_{t+1} (1 -\tau_{t+1}^k ) + (1-d) ]$.  Finally, the condition with respect to bonds is $p_{t}^b u'(c_{t}) = \delta u'(c_{t+1})$. Summarizing:
+
+$$
+\begin{align*}
+\left[  \frac{ \partial \mathcal{L} }{ \partial c_{t} }  \right] & : &
+- \frac{v'(L_{t})}{u'(c_{t})} &= w_{t} (1 - \tau_{t}^l)
+\\
+\left[  \frac{ \partial \mathcal{L} }{ \partial k_{t} }  \right] & : &
+\frac{u'(c_{t})}{\delta u'(c_{t+1})} &=  r_{t+1} (1 -\tau_{t+1}^k ) + 1 - d
+\\
+\left[  \frac{ \partial \mathcal{L} }{ \partial b_{t}^g }  \right] & : &
+p_{t}^b \frac{u'(c_{t})}{\delta u'(c_{t+1})} &= 1
+\end{align*}
+$$
+
+By combining these conditions and substituting:
+
+$$
+r_{t} + \frac{\delta u'(c_{t+1})}{u'(c_{t})} [ b_{t}^g + k_{t} ( r_{t+1} (1 - \tau_{t+1}^k) ) ] = b_{t-1}^g + k_{t-1} ( r_{t} (1 - \tau_{t}^k) + 1 - d) - L_{t} \frac{v'(L_{t})}{u'(c_{t})}
+$$
+
+From here, it is possible to get a discounted budget constraint. Note that the items in brackets embody total wealth *without working*, at periods $t+1$ and $t$ respectively. By substituting forward, one can obtained that:
+
+$$
+W_{0} = \sum_{t=0}^\infty \delta^t \frac{u'(c_{t})}{u'(c_{0})} \left(  c_{t} + \frac{v'(L_{t})}{u'(c_{t})} L_{t}  \right)
+$$
+
+^f243b0
+
+Note that no placeholder for investment appears in the equation. This comes from the fact that $W_{0}$, total wealth in period 0, must be just as if the consumer foresees all the capital stock in the future, and instead purchases government bonds that yield a lot of interest. Since there is no uncertainty, bonds and capital must yield the same returns. Therefore, it is the same to write this functions with investment or forgoing capital stock altogether. In practice, capital will also be present in equilibrium; this condition simply states that the consumption decision is *as if* investment did not exist.
+
+Subsequently, we argue that the only constraint that the Bellman should keep track of (on top of feasibility) is the wealth constraint. In fact, for any such level of wealth, it is possible to find a capital tax such that the capital FOC holds; similar reasoning can be applied for labor. Last, the government bonds can be traced back from the budget constraint once consumption is pinned down. Therefore, the only necessary implementability constraint is exactly [[#^f243b0]]. This allows to rewrite the Bellman problem as:
+
+$$
+\max_{ \left \langle \tau_{0}^k, \{ c_{t}, L_{t}, k_{t} \}_{t=0}^\infty \right\rangle } \sum_{t=0}^\infty \delta^t [ u(c_{t}) + v(L_{t}) ]
+\quad\text{s.t. }
+\begin{cases}
+b_{-1}^g + k_{-1}( r_{0} (1 - \tau_{0}^k) + 1 - d ) = \sum_{t=0}^\infty \delta^t \frac{u'(c_{t})}{u'(c_{0})} \left(  c_{t} + \frac{v'(L_{t})}{u'(c_{t})} L_{t}  \right) \\
+\\
+c_{t} + k_{t} - (1 - d) k_{t-1} + g_{t} = F(k_{t-1}, L_{t})
+\end{cases}
+$$
+
+In some sense, only the $\{ \tau_{t}^k \}_{t=1}^\infty$ matter and affect investment. In contrast, $\tau_{0}^k$ does not affect the consumers' FOC. Yet, it appears as an index of maximization. Time-0 taxes can be thought of a capital "expropriation" rate, for the initial given stock of capital. It is easy to show that, without further refinements, the optimal solution for this model is simply to impose an infinite capital tax at period 0, and then let free capital exchange and collect 0 taxes.
+To make the model more interesting, then, it is often assumed that $\tau_{0}^k \le \bar{\tau}$, so that $\tau_{0}^k$ is not a choice:
+
+$$
+\max_{ \{ c_{t}, L_{t}, k_{t} \}_{t=0}^\infty } \sum_{t=0}^\infty \delta^t [ u(c_{t}) + v(L_{t}) ]
+\quad\text{s.t. }
+\begin{cases}
+b_{-1}^g + k_{-1}( r_{0} (1 - \bar{\tau} ) + 1 - d ) = \sum_{t=0}^\infty \delta^t \frac{u'(c_{t})}{u'(c_{0})} \left(  c_{t} + \frac{v'(L_{t})}{u'(c_{t})} L_{t}  \right) \\
+\\
+c_{t} + k_{t} - (1 - d) k_{t-1} + g_{t} = F(k_{t-1}, L_{t})
+\end{cases}
+$$
+
+The key result remains valid: starting existing capital should be taxed as much as possible, as this choice has no consequence and does not distort investment incentives, thus it provides revenue without depressing output. The reason to tax early in this model is *intrinsic*. Of course, this simplified model abstracts completely from "real world reputation", where people may reasonably suspect that capital taxes will still be high if a dramatic $\tau_{0}^k$ is imposed.
+
+It is more interesting to explore the optimal taxes through the Lagrangian multiplier.
+
+$$
+\mathcal{L} = \sum_{t=0}^\infty \delta^t [ u(c_{t}) + v(L_{t}) ] + \mu_{t}  [ c_{t} + k_{t} - (1 - d) k_{t-1} + g_{t} - F(k_{t-1}, L_{t}) ] + \Delta [ u'(c_{t}) + v'(c_{t}) L_{t} ] - \Delta [ b_{-1} + k_{-1} (1 - \bar{\tau}) r_{0} + 1 - d ]
+$$
+
+The FOCs are similar to Lucas and Stockey:
+
+$$
+\begin{align*}
+\left [ \frac{ \partial \mathcal{L} }{ \partial c_{t} } \right ] & : &
+u'(c_{t}) + v'(L_{t}) + \Delta \left(  \frac{ \partial u'(c_{t}) + v'(L_{t}) L_{t} }{ \partial c_{t} }   \right) + \mu_{t} &= 0
+\\
+\left [ \frac{ \partial \mathcal{L} }{ \partial k_{t} } \right ] &: &
+\delta \mu_{t+1} ( r_{t+1} + 1 - d ) &= \mu_{t}
+\end{align*} 
+$$
+
+From this, we observe the Chamley result stating that, as $\mu_{t} \to \mu^\text{ss}$, the two quantities will cancel, and $1 = \delta(r^\text{ss} + 1 - d)$. What is the corresponding tax? From the consumer problem, we have that $u'(c_{t}) = \delta u'(c_{t+1}) ( r_{t+1} (1 - \tau_{t+1}^k) + 1 - d)$ must hold. In steady state, this simplifies to $1 = \delta ( r^\text{ss} (1 - \tau_{t+1}^k) + 1 - d)$ which implies that taxes should be 0 in the long run.
+
+> [!proposition|*] Chamley Result
+> In the long run, $\tau^{k, \text{ss}} = 0$.
+
+Even with heterogeneous agents, this result is robust. In fact, what happens is that the planner's weight for a Pareto optimal allocation will be imposed, but everything else will basically be solved in the same manner, with an implementability constraint per agent, which means two different $\delta$, which however does not enter the optimal tax equation.
 
 
 [^1]: I do not see how this mistaken FOC could be derived for this model. It seems like a *non sequitur*, or better, a straw-man argument developed on purpose by opposing analysts.
@@ -1029,3 +1375,17 @@ The core idea is to see if the main conclusion (that RE fails) holds true even w
 	$$
 	
 	This is a special case of GMM and can be solved through the same estimator $\hat{\boldsymbol{\mathbf{\theta}}}$.
+
+[^3]: In principle, government debt holdings are a function of the entire history of shocks $\{ g^t \}_{t=0}^\infty$. However, this dependence can be reduced to a one-period current dependence from $g_{t}$, in analogous way as we transformed [[Advanced Macroeconomics III (Jeenas)#^e8b054]] into [[Advanced Macroeconomics III (Jeenas)#^b6351c]].
+
+[^4]: This holds only approximately as we're considering a "average" interest rate, also based on the Arrow security simplification. It would be exact if we set the rate dependent on the entire history of shocks.
+
+[^5]: In this case, Dynare performs reasonably well, as the constraint features an equality rather than inequality.
+
+[^6]: The outside option could also be endogenized. For example, the outside option could be a "new union", where the history $\mu_{t-1}^i=0$, which is also a solution to the PC problem. In this case, the outside option depends on the solution of another optimal problem.
+
+[^7]: 
+
+[^8]: For additional reference, check an [Aguiar and Gopinath](https://www.sciencedirect.com/science/article/pii/S0022199605000644) paper on the topic. Their model features "too little commitment", in a way. Although it can be argued that Albert's paper involves too much commitment, the sweet spot is probably somewhere in between.
+
+[^9]: A chapter on the topic is also included in Ljungqvist and Sargent.
