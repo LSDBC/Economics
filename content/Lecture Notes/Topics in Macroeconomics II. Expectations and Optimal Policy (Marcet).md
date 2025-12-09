@@ -6,6 +6,7 @@
 This course explores modelling approaches to expectations, and the corresponding optimal policies in dynamic economies. The two main sections of the notes reflect this structure.
 
 ## Expectations
+
 ### History of Rational Expectations
 
 Older approaches simply specified expectations as a fixed functions of current and previous variables, rather than forward looking expectations based on the model's own laws. Assuming inconsistent expectations to the model's implication is the most disappointing feature of the non-rational expectations paradigm. The crisis of Classical Keynesian models occurred in the 70s with the failure of the classical Phillips Curve to predict a positive correlation between inflation and unemployment. With rational expectations (hereafter, RE), instead, agent's predictions coincide with the objective model's predictions. This also implies that expectations are enforced by the model itself: there is no additional degrees of freedom to test the model predictions against specifications of expectations. Sure enough, the Classical Keynesian models had an excessive, basically infinite amount of degrees of freedom, with maximized explanatory power and minimized predictive power. At that time, RE was a welcome methodological innovation, as it avoided arbitrary model specifications.
@@ -13,9 +14,11 @@ Older approaches simply specified expectations as a fixed functions of current a
 Agents in the Old Keynesian models were assumed to form expectations following equations that differed from the model's equation determining the very outcome expected upon. Put simply, Old Keynesian agents make *the same mistake all the time*. In contrast, real-world agents *do* make mistakes, but these are not identical at all times, and do not incur systematic welfare losses due to misspecified expectations. Put simply,  Classical Keynesian models were lacking a learning mechanism for people to adjust their expectational equations.
 
 RE, instead, avoided that "stupid" mistakes were repeatedly committed, and became the dominant paradigm in modelling expectations in economics around the 80s. This is thanks to some theoretical features of RE:
+
 - The choice of expectations is dictated by the model, and no arbitrary modelling is admitted.
 - It a stable expectation that is maintained in the long run
 - It prevents agents to make systematic, or even "stupid", mistakes in their forecasts.
+
 Although these are good methodological justification, and any deviation from RE should address them, it seems like an unreasonable burden that agents come to know rational expectations straight away. Moreover, alternative way to solve such problems may exist.
 
 ### An Application: Expectations and Asset Prices
@@ -67,10 +70,10 @@ Empirical results for this regression are provided by Cochrane (2005) as follows
 | 5   | 33                | 5.80                  | 0.6   | 4.7                             | 2.4                   | 0.12  |
 
 (Beware that this data has DP rather than PD on the RHS, and data is yearly rather than quarterly like in the previous table.)
-Put simply, future excess returns are higher when $P$ is low (relative to the dividend its yields). Moreover, $\hat{b}$ is significantly different from 0, the more the longer the horizon $n$. Finally, the $R^2$ is relatively high and rejects the "weak form of market efficiency" in the long run. This result is very robust and is sometimes described as **mean reversion** of DP.
+Put simply, future excess returns are higher when $P$ is low (relative to the dividend it yields). Moreover, $\hat{b}$ is significantly different from 0, the more the longer the horizon $n$. Finally, the $R^2$ is relatively high and rejects the "weak form of market efficiency" in the long run. This result is very robust and is sometimes described as **mean reversion** of DP.
 In contrast, $\hat{d}$ is not significant: therefore, mean reversion and volatility of returns are due to price movements, and not dividends.
 
-Let us attempt to micro-found asset pricing with RE. In a famed model by Lucas', a representative consumer/investor chooses stock holdings $S_t$ and consumption $C_t$ to solve:
+Let us attempt to micro-found asset pricing with RE. In the famed model by Lucas and Stokey, a representative consumer/investor chooses stock holdings $S_t$ and consumption $C_t$ to solve:
 
 $$
 \max_{\{ S_{t}, C_{t} \}_{t=0}^\infty } \mathbb{E}_{0} \sum_{t=0}^\infty \beta^t u(C_{t}) \quad\text{ such that }\quad C_{t} + S_{t} P_{t} = W_{t} + S_{t-1}(P_{t} + D_{t})
@@ -131,7 +134,7 @@ $$
 \end{align*}
 $$
 
-where the stochastic discount factor depends on $H_t$. Since this is highly volatile, this affects the risk aversion which becomes $\mathbb{E} \left[  -C_{t} \frac{u''\left( \frac{C_{t}}{H_{t-1}} \right)}{ u'\left( \frac{C_{t}}{H_{t-1}} \right) }  \right] \approx 80$. However, this utility function leads to weird results when plugged into standard DSGE models, such as increased utility for decreasing consumption. Because agents care about the gap (relative status), not the absolute amount, they are mathematically happier being poor in a society where everyone else is destitute (low habit), than being rich in a society where everyone else is slightly richer (high habit). Ljungqvist and Uhlig showed that in these models, a government could theoretically burn 10% of the country's endowment and make everyone happier by ending the "rat race."
+where the stochastic discount factor depends on $H_t$. Since this is highly volatile, this affects the risk aversion which becomes $\mathbb{E} \left[  -C_{t} \frac{u''\left( \frac{C_{t}}{H_{t-1}} \right)}{ u'\left( \frac{C_{t}}{H_{t-1}} \right) }  \right] \approx 80$. However, this utility function leads to weird results when plugged into standard DSGE models, such as increased utility for decreasing consumption. Because agents care about the gap (relative status), not the absolute amount, they are mathematically happier being poor in a society where everyone else is destitute (low habit), than being rich in a society where everyone else is slightly richer (high habit)[^12]. Ljungqvist and Uhlig showed that in these models, a government could theoretically burn 10% of the country's endowment and make everyone happier by ending the "rat race".
 
 Bansal and Yaron (2004) assume output growth has a slow-moving component that affects dividends, such as $\log D_{t} - \log D_{t-1} = a_{t} + \epsilon_{t}$ such that $a_{t} = a_{t-1} + \eta_{t}$. Importantly, $a_{t}$ is perfectly observed by investors in period $t$. Since $a_{t}$ is the denominator and $1 - \beta a_{t} \approx 0$, small changes in $a_t$ lead to large changes in prices. This allows to explain the variance in the data.
 However, some problems still persist. To match, the data, the variance of $\eta$ should be very small, because dividend growth does not show a strong unit root behavior in practice. If the variance of $\eta$ is much smaller than the variance of $\epsilon_t$, then this will assume a huge role as it piles up in the long run. The growth rate becomes time-varying and can exhibit large fluctuations; moreover, since the denominator is close to 1, small fluctuations in  lead to large fluctuations in the growth rate. Yet, it is weird to assume that agents in the model know about a variable, $a_t$, which does not even exist in statistical agencies.
@@ -218,7 +221,7 @@ where the null (rejected) is $B^n=0$. The test is identical to AMB, since $B^n =
 
 In Bayesian models, agents do not know all the moments of the fundamental data generating process. In this section, we analyze a model of learning about fundamental shocks. This model is interesting to explore if Bayesian RE converge to RE, and if so how fast, and whether Bayesian RE can be used as a bounded substitute for RE.
 
-Consider a special case of Lucas' model with no risk aversion $u(C) = C$ and $W_{t}=0$. The growth rate of dividends follows $\frac{D_{t}}D{D_{t+1}} = 1 + G + \epsilon_{t}$ with mean zero $\overset{\mathrm{i.i.d.}}{\sim}$ error. Under RE, this case implies $\mathbb{E}_{t} D_{t+j} = (1 + G)^j D_{t}$. Therefore, under RE:
+Consider a special case of Lucas' model with no risk aversion $u(C) = C$ and $W_{t}=0$. The growth rate of dividends follows $\frac{D_{t}}{D_{t-1}} = 1 + G + \epsilon_{t}$ with mean zero $\overset{\mathrm{i.i.d.}}{\sim}$ error. Under RE, this case implies $\mathbb{E}_{t} D_{t+j} = (1 + G)^j D_{t}$. Therefore, under RE:
 
 $$
 \begin{align*}
@@ -296,7 +299,7 @@ $$
 \begin{align*}
 \alpha_{t+1} &= 1 + \frac{\alpha_{t}}{1 + \alpha_{t} \frac{\sigma_{\eta}^2}{\sigma_{\epsilon}^2}}
 \\
-a_{1} &= \frac{\sigma_{\eta} + \sigma_{\epsilon} + \sigma_{0}}{\sigma_{\eta} + \sigma_{0}}
+\alpha_{1} &= \frac{\sigma_{\eta} + \sigma_{\epsilon} + \sigma_{0}}{\sigma_{\eta} + \sigma_{0}}
 \end{align*}
 $$
 
@@ -354,7 +357,9 @@ $$
 with FOC:
 
 $$
-\frac{(u^1)'(C_{t}^1)}{(u^2)'(C_{t}^2)} = \left(  \frac{\beta^2}{\beta^1} \right)^t \frac{1-\alpha}{\alpha}
+\begin{align*}
+\frac{(u^1)'(C_{t}^1)}{(u^2)'(C_{t}^2)} &= \left(  \frac{\beta^2}{\beta^1} \right)^t \frac{1-\alpha}{\alpha}
+\end{align*}
 $$
 
 this FOC, combined with the feasibility condition, allows to solve for the $C$s. So, given some $\alpha$, each consumption path is a fixed function of total output $\boldsymbol{\mathbf{W}}_{t}$, and the pricing equation finally yields $P$.
@@ -382,9 +387,24 @@ for some Pareto weight $\alpha$. The planner FOC is as follows:
 
 $$
 \begin{align*}
-\frac{u'(C_{t}^1)}{u'(C_{t}^2)} &= \frac{1 - \alpha}{\alpha} \prod_{j=1}^t \frac{\mu_{j}^2}{\mu_{j}^1}
+[C_{t}^1] & : & \alpha \Pr^1(h^t) u'(C_{t}^1(h^t)) &= \lambda
 \\
-&= \frac{\mu^2_{t}}{\mu_{t}^1} \frac{u'(C_{t-1}^1)}{u'(C_{t-1}^2)}
+[C_{t}^2] & : &
+(1 - \alpha) \Pr^2 (h^t) u'(C_{t}^2 (h^t)) &= \lambda
+\end{align*}
+$$
+
+and can be combined into a unique condition by equating the $\lambda$:
+
+$$
+\begin{align*}
+\frac{(u^1)'(C_{t}^1)}{(u^2)'(C_{t}^2)} &= \frac{1-\alpha}{\alpha} \frac{\Pr^2(h^t)}{\Pr^1(h^t)}
+\\
+&= \frac{1 - \alpha}{\alpha} \prod_{j=1}^t \frac{\mu_{j}^2}{\mu_{j}^1}
+\\
+&= \frac{\mu_{t}^2}{\mu_{t}^1} \frac{1 - \alpha}{\alpha} \prod_{j=1}^{t-1} \frac{\mu_{j}^2}{\mu_{j}^1}
+\\
+\frac{u'(C_{t}^1)}{u'(C_{t}^2)}  &= \frac{\mu^2_{t}}{\mu_{t}^1} \frac{u'(C_{t-1}^1)}{u'(C_{t-1}^2)}
 \end{align*}
 $$
 
@@ -393,7 +413,7 @@ However, the Friedman hypothesis is wrong in general. If agents have beliefs tha
 
 $$
 \begin{align*}
-\mathbb{E}_{t} \left[  \frac{\mu_{2,t+1}}{\mu_{1,t+1}} \frac {u'(C_{1,t})}{u'(C_{2,t})} \right] &= \int \frac{\mu_{2,t+1}}{\mu_{1,t+1}} \frac {u'(C_{1,t})}{u'(C_{2,t})} \mu_{t+1}(\omega) \, d\omega 
+\tilde{ \mathbb{E} }_{t}^1 \left[  \frac{\mu_{2,t+1}}{\mu_{1,t+1}} \frac {u'(C_{1,t})}{u'(C_{2,t})} \right] &= \int \frac{\mu_{2,t+1}}{\mu_{1,t+1}} \frac {u'(C_{1,t})}{u'(C_{2,t})} \mu_{t+1}(\omega) \, d\omega 
 \\
 &= \int \mu_{2,t+1} \frac {u'(C_{1,t})}{u'(C_{2,t})} \, d\omega 
 \\
@@ -484,23 +504,31 @@ A stock is the same as a portfolio of dividends and price, that is $b_{t}^j(H) =
 
 $$
 \begin{align*}
-P_{t}^{\text{stock}} &= p_{t}^{b,H} ( D(H) + P(H) ) + p_{t}^{b,L} ( D(L) + P(L) )
-\\
+P_{t}^{\text{stock}} &= p_{t}^{b,H} ( D(H) + P(H) ) + p_{t}^{b,L} ( D(L) + P(L) ) 
+\\ 
 &= \frac{\mu^H}{\mu^H} p_{t}^{b,H} ( D(H) + P(H) ) + \frac{\mu^L}{\mu^L} p_{t}^{b,L} ( D(L) + P(L) )
 \\
-&= \dots
+&= \mu^H \underbrace{ \left[ \frac { \delta u' ( c_{t+1}^1 ( H ) ) }{ u'(c_{t}^1) } \frac{\mu^{H,1}}{\mu^H} \right] }_{\xi_{t+1}(H)} ( D(H) + P(H) ) + \mu^L \underbrace{ \left[ \frac { \delta u' ( c_{t+1}^2 ( L ) ) }{ u'(c_{t}^2) } \frac{\mu^{L,2}}{\mu^L} \right] }_{\xi_{t+1}(L)} ( D(L) + P(L) )
 \\
-&= \mathbb{E}_{t} [ \delta \xi_{t+1} ( D_{t+1} + P_{t+1}^{\text{stock}}) ]
+&= \mathbb{E}_{t} [ \xi_{t+1} ( D_{t+1} + P_{t+1}^{\text{stock}}) ]
 \end{align*}
 $$
 
-where $\xi_{t+1}(H) = \frac{ \delta u' (c_{t+1}^1 (s_{t+1}=H)) \mu^{s,1} }{ u'(c_{t}^1) \mu^s }$ and similar for $L$, with $\mu^s$ being the true moments and probability of the states. Disagreement brings uncertainty about the marginal agent pricing the asset each period.
+where:
+
+$$\xi_{t+1} = \begin{cases} \delta \frac{ u'(c_{t+1}^1) }{ u'(c_t^1) } \frac{\mu^{H,1}}{\mu^H} & \text{if } s_{t+1} = H
+\\
+\delta \frac{ u'(c_{t+1}^2) }{ u'(c_t^2) } \frac{\mu^{L,2}}{\mu^L} & \text{if } s_{t+1} = L \\
+\end{cases}$$
+
+Disagreement brings uncertainty about the marginal agent pricing the asset each period.
 
 Papers exist along this literature:
 - Scheinkman and Xiong (2003) on price bubble through frenzied trading;
 - Over-investment: Bolton, Scheinkman and Xiong (2006)
 - Crashes: Abreu and Brunnermeier (2003) and Hong and Stein (2003);
 - Credit cycles: Geanakoplos (2010).
+
 For a survey, see Xiong's *Bubbles Crises and Heterogeneous Beliefs*. A big issue with this literature is that ***agents agree on the pricing function***. They only disagree about future returns to the extent they disagree about probabilities of future $D,W$. That is, they instance Bayesian-RE. As a consequence, few of those papers explain observations *quantitatively*, and most find insufficient volatility of stock prices.
 
 #### Self-referential learning
@@ -517,15 +545,13 @@ P_{t} &= \beta \tilde{\mathbb{E}}_{t} (P_{t+1} + D_{t+1})
 \end{align*}
 $$
 
-What are the dynamics of prices if agents learn about how to form $\tilde{\mathbb{E}}_{t} [P_{t+1}]$? To obtained closed-form solutions, we also assume that $D_{t}^e = \mu + \epsilon_{t}$ is a mean-zero random walk. Suppose investors believe prices follow the **perceived law of motion** (PLM)
+What are the dynamics of prices if agents learn about how to form $\tilde{\mathbb{E}}_{t} [P_{t+1}]$? To obtain closed-form solutions, assume that $D_{t}^e = \mu + \epsilon_{t}$ is a mean-zero random walk. Suppose investors believe prices follow the **perceived law of motion** (PLM)
 
 $$
 \begin{align*}
-P_{t} &= m + v_{t}
+\tilde{\mathbb{E}}_{t-1} [ P_{t} ] &= m + v_{t}
 \\
 v & \overset{\mathrm{i.i.d.}}{\sim} \mathcal{N} (0, \sigma^2_{v})
-\\
-m & \sim \mathcal{N} (m_{0}, \sigma_{0})
 \end{align*}
 $$
 
@@ -559,11 +585,11 @@ Suppose now that agents are less stubborn, and have the following PLM:
 
 $$
 \begin{align*}
-P_{t} &= m + v_{t}
+\tilde{\mathbb{E}}_{t-1} [ P_{t} ] &= m + v_{t}
 \\
-v &\overset{\text{iid}}\sim \mathcal{N} (0, \sigma_{v}^2)
+v & \overset{\mathrm{i.i.d.}}{\sim} \mathcal{N} (0, \sigma^2_{v})
 \\
-m &\sim \mathcal{N} ( m_{0}, \sigma_{0} )
+m & \sim \mathcal{N} (m_{0}, \sigma_{0})
 \end{align*}
 $$
 
@@ -621,7 +647,7 @@ m_{t} &= m_{t-1} + \frac{1}{t} \left(  P_{t} - m_{t-1} + \frac{1}{t-1} (P_{t} - 
 $$
 
 
-with $N(t,\alpha)$ chosen such that $\sum_{j=N(t,\alpha)}^{0} \frac{1}{t-j} = \alpha$. If $t$ goes to infinity too quickly, the sum is not absolutely summable and does not converge to infinity. In other words, update is not fast enough relative to time, and learning does not occur.
+with $N(t,\alpha)$ chosen such that $\sum_{j=N(t,\alpha)}^{0} \frac{1}{t-j} = \alpha$. If $t$ goes to infinity too quickly, the sum is not absolutely summable and does not converge summing in an infinite sum. In other words, update is not fast enough relative to time, and learning does not occur.
 
 > [!example|*]+ A Learning Model of Real Money Balances
 > Suppose the price level follows the process:
@@ -1535,6 +1561,15 @@ where $D_{t} = \prod_{\tau=1}^t \pi_{t}$. These model often introduce **probabil
 
 
 
+<div style="page-break-after: always;"></div>
+
+## Q&A
+
+As for inducing the best expectations, Marcet seems to suggest we should basically design an information device which "implements a mechanism" such that we give agents' the information relevant to induce them correct expectations.
+
+Lucas' critique al belated policy. Proposed solution: **use tilde expectations for current regime and assume RE *after* regime switching, to follow Lucas' recipe at least after regime switching**. This makes the paper easier, but it is probably not reasonable in actual practice. Alternative: **acknowledge we don't know what expectations will be, and make a guess as an analyst**.
+
+
 [^1]: I do not see how this mistaken FOC could be derived for this model. It seems like a *non sequitur*, or better, a straw-man argument developed on purpose by opposing analysts.
 
 [^2]: The SMM estimates a times series generated by parameters, that is $y_{t}(\boldsymbol{\mathbf{\theta}})$. The model tests the following identity:
@@ -1566,3 +1601,5 @@ where $D_{t} = \prod_{\tau=1}^t \pi_{t}$. These model often introduce **probabil
 [^10]: Although this looks natural, game theorists might contend that sequential Stackelberg equilibria might exist, alongside the recursive Nash equilibrium.
 
 [^11]: This technique is called the [[Welfare Economics and Existence of An Equilibrium for a Competitive Economy|Negishi]] algorithm. It simplifies asset pricing by solving for quantities (Consumption) first using a Planner, and finding prices (Asset Prices) second using Marginal Utilities. This is only possible because financial assets net to zero in the aggregate constraint.
+
+[^12]: Many authors from all areas of economics introduced forms of "keeping up with the Joneses" behaviors. It is clear what these authors are trying to capture: Some of our consumption-saving behaviors are driven by relative consumption concerns. However, imposing relative consumption into utility function leads to unpleasant results, such as the "rat race". Not only that: It is also *unrealistic*. No agent would ever commit to or identify with a utility function including other peoples consumption (if you're not convinced, imagine a survey where you asked if you'd like to make everyone poorer by 50\% and yourself poorer by 1\%: how would you reply?). Instead, it is way more promising to include relative income concerns into the **policy function**, as a source of non-stochastic error derived from a behavioral bias.
