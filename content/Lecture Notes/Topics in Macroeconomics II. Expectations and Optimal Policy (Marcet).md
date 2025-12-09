@@ -6,7 +6,6 @@
 This course explores modelling approaches to expectations, and the corresponding optimal policies in dynamic economies. The two main sections of the notes reflect this structure.
 
 ## Expectations
-
 ### History of Rational Expectations
 
 Older approaches simply specified expectations as a fixed functions of current and previous variables, rather than forward looking expectations based on the model's own laws. Assuming inconsistent expectations to the model's implication is the most disappointing feature of the non-rational expectations paradigm. The crisis of Classical Keynesian models occurred in the 70s with the failure of the classical Phillips Curve to predict a positive correlation between inflation and unemployment. With rational expectations (hereafter, RE), instead, agent's predictions coincide with the objective model's predictions. This also implies that expectations are enforced by the model itself: there is no additional degrees of freedom to test the model predictions against specifications of expectations. Sure enough, the Classical Keynesian models had an excessive, basically infinite amount of degrees of freedom, with maximized explanatory power and minimized predictive power. At that time, RE was a welcome methodological innovation, as it avoided arbitrary model specifications.
@@ -14,11 +13,9 @@ Older approaches simply specified expectations as a fixed functions of current a
 Agents in the Old Keynesian models were assumed to form expectations following equations that differed from the model's equation determining the very outcome expected upon. Put simply, Old Keynesian agents make *the same mistake all the time*. In contrast, real-world agents *do* make mistakes, but these are not identical at all times, and do not incur systematic welfare losses due to misspecified expectations. Put simply,  Classical Keynesian models were lacking a learning mechanism for people to adjust their expectational equations.
 
 RE, instead, avoided that "stupid" mistakes were repeatedly committed, and became the dominant paradigm in modelling expectations in economics around the 80s. This is thanks to some theoretical features of RE:
-
 - The choice of expectations is dictated by the model, and no arbitrary modelling is admitted.
 - It a stable expectation that is maintained in the long run
 - It prevents agents to make systematic, or even "stupid", mistakes in their forecasts.
-
 Although these are good methodological justification, and any deviation from RE should address them, it seems like an unreasonable burden that agents come to know rational expectations straight away. Moreover, alternative way to solve such problems may exist.
 
 ### An Application: Expectations and Asset Prices
@@ -437,7 +434,9 @@ $$
 
 For this ratio to go to infinity, the denominator (agent 1's marginal utility) stays finite, which forces the numerator (agent 2's marginal utility) to infinity:
 
-$$u'(C_{1,t}) \to \infty \implies C_{1,t} \to 0$$
+$$
+u'(C_{1,t}) \to \infty \implies C_{1,t} \to 0
+$$
 
 While the math proves agent 1 eventually consumes 0 (Friedman was right in the _infinite_ long run), the Yan (2008) result shows that the speed of this decay is determined by the Kullback-Leibler divergence between the two beliefs. If agent 1 is "crazy" (beliefs are very different), $\frac{\mu_2}{\mu_1}$ grows fast and he vanishes quickly. If agent 1 is "smart but slightly wrong" (beliefs are close), $\frac{\mu_2}{\mu_1}$ grows very slowly and he survives for a long time.
 #### Conclusion: Limits of Market Selection and Aggregation
@@ -516,14 +515,17 @@ $$
 
 where:
 
-$$\xi_{t+1} = \begin{cases} \delta \frac{ u'(c_{t+1}^1) }{ u'(c_t^1) } \frac{\mu^{H,1}}{\mu^H} & \text{if } s_{t+1} = H
+$$
+\xi_{t+1} = \begin{cases} \delta \frac{ u'(c_{t+1}^1) }{ u'(c_t^1) } \frac{\mu^{H,1}}{\mu^H} & \text{if } s_{t+1} = H
 \\
 \delta \frac{ u'(c_{t+1}^2) }{ u'(c_t^2) } \frac{\mu^{L,2}}{\mu^L} & \text{if } s_{t+1} = L \\
-\end{cases}$$
+\end{cases}
+$$
 
 Disagreement brings uncertainty about the marginal agent pricing the asset each period.
 
 Papers exist along this literature:
+
 - Scheinkman and Xiong (2003) on price bubble through frenzied trading;
 - Over-investment: Bolton, Scheinkman and Xiong (2006)
 - Crashes: Abreu and Brunnermeier (2003) and Hong and Stein (2003);
@@ -843,11 +845,13 @@ This idea can be extended to:
 - Some non-stationary models
 
 As Sargent once put it, there is a general idea that deviating from RE hurls analysts into the "wilderness of irrationality". The main arguments usually put forward against learning are the following:
+
 1) **Lack of discipline**. Any kind of expectations could be validly assumed, generating wilderness.
 2) **Unfalsifiability**. Liberalizing learning and irrational expectations creates *ad hoc* models that cannot fail. This resonates with the large old Keynesian models of the 70s.
 3) **Irrationality**. While learning about fundamental shocks is considered acceptable, most economists would reject that agents view prices as deviating from fundamentals.
 
 These good concerns can easily find counterarguments in support of learning.
+
 1) Expectations can be disciplined through empirical validation, such as looking at surveys and testing if the PLM are compatible with observed data on expectations.
 2) If unfalsifiability is imputed to overparametrization, learning models are no more overparametrized than many RE models. In particular, it is possible to design learning models that are just as parsimonious or even more parsimonious in terms of parameters.
 3) If agents learn about prices, expectations don't need to be "fairly good". The only required criterion may be "internal rationality".
