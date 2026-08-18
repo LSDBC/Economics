@@ -15,7 +15,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: { provider: 'google', tagId: 'G-26XTKW2T2L' },
     locale: "en-US",
-    baseUrl: "https://notebook.bianchichignoli.it",
+    baseUrl: "notebook.bianchichignoli.it",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
@@ -76,6 +76,7 @@ const config: QuartzConfig = {
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
+      Plugin.CNAME(),
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
